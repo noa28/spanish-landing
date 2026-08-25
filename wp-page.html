@@ -211,11 +211,14 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 }
 #lp .imgview{
   position:fixed; inset:0; z-index:130; display:none;
-  background:rgba(12,32,40,.94); overflow:auto; -webkit-overflow-scrolling:touch;
-  padding:56px 8px 24px;
+  background:rgba(12,32,40,.94); overflow-y:auto; overflow-x:hidden;
+  -webkit-overflow-scrolling:touch; padding:56px 10px 30px;
+}
+#lp .imgview .tip{
+  color:#BFDCE2; font-size:13px; text-align:center; margin:0 0 12px;
 }
 #lp .imgview.on{display:block}
-#lp .imgview img{width:auto; max-width:none; min-width:100%; margin:0 auto; display:block; border-radius:8px}
+#lp .imgview img{width:100%; max-width:100%; height:auto; margin:0 auto; display:block; border-radius:8px}
 #lp .imgview .x{
   position:fixed; top:10px; inset-inline-end:10px; z-index:2;
   width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
@@ -961,7 +964,7 @@ body{padding-bottom:78px; background:#FFFFFF}
   </div>
 </div>
 
-<div class="imgview" id="imgview"><button class="x" id="imgviewX" aria-label="סגירה">✕</button></div>
+<div class="imgview" id="imgview"><button class="x" id="imgviewX" aria-label="סגירה">✕</button><p class="tip">אפשר לצבוט כדי להתקרב</p></div>
 
 <script>
 document.documentElement.classList.add('js');
@@ -977,7 +980,6 @@ if (iv && infoFig){
     const im = new Image();
     im.src = im0.currentSrc || im0.src;
     im.alt = im0.alt;
-    im.style.width = Math.round(window.innerWidth * 2.2) + 'px';
     iv.appendChild(im);
     iv.classList.add('on'); document.body.style.overflow = 'hidden';
   };
