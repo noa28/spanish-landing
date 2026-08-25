@@ -74,8 +74,8 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .hero{padding:38px 0 20px; position:relative; overflow:hidden}
 @media (min-width:880px){#lp .hero{padding:58px 0 40px} }
 #lp .hero-grid{display:grid; gap:30px; align-items:center}
-@media (min-width:880px){#lp .hero-grid{grid-template-columns:1.05fr .95fr; gap:48px} }
-#lp .hero h1{font-size:clamp(32px,6.4vw,56px)}
+@media (min-width:880px){#lp .hero-grid{grid-template-columns:1.14fr .86fr; gap:44px} }
+#lp .hero h1{font-size:clamp(32px,6.4vw,54px)}
 #lp .hero .lead{margin-top:18px}
 #lp .hero-cta{display:flex; flex-wrap:wrap; gap:13px; margin-top:28px}
 #lp .trust{display:flex; align-items:center; gap:12px; margin-top:26px; font-size:15px; color:var(--ink-soft)}
@@ -317,6 +317,8 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
   font-size:clamp(21px,2.9vw,28px); line-height:1.32;
 }
 #lp .teacher p{margin-bottom:14px; color:var(--ink-soft)}
+#lp .teacher .invite{color:var(--ink); font-weight:600; line-height:1.7}
+#lp .teacher .sig{font-family:var(--f-head); font-weight:700; font-size:20px; color:var(--teal); direction:ltr; text-align:start; margin-bottom:0}
 #lp .creds{display:flex; gap:28px; flex-wrap:wrap; margin-top:24px}
 #lp .cred b{display:block; font-family:var(--f-head); font-weight:800; font-size:32px; color:var(--orange); line-height:1}
 #lp .cred span{font-size:14px; color:var(--ink-soft)}
@@ -342,8 +344,8 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .arw:hover{background:var(--ink); color:var(--white); transform:translateY(-50%) scale(1.07)}
 #lp .arw:focus-visible{outline:3px solid var(--orange); outline-offset:3px}
 #lp .arw svg{width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round}
-#lp .arw.prev{inset-inline-end:-56px}
-#lp .arw.next{inset-inline-start:-56px}
+#lp .arw.prev{inset-inline-start:-56px}
+#lp .arw.next{inset-inline-end:-56px}
 #lp .dots{display:flex; gap:8px; justify-content:center; margin-top:18px}
 #lp .dots button{
   width:9px; height:9px; border-radius:50%; border:none; padding:0; cursor:pointer;
@@ -804,9 +806,11 @@ body{padding-bottom:78px; background:#FFFFFF}
     </div>
     <div>
       <span class="eyebrow">!Hola</span>
-      <blockquote>״המטרה שלי היא לא רק ללמד ספרדית — אלא לעזור לבני הנוער <span class="hl">להרגיש שהם מסוגלים</span>.״</blockquote>
-      <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם את החומר מהר, ולשמר את התוצאות לאורך זמן.</p>
-      <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות, ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם הצרכים של מאות תלמידים שלימדתי לאורך השנים.</p>
+      <blockquote>״המטרה שלי בספרדית זה משחק ילדים היא לא רק ללמד ספרדית. אלא לעזור לבני הנוער לפתח ביטחון, ליהנות מהדרך ו<span class="hl">להרגיש שהם מסוגלים להצליח</span>.״</blockquote>
+      <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת כיצד לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם במהירות את החומר הנלמד, ולשמר את התוצאות לאורך זמן.</p>
+      <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות (באופן אישי אני דוברת חמש שפות), ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם צרכים שונים של מאות תלמידים שלימדתי בשנים אלה.</p>
+      <p class="invite">אז רוצים להתחיל לדבר, ובקלות?<br>הגשמת החלום שלכם — במרחק קליק אחד!<br>אני אתכם במסע.</p>
+      <p class="sig">Laura Epstein</p>
       <div class="creds">
         <div class="cred"><b>18</b><span>שנות הוראה</span></div>
         <div class="cred"><b>5</b><span>שפות שאני דוברת</span></div>
