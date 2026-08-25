@@ -240,13 +240,25 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .lesson .thumb{
   aspect-ratio:16/9; display:grid; place-items:center;
   background:linear-gradient(140deg, var(--teal) 0%, #14808D 100%);
-  position:relative;
+  background-size:cover; background-position:center;
+  position:relative; transition:background-image .3s;
 }
 #lp .lesson .thumb::after{
   content:""; position:absolute; inset:0; opacity:.22;
   background-image:radial-gradient(circle at 22% 26%, #fff 1.5px, transparent 2px);
-  background-size:26px 26px;
+  background-size:26px 26px; transition:opacity .3s;
 }
+#lp .lesson .thumb.has-img::after{
+  opacity:1; background-image:linear-gradient(to top, rgba(10,40,50,.55), rgba(10,40,50,.12) 55%, transparent);
+  background-size:auto;
+}
+#lp .lesson .dur{
+  position:absolute; z-index:1; bottom:10px; inset-inline-end:10px;
+  background:rgba(12,32,40,.82); color:#fff; font-family:var(--f-head);
+  font-size:12.5px; font-weight:700; padding:3px 9px; border-radius:6px;
+  opacity:0; transition:opacity .3s;
+}
+#lp .lesson .dur.on{opacity:1}
 #lp .lesson .play{
   position:relative; z-index:1; width:60px; height:60px; border-radius:50%;
   background:var(--white); display:grid; place-items:center;
@@ -412,7 +424,7 @@ body{padding-bottom:78px; background:#FFFFFF}
     <div>
       <span class="eyebrow">🎈 לנערים ונערות בגילאי 12–16</span>
       <h1>ספרדית זה <span class="hl">משחק ילדים</span></h1>
-      <p class="lead">תוכנית דיבור לבני נוער: קורס דיגיטלי בקצב אישי, שיעור יומי בוואטסאפ, ו־8&nbsp;מפגשי&nbsp;זום&nbsp;קבוצתיים. בסוף התוכנית הם מנהלים שיחה אמיתית בספרדית — ובעיקר, מרגישים שהם מסוגלים.</p>
+      <p class="lead">תוכנית דיבור לבני נוער: קורס דיגיטלי בקצב אישי, שיעור יומי בוואטסאפ, ו־8 מפגשי זום קבוצתיים. בסוף התוכנית הם מנהלים שיחה אמיתית בספרדית — ובעיקר, מרגישים שהם מסוגלים.</p>
       <div class="hero-cta">
         <a class="btn btn-main" href="#form">לשריון מקום במחזור הקרוב</a>
         <a class="btn btn-soft" href="#taster">רגע, בואו ננסה משפט</a>
@@ -553,7 +565,7 @@ body{padding-bottom:78px; background:#FFFFFF}
   <div class="shell argument rv">
     <span class="eyebrow">📱 בואו נדבר על מסכים</span>
     <h2 class="h-lg">אי אפשר להוציא אותם מהמסכים</h2>
-    <p style="margin-top:18px">אבל אפשר לבחור מה ייכנס אליהם דרכם. עוד שעה של גלילה, או שעה שמפתחת שפה חדשה. אם כבר הם מול המסך — שלפחות יצאו ממנו עם משהו שילך איתם לכל החיים. ובסוף גם יהיה להם כיף.</p>
+    <p style="margin-top:18px">אבל אפשר לבחור מה ייכנס אליהם דרכם.<br>עוד שעה של גלילה, או שעה שמפתחת שפה חדשה. אם כבר הם מול המסך — שלפחות יצאו ממנו עם משהו שילך איתם לכל החיים. ובסוף גם יהיה להם כיף.</p>
   </div>
 </section>
 
@@ -847,17 +859,43 @@ document.documentElement.classList.add('js');
 
 /* ---- lesson previews ---- */
 const LESSONS = [
+  {id:'1103729776', title:'השיחה הראשונה שלי', sub:'שיעור 9 · חלק 1'},
   {id:'1103736044', title:'השיחה הראשונה שלי', sub:'שיעור 17 · חלק 2'}
 ];
 const PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
 const lessonsHost = document.getElementById('lessons');
+const mmss = sec => Math.floor(sec/60) + ':' + String(sec % 60).padStart(2,'0');
+
 LESSONS.forEach(v => {
   const b = document.createElement('button');
   b.className = 'lesson';
-  b.innerHTML = '<div class="thumb"><span class="play">' + PLAY + '</span></div>' +
+  b.innerHTML = '<div class="thumb"><span class="play">' + PLAY + '</span><span class="dur"></span></div>' +
                 '<div class="meta"><b>' + v.title + '</b><span>' + v.sub + '</span></div>';
   b.addEventListener('click', () => openVideo(v));
   lessonsHost.appendChild(b);
+
+  /* poster frame + length straight from Vimeo.
+     if it fails the card keeps the teal tile, so nothing breaks. */
+  fetch('https://vimeo.com/api/oembed.json?url=' + encodeURIComponent('https://vimeo.com/' + v.id) + '&width=800')
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (!d) return;
+      if (d.thumbnail_url){
+        const img = new Image();
+        img.onload = () => {
+          const t = b.querySelector('.thumb');
+          t.style.backgroundImage = 'url("' + d.thumbnail_url + '")';
+          t.classList.add('has-img');
+        };
+        img.src = d.thumbnail_url;
+      }
+      if (d.duration){
+        const el = b.querySelector('.dur');
+        el.textContent = mmss(d.duration);
+        el.classList.add('on');
+      }
+    })
+    .catch(() => {});
 });
 const vmodal = document.getElementById('vmodal');
 const vframe = document.getElementById('vframe');
