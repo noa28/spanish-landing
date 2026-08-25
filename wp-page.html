@@ -123,7 +123,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .reason:hover{transform:translateY(-5px) rotate(-1.5deg)}
 #lp .reason span{font-size:31px; display:block; margin-bottom:7px}
 #lp .reason b{font-family:var(--f-head); font-size:15px; font-weight:700}
-#lp .taster{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); margin-top:30px}
+#lp .taster{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); margin-top:30px}
 #lp .phrase{
   position:relative; background:var(--white); border-radius:20px;
   padding:22px 20px; text-align:center; cursor:pointer; border:none;
@@ -132,7 +132,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 }
 #lp .phrase:hover{transform:translateY(-4px); box-shadow:var(--soft-lg)}
 #lp .phrase:focus-visible{outline:3px solid var(--teal); outline-offset:3px}
-#lp .phrase .es{font-family:var(--f-head); font-weight:700; font-size:20px; color:var(--teal); direction:ltr}
+#lp .phrase .es{font-family:var(--f-head); font-weight:700; font-size:20px; color:var(--teal); direction:ltr; unicode-bidi:isolate; display:block}
 #lp .phrase .tap{font-size:13px; color:var(--ink-faint); margin-top:8px}
 #lp .phrase .rev{
   display:grid; gap:3px; margin-top:10px;
@@ -386,7 +386,7 @@ body{padding-bottom:78px; background:#FFFFFF}
 
     <div class="hero-art">
       <div class="blob"></div>
-      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/hero-laura.webp" alt="לאורה אפשטיין, מורה לספרדית">
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/hero-laura2.webp" alt="לאורה אפשטיין, מורה לספרדית">
       <div class="hero-badge">
         <b>990₪</b><span>במקום 1,500₪<br>מחיר השקה</span>
       </div>
@@ -406,7 +406,7 @@ body{padding-bottom:78px; background:#FFFFFF}
 <div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ TASTER ============ -->
-<section class="bg-cream" id="taster" style="padding-top:32px">
+<section class="bg-cream" id="taster" style="padding-top:34px; padding-top:32px">
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">✨ טעימה קטנה</span>
@@ -419,38 +419,33 @@ body{padding-bottom:78px; background:#FFFFFF}
       <button class="phrase"><span class="es">¿De dónde eres?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">מאיפה אתה?</span><span class="say">דֶה דוֹנְדֶה אֶרֶס</span></div></button>
       <button class="phrase"><span class="es">Mucho gusto</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">נעים מאוד</span><span class="say">מוּצ'וֹ גוּסְטוֹ</span></div></button>
       <button class="phrase"><span class="es">¿Quieres jugar?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">רוצה לשחק?</span><span class="say">קְיֶרֶס חוּגָאר</span></div></button>
-      <button class="phrase"><span class="es">No entiendo</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">אני לא מבין</span><span class="say">נוֹ אֶנְטְיֶנְדוֹ</span></div></button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHY SPANISH ============ -->
-<section>
-  <div class="shell rv">
-    <div class="section-head center">
-      <span class="eyebrow">🌎 למה דווקא ספרדית</span>
-      <h2 class="h-lg">השפה שהם כבר פוגשים כל יום</h2>
-      <p class="lead">יותר מ־500 מיליון אנשים מדברים ספרדית. זו לא שפה שלומדים בשביל מבחן — זו שפה שילדים באמת נהנים להשתמש בה.</p>
-    </div>
-    <div class="reasons">
-      <div class="reason"><span>✈️</span><b>טיולים</b></div>
-      <div class="reason"><span>⚽</span><b>כדורגל</b></div>
-      <div class="reason"><span>🎧</span><b>מוזיקה</b></div>
-      <div class="reason"><span>🎬</span><b>נטפליקס</b></div>
-      <div class="reason"><span>💼</span><b>עסקים</b></div>
-      <div class="reason"><span>🤝</span><b>אנשים</b></div>
     </div>
   </div>
 </section>
 
 <div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
-<!-- ============ SCREENS ============ -->
+<!-- ============ FLIPPED CLASSROOM ============ -->
 <section class="bg-sky" style="padding-top:34px">
-  <div class="shell argument rv">
-    <span class="eyebrow">📱 בואו נדבר על מסכים</span>
-    <h2 class="h-lg">אי אפשר להוציא אותם מהמסכים</h2>
-    <p style="margin-top:18px">אבל אפשר לבחור מה ייכנס אליהם דרכם. עוד שעה של גלילה, או שעה שמפתחת שפה חדשה. אם כבר הם מול המסך — שלפחות יצאו ממנו עם משהו שילך איתם לכל החיים. ובסוף גם יהיה להם כיף.</p>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🔄 שיטת הכיתה ההפוכה</span>
+      <h2 class="h-lg">״ספרדית זה משחק ילדים״ עובדת<br>על פי עיקרון <span class="hl">הכיתה ההפוכה</span></h2>
+      <p class="lead">במקום להקדיש חלק גדול מהשיעור להסבר על חומר חדש ורק אחר כך לשלוח את התלמידים לתרגל אותו בבית — אנחנו הופכים את הסדר. כל דקת מפגש הולכת לדיבור.</p>
+    </div>
+
+    <div class="flip-steps-row">
+      <div class="flip-step"><span>🏠</span><div><b>בבית</b><p>סרטון קצר, הסבר ואוצר מילים — בקצב שלהם. עוצרים, חוזרים וצופים שוב במידת הצורך.</p></div></div>
+      <div class="flip-arrow">←</div>
+      <div class="flip-step"><span>💬</span><div><b>בכיתה</b><p>מתרגלים את מה שכבר מכירים: שואלים, בונים משפטים ומנהלים דיאלוגים אמיתיים.</p></div></div>
+      <div class="flip-arrow">←</div>
+      <div class="flip-step"><span>❤️</span><div><b>ובספרדית…</b><p>מתחילים להשתמש בשפה באמת — ולדבר אותה.</p></div></div>
+    </div>
+
+    <figure class="infographic">
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/flipped.webp" alt="מהי כיתה הפוכה ולמה אנחנו לומדים כך — הסבר מלא על השיטה">
+    </figure>
+    <p class="info-hint">↔ אפשר להזיז את התמונה לצדדים</p>
   </div>
 </section>
 
@@ -480,27 +475,33 @@ body{padding-bottom:78px; background:#FFFFFF}
 
 <div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
 
-<!-- ============ FLIPPED CLASSROOM ============ -->
+<!-- ============ WHY SPANISH ============ -->
 <section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
-      <span class="eyebrow">🔄 שיטת הכיתה ההפוכה</span>
-      <h2 class="h-lg">״ספרדית זה משחק ילדים״ עובדת<br>על פי עיקרון <span class="hl">הכיתה ההפוכה</span></h2>
-      <p class="lead">במקום להקדיש חלק גדול מהשיעור להסבר על חומר חדש ורק אחר כך לשלוח את התלמידים לתרגל אותו בבית — אנחנו הופכים את הסדר. כל דקת מפגש הולכת לדיבור.</p>
+      <span class="eyebrow">🌎 למה דווקא ספרדית</span>
+      <h2 class="h-lg">השפה שהם כבר פוגשים כל יום</h2>
+      <p class="lead">יותר מ־500 מיליון אנשים מדברים ספרדית. זו לא שפה שלומדים בשביל מבחן — זו שפה שילדים באמת נהנים להשתמש בה.</p>
     </div>
-
-    <div class="flip-steps-row">
-      <div class="flip-step"><span>🏠</span><div><b>בבית</b><p>סרטון קצר, הסבר ואוצר מילים — בקצב שלהם. עוצרים, חוזרים וצופים שוב במידת הצורך.</p></div></div>
-      <div class="flip-arrow">←</div>
-      <div class="flip-step"><span>💬</span><div><b>בכיתה</b><p>מתרגלים את מה שכבר מכירים: שואלים, בונים משפטים ומנהלים דיאלוגים אמיתיים.</p></div></div>
-      <div class="flip-arrow">←</div>
-      <div class="flip-step"><span>❤️</span><div><b>ובספרדית…</b><p>מתחילים להשתמש בשפה באמת — ולדבר אותה.</p></div></div>
+    <div class="reasons">
+      <div class="reason"><span>✈️</span><b>טיולים</b></div>
+      <div class="reason"><span>⚽</span><b>כדורגל</b></div>
+      <div class="reason"><span>🎧</span><b>מוזיקה</b></div>
+      <div class="reason"><span>🎬</span><b>נטפליקס</b></div>
+      <div class="reason"><span>💼</span><b>עסקים</b></div>
+      <div class="reason"><span>🤝</span><b>אנשים</b></div>
     </div>
+  </div>
+</section>
 
-    <figure class="infographic">
-      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/flipped.webp" alt="מהי כיתה הפוכה ולמה אנחנו לומדים כך — הסבר מלא על השיטה">
-    </figure>
-    <p class="info-hint">↔ אפשר להזיז את התמונה לצדדים</p>
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ SCREENS ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell argument rv">
+    <span class="eyebrow">📱 בואו נדבר על מסכים</span>
+    <h2 class="h-lg">אי אפשר להוציא אותם מהמסכים</h2>
+    <p style="margin-top:18px">אבל אפשר לבחור מה ייכנס אליהם דרכם. עוד שעה של גלילה, או שעה שמפתחת שפה חדשה. אם כבר הם מול המסך — שלפחות יצאו ממנו עם משהו שילך איתם לכל החיים. ובסוף גם יהיה להם כיף.</p>
   </div>
 </section>
 
@@ -541,10 +542,10 @@ body{padding-bottom:78px; background:#FFFFFF}
   </div>
 </section>
 
-<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ HOW LEARNING FEELS ============ -->
-<section>
+<section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">🎈 ובסוף גם יהיה להם כיף</span>
@@ -560,6 +561,8 @@ body{padding-bottom:78px; background:#FFFFFF}
     </div>
   </div>
 </section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ GAINS ============ -->
 <section class="bg-sky" style="padding-top:34px">
