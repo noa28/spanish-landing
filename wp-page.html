@@ -411,6 +411,26 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .consent a{color:var(--teal); text-decoration:underline; text-underline-offset:2px}
 #lp .consent input{margin-top:3px; accent-color:var(--teal); width:17px; height:17px; flex:0 0 auto}
 #lp .form-card .btn{width:100%}
+#lp .form-card .wpcf7{margin:0}
+#lp .form-card .wpcf7-form-control-wrap{display:block}
+#lp .form-card .wpcf7-not-valid-tip{font-size:13px; color:#C4472F; margin-top:5px}
+#lp .form-card input.wpcf7-not-valid{border-color:#E0705A; background:#FFF6F4}
+#lp .form-card .wpcf7-response-output{
+  margin:16px 0 0; padding:12px 15px; border:none; border-radius:12px;
+  font-size:14.5px; background:var(--cream); color:var(--ink-soft);
+}
+#lp .form-card .wpcf7-spinner{display:block; margin:12px auto 0}
+#lp .form-card .wpcf7-acceptance{display:block; margin:16px 0 20px}
+#lp .form-card .wpcf7-acceptance .wpcf7-list-item{margin:0}
+#lp .form-card .wpcf7-acceptance label{
+  display:flex; gap:10px; align-items:flex-start;
+  font-size:13.5px; color:var(--ink-soft); line-height:1.5; cursor:pointer;
+}
+#lp .form-card .wpcf7-acceptance input[type=checkbox]{
+  margin-top:3px; accent-color:var(--teal); width:17px; height:17px; flex:0 0 auto;
+}
+#lp .form-card .wpcf7-acceptance a{color:var(--teal); text-decoration:underline; text-underline-offset:2px}
+#lp .form-card input.wpcf7-submit{width:100%; margin-top:2px}
 #lp .contact{display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); max-width:660px; margin:26px auto 0}
 #lp .contact a{
   display:flex; align-items:center; gap:13px; text-decoration:none;
@@ -807,7 +827,7 @@ body{padding-bottom:78px; background:#FFFFFF}
     </div>
     <div>
       <span class="eyebrow">!Hola</span>
-      <blockquote>״המטרה שלי בספרדית זה משחק ילדים היא לא רק ללמד ספרדית. אלא לעזור לבני הנוער לפתח ביטחון, ליהנות מהדרך ולהרגיש שהם <span class="hl">מסוגלים להצליח</span>.״</blockquote>
+      <blockquote>״המטרה שלי ב״ספרדית זה משחק ילדים״ היא לא רק ללמד ספרדית. אלא לעזור לבני הנוער לפתח ביטחון, ליהנות מהדרך ולהרגיש שהם <span class="hl">מסוגלים להצליח</span>.״</blockquote>
       <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת כיצד לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם במהירות את החומר הנלמד, ולשמר את התוצאות לאורך זמן.</p>
       <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות (באופן אישי אני דוברת חמש שפות), ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם צרכים שונים של מאות תלמידים שלימדתי בשנים אלה.</p>
       <p class="invite">אז רוצים להתחיל לדבר, ובקלות?<br>הגשמת החלום שלכם — במרחק קליק אחד!<br>אני אתכם במסע.</p>
@@ -892,23 +912,8 @@ body{padding-bottom:78px; background:#FFFFFF}
     </div>
 
     <div class="form-card" id="form">
-      <h3 style="font-size:21px; margin-bottom:6px">השאירו פרטים ונדבר</h3>
-      <p style="font-size:15px; color:var(--ink-soft); margin-bottom:20px">אחזור אליכם עם כל הפרטים על המחזור הקרוב.</p>
-      <!-- לחיבור הטופס: להחליף את ה-action בכתובת שאליה הפרטים נשלחים -->
-      <form action="#" method="post">
-        <div class="field"><label for="n">שם מלא</label><input id="n" name="name" type="text" autocomplete="name" required></div>
-        <div class="field"><label for="e">אימייל</label><input id="e" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="p">טלפון</label>
-          <input id="p" name="phone" type="tel" inputmode="numeric" autocomplete="tel"
-                 pattern="0[0-9]{9}" minlength="10" maxlength="10" required>
-          <small class="hint">10 ספרות, בלי מקפים ובלי רווחים</small>
-        </div>
-        <label class="consent">
-          <input type="checkbox" name="consent" required>
-          <span>אני מאשר/ת את ההרשמה ומסכימ/ה לקבל עדכונים ותוכן שיווקי בהתאם <a href="https://myfluentspanish.com/privacy/" target="_blank" rel="noopener">למדיניות הפרטיות</a>.</span>
-        </label>
-        <button class="btn btn-main" type="submit">שלחו לי את הפרטים</button>
-      </form>
+      <h3 style="font-size:21px; margin-bottom:20px">השאירו פרטים והצטרפו לקבוצה הקרובה</h3>
+      [contact-form-7 id="193df0e" title="ספרדית זה משחק ילדים - נוער 12-16"]
     </div>
 
     <p style="text-align:center; font-size:14.5px; color:var(--ink-soft); margin-top:30px">
@@ -1006,7 +1011,7 @@ function closeVideo(){
   document.body.style.overflow = '';
 }
 /* ---- phone field: digits only, exactly 10 ---- */
-const phone = document.getElementById('p');
+const phone = document.querySelector('input[name="your-phone"]');
 if (phone){
   const check = () => {
     if (!phone.value) return phone.setCustomValidity('');
