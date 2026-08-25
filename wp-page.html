@@ -1,0 +1,892 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Rubik:wght@500;700;800&display=swap">
+
+<style>
+:root{
+  --white:#FFFFFF;
+  --cream:#FFF9F2;
+  --sky:#F1FAFB;
+  --orange:#F79320;
+  --orange-dark:#DD7A08;
+  --orange-soft:#FFEEDA;
+  --teal:#1EA6B6;
+  --teal-soft:#E1F4F7;
+  --ink:#1C3A50;
+  --ink-soft:#5E7789;
+  --ink-faint:#93A6B3;
+  --line:#EBEFF2;
+
+  --f-head:"Rubik", "Segoe UI", sans-serif;
+  --f-body:"Assistant", "Segoe UI", sans-serif;
+
+  --shell:min(1100px, 100% - 36px);
+  --soft:0 18px 40px -24px rgba(28,58,80,.28);
+  --soft-lg:0 30px 60px -30px rgba(28,58,80,.34);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  direction:rtl; margin:0;
+  background:var(--white); color:var(--ink);
+  font-family:var(--f-body); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:78px;
+}
+@media (min-width:780px){ body{padding-bottom:0} }
+
+h1,h2,h3{font-family:var(--f-head); font-weight:800; line-height:1.18; margin:0; text-wrap:balance; letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%; display:block}
+.shell{width:var(--shell); margin-inline:auto}
+section{padding:66px 0; position:relative}
+@media (min-width:780px){ section{padding:92px 0} }
+
+.bg-cream{background:var(--cream)}
+.bg-sky{background:var(--sky)}
+
+/* wave divider */
+.wave{display:block; width:100%; height:52px}
+.wave path{fill:currentColor}
+
+/* ---------- type ---------- */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:7px;
+  font-family:var(--f-head); font-size:13px; font-weight:700; letter-spacing:.06em;
+  color:var(--orange-dark); background:var(--orange-soft);
+  padding:6px 14px; border-radius:999px; margin-bottom:16px;
+}
+.h-xl{font-size:clamp(31px,6vw,54px)}
+.h-lg{font-size:clamp(26px,4.2vw,38px)}
+.lead{font-size:clamp(16.5px,2vw,19.5px); color:var(--ink-soft); max-width:62ch}
+.section-head{margin-bottom:40px; max-width:64ch}
+.section-head.center{margin-inline:auto; text-align:center}
+.section-head.center .lead{margin-inline:auto}
+.section-head p{margin-top:14px}
+.hl{color:var(--orange)}
+.hl-t{color:var(--teal)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:var(--f-head); font-weight:700; font-size:17.5px;
+  padding:16px 32px; border-radius:999px; border:none; cursor:pointer;
+  text-decoration:none; transition:transform .2s cubic-bezier(.3,1.3,.5,1), box-shadow .2s, background .2s;
+}
+.btn-main{background:var(--orange); color:var(--white); box-shadow:0 10px 26px -10px rgba(247,147,32,.85)}
+.btn-main:hover{background:var(--orange-dark); transform:translateY(-3px); box-shadow:0 16px 30px -12px rgba(247,147,32,.9)}
+.btn-soft{background:var(--white); color:var(--teal); box-shadow:var(--soft); border:1.5px solid var(--teal-soft)}
+.btn-soft:hover{transform:translateY(-3px); border-color:var(--teal)}
+.btn:focus-visible{outline:3px solid var(--teal); outline-offset:3px}
+
+/* ---------- doodles ---------- */
+.doodle{position:absolute; pointer-events:none; color:var(--teal); opacity:.5}
+.doodle.o{color:var(--orange)}
+
+/* ---------- hero ---------- */
+.hero{padding:38px 0 20px; position:relative; overflow:hidden}
+@media (min-width:880px){ .hero{padding:58px 0 40px} }
+.hero-grid{display:grid; gap:30px; align-items:center}
+@media (min-width:880px){ .hero-grid{grid-template-columns:1.05fr .95fr; gap:48px} }
+.hero h1{font-size:clamp(32px,6.4vw,56px)}
+.hero .lead{margin-top:18px}
+.hero-cta{display:flex; flex-wrap:wrap; gap:13px; margin-top:28px}
+.trust{display:flex; align-items:center; gap:12px; margin-top:26px; font-size:15px; color:var(--ink-soft)}
+.trust img{width:44px; height:44px; border-radius:50%; object-fit:cover; box-shadow:var(--soft)}
+.trust b{color:var(--ink)}
+
+.hero-art{position:relative}
+.hero-art .blob{
+  position:absolute; inset:6% -6% -2% 4%;
+  background:linear-gradient(150deg, var(--teal-soft), var(--orange-soft));
+  border-radius:46% 54% 52% 48% / 56% 44% 56% 44%;
+}
+.hero-art img{position:relative; border-radius:26px; box-shadow:var(--soft-lg); width:100%}
+.hero-badge{
+  position:absolute; z-index:2; bottom:14px; inset-inline-start:-6px;
+  background:var(--white); border-radius:18px; padding:12px 17px;
+  box-shadow:var(--soft-lg); display:flex; align-items:center; gap:11px;
+}
+.hero-badge b{font-family:var(--f-head); font-size:26px; color:var(--orange); line-height:1}
+.hero-badge span{font-size:13px; color:var(--ink-soft); line-height:1.3}
+
+/* ---------- soft cards ---------- */
+.cards{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(238px,1fr))}
+.card{
+  background:var(--white); border-radius:22px; padding:26px 24px;
+  box-shadow:var(--soft); transition:transform .22s, box-shadow .22s;
+}
+.card:hover{transform:translateY(-5px); box-shadow:var(--soft-lg)}
+.card .ico{
+  width:48px; height:48px; border-radius:15px; display:grid; place-items:center;
+  font-size:23px; background:var(--teal-soft); margin-bottom:15px;
+}
+.card .ico.o{background:var(--orange-soft)}
+.card h3{font-size:19px; margin-bottom:7px}
+.card p{font-size:15.5px; color:var(--ink-soft); line-height:1.55}
+
+/* ---------- argument ---------- */
+.argument{max-width:60ch; margin-inline:auto; text-align:center}
+.argument p{font-size:clamp(17.5px,2.2vw,21px); color:var(--ink-soft); margin-bottom:18px}
+.pull{
+  font-family:var(--f-head); font-weight:800;
+  font-size:clamp(24px,3.6vw,34px); color:var(--ink) !important;
+  line-height:1.28; margin:28px 0 !important;
+}
+
+/* ---------- reasons ---------- */
+.reasons{display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:13px}
+.reason{
+  background:var(--white); border-radius:20px; padding:22px 10px; text-align:center;
+  box-shadow:var(--soft); transition:transform .22s;
+}
+.reason:hover{transform:translateY(-5px) rotate(-1.5deg)}
+.reason span{font-size:31px; display:block; margin-bottom:7px}
+.reason b{font-family:var(--f-head); font-size:15px; font-weight:700}
+
+/* ---------- spanish taster ---------- */
+.taster{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); margin-top:30px}
+.phrase{
+  position:relative; background:var(--white); border-radius:20px;
+  padding:22px 20px; text-align:center; cursor:pointer; border:none;
+  font:inherit; color:inherit; box-shadow:var(--soft);
+  transition:transform .22s, box-shadow .22s;
+}
+.phrase:hover{transform:translateY(-4px); box-shadow:var(--soft-lg)}
+.phrase:focus-visible{outline:3px solid var(--teal); outline-offset:3px}
+.phrase .es{font-family:var(--f-head); font-weight:700; font-size:20px; color:var(--teal); direction:ltr}
+.phrase .tap{font-size:13px; color:var(--ink-faint); margin-top:8px}
+.phrase .rev{
+  display:grid; gap:3px; margin-top:10px;
+  max-height:0; opacity:0; overflow:hidden;
+  transition:max-height .32s ease, opacity .3s ease, margin .3s;
+}
+.phrase.open .rev{max-height:110px; opacity:1}
+.phrase.open .tap{display:none}
+.phrase .he{font-size:16.5px; font-weight:700}
+.phrase .say{font-size:13.5px; color:var(--orange-dark); background:var(--orange-soft); border-radius:999px; padding:3px 10px; justify-self:center}
+
+/* ---------- steps ---------- */
+.steps{display:grid; gap:15px; counter-reset:s}
+@media (min-width:880px){ .steps{grid-template-columns:1fr 1fr} }
+.step{
+  counter-increment:s; background:var(--white); border-radius:22px;
+  padding:24px 24px; display:flex; gap:16px; box-shadow:var(--soft);
+  transition:transform .22s;
+}
+.step:hover{transform:translateY(-4px)}
+.step::before{
+  content:counter(s); flex:0 0 auto;
+  width:42px; height:42px; border-radius:50%;
+  background:var(--teal); color:var(--white);
+  font-family:var(--f-head); font-weight:800; font-size:19px;
+  display:grid; place-items:center;
+}
+.step:nth-child(even)::before{background:var(--orange)}
+.step h3{font-size:18px; margin-bottom:5px}
+.step p{font-size:15.5px; color:var(--ink-soft); line-height:1.55}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex; gap:9px; flex-wrap:wrap; justify-content:center; margin-bottom:26px}
+.tab{
+  font:inherit; font-family:var(--f-head); font-weight:700; font-size:16px;
+  background:var(--white); color:var(--ink-soft); border:none; cursor:pointer;
+  padding:12px 24px; border-radius:999px; box-shadow:var(--soft);
+  transition:background .2s, color .2s, transform .2s;
+}
+.tab:hover{transform:translateY(-2px)}
+.tab[aria-selected="true"]{background:var(--teal); color:var(--white)}
+.tab:focus-visible{outline:3px solid var(--orange); outline-offset:3px}
+.panel{
+  display:none; background:var(--white); border-radius:24px;
+  padding:30px 28px; box-shadow:var(--soft); max-width:760px; margin-inline:auto;
+  animation:fade .32s ease;
+}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+.panel h3{font-size:22px; margin-bottom:12px; color:var(--teal)}
+.panel p{color:var(--ink-soft); font-size:16px}
+
+/* ---------- flipped classroom ---------- */
+.flip-row{display:grid; gap:26px; align-items:center}
+@media (min-width:880px){ .flip-row{grid-template-columns:1fr 1fr; gap:44px} }
+.flip-steps{display:grid; gap:14px}
+.flip-step{display:flex; align-items:center; gap:14px; background:var(--white); border-radius:18px; padding:16px 20px; box-shadow:var(--soft)}
+.flip-step span{font-size:26px}
+.flip-step b{font-family:var(--f-head); font-size:17px; display:block}
+.flip-step p{font-size:14.5px; color:var(--ink-soft)}
+/* ---------- flipped classroom ---------- */
+.flip-row{display:grid; gap:26px; align-items:center}
+@media (min-width:880px){ .flip-row{grid-template-columns:1fr 1fr; gap:44px} }
+.flip-steps{display:grid; gap:14px}
+.flip-step{display:flex; align-items:center; gap:14px; background:var(--white); border-radius:18px; padding:16px 20px; box-shadow:var(--soft)}
+.flip-step span{font-size:26px}
+.flip-step b{font-family:var(--f-head); font-size:17px; display:block}
+.flip-step p{font-size:14.5px; color:var(--ink-soft)}
+
+/* ---------- flipped classroom ---------- */
+.flip-steps-row{display:grid; gap:12px; margin-bottom:34px}
+@media (min-width:900px){ .flip-steps-row{grid-template-columns:1fr auto 1fr auto 1fr; align-items:center} }
+.flip-arrow{display:none}
+@media (min-width:900px){ .flip-arrow{display:block; font-size:26px; color:var(--orange); font-weight:700; text-align:center} }
+.infographic{margin:0 auto; max-width:860px}
+.infographic img{width:100%; border-radius:24px; box-shadow:var(--soft-lg); background:var(--white)}
+.info-hint{display:none}
+@media (max-width:700px){
+  /* אינפוגרפיקה צפופה: במקום להקטין עד שלא קריא, מאפשרים להזיז אותה לצדדים */
+  .infographic{
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    border-radius:24px; box-shadow:var(--soft-lg);
+  }
+  .infographic img{width:auto; min-width:680px; border-radius:0; box-shadow:none}
+  .info-hint{
+    display:block; text-align:center; font-size:13px; color:var(--ink-faint);
+    margin-top:10px;
+  }
+}
+
+/* ---------- extra learnings ---------- */
+.extra{
+  max-width:760px; margin:20px auto 0; background:var(--white);
+  border-radius:24px; padding:28px 28px 24px; box-shadow:var(--soft);
+  border-top:5px solid var(--orange);
+}
+.extra h3{font-size:20px; margin-bottom:14px}
+.extra ul{list-style:none; padding:0; margin:0; display:grid; gap:11px}
+.extra li{display:flex; gap:11px; font-size:15.5px; color:var(--ink-soft); line-height:1.55}
+.extra li::before{content:"º8"; flex:0 0 auto}
+
+/* ---------- after signup ---------- */
+.after-signup{
+  max-width:520px; margin:0 auto 20px; background:var(--white);
+  border-radius:24px; padding:24px 26px; box-shadow:var(--soft);
+  border:2px dashed var(--teal);
+}
+.after-signup b{font-family:var(--f-head); font-size:17px; display:block; margin-bottom:12px}
+.after-signup ul{list-style:none; padding:0; margin:0; display:grid; gap:9px}
+.after-signup li{display:flex; gap:10px; font-size:15.5px; color:var(--ink-soft)}
+.after-signup li::before{content:"¹4\FE0F"; flex:0 0 auto}
+
+/* ---------- product shots ---------- */
+.shots{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:8px}
+.shot{text-align:center}
+.shot img{border-radius:12px; box-shadow:var(--soft-lg); margin-inline:auto}
+.shot b{display:block; font-size:14px; margin-top:11px; color:var(--ink-soft)}
+
+/* ---------- teacher ---------- */
+.teacher{display:grid; gap:32px; align-items:center}
+@media (min-width:860px){ .teacher{grid-template-columns:330px 1fr; gap:52px} }
+.teacher-photo{position:relative}
+.teacher-photo img{border-radius:26px; box-shadow:var(--soft-lg); width:100%}
+.teacher-photo .ring{
+  position:absolute; inset:-14px -14px 14px 14px; border-radius:30px;
+  border:2px dashed var(--teal); opacity:.45; z-index:-1;
+}
+.teacher blockquote{
+  margin:0 0 18px; font-family:var(--f-head); font-weight:700;
+  font-size:clamp(21px,2.9vw,28px); line-height:1.32;
+}
+.teacher p{margin-bottom:14px; color:var(--ink-soft)}
+.creds{display:flex; gap:28px; flex-wrap:wrap; margin-top:24px}
+.cred b{display:block; font-family:var(--f-head); font-weight:800; font-size:32px; color:var(--orange); line-height:1}
+.cred span{font-size:14px; color:var(--ink-soft)}
+
+/* ---------- testimonials ---------- */
+.carousel{position:relative; max-width:780px; margin-inline:auto}
+.track{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:16px; scrollbar-width:none; padding-bottom:6px}
+.track::-webkit-scrollbar{display:none}
+.slide{
+  flex:0 0 100%; scroll-snap-align:center;
+  background:var(--white); border-radius:24px; padding:30px 28px; box-shadow:var(--soft);
+}
+.slide .q{font-size:24px; color:var(--teal-soft); font-family:var(--f-head); line-height:1}
+.slide p{font-size:16px; color:var(--ink-soft); line-height:1.62; margin:10px 0}
+.slide footer{display:flex; align-items:center; gap:11px; margin-top:16px; font-size:14.5px; color:var(--ink-faint)}
+.slide .av{width:36px; height:36px; border-radius:50%; background:var(--orange-soft); color:var(--orange-dark); display:grid; place-items:center; font-weight:700; font-family:var(--f-head)}
+.dots{display:flex; gap:8px; justify-content:center; margin-top:18px}
+.dots button{
+  width:9px; height:9px; border-radius:50%; border:none; padding:0; cursor:pointer;
+  background:var(--line); transition:background .2s, width .2s;
+}
+.dots button[aria-current="true"]{background:var(--orange); width:26px; border-radius:999px}
+
+/* ---------- checks ---------- */
+.checks{display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
+.check{display:flex; gap:13px; background:var(--white); border-radius:20px; padding:19px 21px; box-shadow:var(--soft)}
+.check .mark{flex:0 0 auto; width:27px; height:27px; border-radius:50%; background:var(--teal); color:var(--white); display:grid; place-items:center; font-size:14px; font-weight:800}
+.check b{display:block; font-family:var(--f-head); font-size:16.5px; margin-bottom:3px}
+.check p{font-size:15px; color:var(--ink-soft); line-height:1.5}
+
+/* ---------- price ---------- */
+.price-box{
+  background:var(--white); border-radius:30px; padding:38px 30px; text-align:center;
+  max-width:640px; margin-inline:auto; box-shadow:var(--soft-lg);
+  position:relative; overflow:hidden;
+}
+.price-box::before{
+  content:""; position:absolute; top:0; inset-inline:0; height:6px;
+  background:linear-gradient(90deg, var(--orange), var(--teal));
+}
+.deadline{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--orange-soft); color:var(--orange-dark);
+  font-weight:700; font-size:14.5px; padding:8px 17px; border-radius:999px; margin-bottom:14px;
+}
+.price-row{display:flex; align-items:baseline; justify-content:center; gap:14px; flex-wrap:wrap; margin:10px 0 6px}
+.price-row b{font-family:var(--f-head); font-weight:800; font-size:clamp(44px,9vw,66px); line-height:1}
+.price-row s{font-size:21px; color:var(--ink-faint)}
+.price-box .pay{font-size:15.5px; color:var(--ink-soft)}
+.price-list{list-style:none; padding:0; display:grid; gap:10px; margin:26px auto; max-width:400px; text-align:start}
+.price-list li{display:flex; gap:10px; font-size:15.5px}
+.price-list li::before{content:"🎁"; flex:0 0 auto}
+
+/* ---------- faq ---------- */
+.faq{max-width:740px; margin-inline:auto; display:grid; gap:11px}
+details{background:var(--white); border-radius:20px; padding:0 24px; box-shadow:var(--soft)}
+summary{
+  list-style:none; cursor:pointer; padding:20px 0;
+  font-family:var(--f-head); font-size:17px; font-weight:700;
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+"; font-size:22px; color:var(--orange); font-weight:400; line-height:1;
+  transition:transform .25s;
+}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 21px; color:var(--ink-soft); font-size:16px; line-height:1.6}
+
+/* ---------- form ---------- */
+.form-card{
+  background:var(--white); border-radius:28px; padding:32px 28px;
+  box-shadow:var(--soft-lg); max-width:520px; margin-inline:auto;
+}
+.field{display:grid; gap:6px; margin-bottom:15px}
+.field label{font-size:14.5px; font-weight:700}
+.field input{
+  font:inherit; font-size:16px; padding:14px 16px;
+  border:1.5px solid var(--line); border-radius:14px; background:var(--cream); color:var(--ink);
+  transition:border-color .2s, background .2s;
+}
+.field input:focus{outline:none; border-color:var(--teal); background:var(--white)}
+.consent{display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:var(--ink-soft); margin:16px 0 20px; line-height:1.5}
+.consent input{margin-top:3px; accent-color:var(--teal); width:17px; height:17px; flex:0 0 auto}
+.form-card .btn{width:100%}
+
+/* ---------- contact ---------- */
+.contact{display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); max-width:660px; margin:26px auto 0}
+.contact a{
+  display:flex; align-items:center; gap:13px; text-decoration:none;
+  background:var(--white); border-radius:20px; padding:17px 21px; box-shadow:var(--soft);
+  transition:transform .2s;
+}
+.contact a:hover{transform:translateY(-3px)}
+.contact span{font-size:22px}
+.contact b{display:block; font-size:12.5px; color:var(--ink-faint); font-weight:700}
+.contact i{font-style:normal; font-size:16px}
+
+footer.site{background:var(--cream); padding:28px 0; font-size:13.5px; color:var(--ink-faint); text-align:center}
+
+/* ---------- sticky ---------- */
+.sticky{
+  position:fixed; inset-inline:0; bottom:0; z-index:60;
+  background:rgba(255,255,255,.97); backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  box-shadow:0 -10px 30px -20px rgba(28,58,80,.5);
+}
+.sticky .p{font-size:13.5px; color:var(--ink-soft); line-height:1.25}
+.sticky .p b{font-family:var(--f-head); font-weight:800; font-size:21px; color:var(--ink); display:block}
+.sticky .btn{padding:12px 22px; font-size:16px}
+@media (min-width:780px){ .sticky{display:none} }
+
+/* ---------- fill marker ---------- */
+.fill{
+  background:#FFF3D6; color:#946200; border:1px dashed #E0A93A;
+  border-radius:7px; padding:1px 9px; font-size:.93em; font-weight:700; white-space:nowrap;
+}
+
+/* ---------- reveal ---------- */
+html.js .rv{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.3,1)}
+html.js .rv.in{opacity:1; transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition-duration:.01ms !important; animation:none !important}
+  html.js .rv{opacity:1; transform:none}
+}
+</style>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <svg class="doodle" style="top:22px; inset-inline-end:4%; width:70px" viewBox="0 0 80 60" fill="none" aria-hidden="true">
+    <path d="M4 30 L74 6 L46 54 L38 34 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M4 30 L38 34" stroke="currentColor" stroke-width="2.6"/>
+  </svg>
+  <svg class="doodle o" style="top:120px; inset-inline-start:3%; width:54px" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+    <path d="M30 4 L35 25 L56 30 L35 35 L30 56 L25 35 L4 30 L25 25 Z" fill="currentColor" opacity=".75"/>
+  </svg>
+
+  <div class="shell hero-grid">
+    <div>
+      <span class="eyebrow">🎈 לנערים ונערות בגילאי 12–16</span>
+      <h1>ספרדית זה <span class="hl">משחק ילדים</span></h1>
+      <p class="lead">תוכנית דיבור לבני נוער: קורס דיגיטלי בקצב אישי, שיעור יומי בוואטסאפ, ו־8 מפגשי זום קטנים. בסוף התוכנית הם מנהלים שיחה אמיתית בספרדית — ובעיקר, מרגישים שהם מסוגלים.</p>
+      <div class="hero-cta">
+        <a class="btn btn-main" href="#form">לשריון מקום במחזור הקרוב</a>
+        <a class="btn btn-soft" href="#taster">רגע, בואו ננסה משפט</a>
+      </div>
+      <div class="trust">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
+        <div>עם <b>לאורה אפשטיין</b> · מורה לספרדית 18 שנה · דוברת 5 שפות</div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="blob"></div>
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/hero-laura.webp" alt="לאורה אפשטיין, מורה לספרדית">
+      <div class="hero-badge">
+        <b>990₪</b><span>במקום 1,500₪<br>מחיר השקה</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ARGUMENT ============ -->
+<section>
+  <div class="shell argument rv">
+    <p>אתם לא מחפשים עוד חוג. כהורים אנחנו משקיעים בילדים שלנו בספורט, במוזיקה, במתמטיקה ובאנגלית — אבל יש השקעות שנשארות איתם הרבה אחרי שהחוג נגמר.</p>
+    <p class="pull">כשילד לומד לדבר ספרדית<br>הוא לא רק לומד מילים.<br><span class="hl">הוא לומד להאמין בעצמו.</span></p>
+    <p>להעז. להכיר אנשים חדשים. ולהרגיש שהעולם הרבה יותר גדול ממה שחשב.</p>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ TASTER ============ -->
+<section class="bg-cream" id="taster" style="padding-top:32px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">✨ טעימה קטנה</span>
+      <h2 class="h-lg">תוך דקה הם כבר יודעים משהו</h2>
+      <p class="lead">לחצו על משפט כדי לראות מה הוא אומר ואיך אומרים אותו. ככה בדיוק מרגישים השיעורים — קטן, ברור, ומיד מצליחים.</p>
+    </div>
+    <div class="taster">
+      <button class="phrase"><span class="es">¡Hola! ¿Qué tal?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">היי, מה נשמע?</span><span class="say">אוֹלָה, קֶה טַאל</span></div></button>
+      <button class="phrase"><span class="es">Me llamo…</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">קוראים לי…</span><span class="say">מֶה יָאמוֹ</span></div></button>
+      <button class="phrase"><span class="es">¿De dónde eres?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">מאיפה אתה?</span><span class="say">דֶה דוֹנְדֶה אֶרֶס</span></div></button>
+      <button class="phrase"><span class="es">Mucho gusto</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">נעים מאוד</span><span class="say">מוּצ'וֹ גוּסְטוֹ</span></div></button>
+      <button class="phrase"><span class="es">¿Quieres jugar?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">רוצה לשחק?</span><span class="say">קְיֶרֶס חוּגָאר</span></div></button>
+      <button class="phrase"><span class="es">No entiendo</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">אני לא מבין</span><span class="say">נוֹ אֶנְטְיֶנְדוֹ</span></div></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY SPANISH ============ -->
+<section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🌎 למה דווקא ספרדית</span>
+      <h2 class="h-lg">השפה שהם כבר פוגשים כל יום</h2>
+      <p class="lead">יותר מ־500 מיליון אנשים מדברים ספרדית. זו לא שפה שלומדים בשביל מבחן — זו שפה שילדים באמת נהנים להשתמש בה.</p>
+    </div>
+    <div class="reasons">
+      <div class="reason"><span>✈️</span><b>טיולים</b></div>
+      <div class="reason"><span>⚽</span><b>כדורגל</b></div>
+      <div class="reason"><span>🎧</span><b>מוזיקה</b></div>
+      <div class="reason"><span>🎬</span><b>נטפליקס</b></div>
+      <div class="reason"><span>💼</span><b>עסקים</b></div>
+      <div class="reason"><span>🤝</span><b>אנשים</b></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ SCREENS ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell argument rv">
+    <span class="eyebrow">📱 בואו נדבר על מסכים</span>
+    <h2 class="h-lg">אי אפשר להוציא אותם מהמסכים</h2>
+    <p style="margin-top:18px">אבל אפשר לבחור מה ייכנס אליהם דרכם. עוד שעה של גלילה, או שעה שמפתחת שפה חדשה. אם כבר הם מול המסך — שלפחות יצאו ממנו עם משהו שילך איתם לכל החיים. ובסוף גם יהיה להם כיף.</p>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">📦 מה קורה אחרי ההרשמה</span>
+      <h2 class="h-lg">חמישה דברים, לפי הסדר</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div><h3>גישה לקורס הדיגיטלי</h3><p>״השיחה הראשונה שלי בספרדית״ — שיעורים קצרים וברורים בקצב אישי. אפשר לחזור אליהם תמיד, והגישה היא לכל החיים.</p></div></div>
+      <div class="step"><div><h3>חוברת עבודה דיגיטלית</h3><p>57 עמודים צבעוניים עם תרגולים, משימות ודוגמאות. להורדה, לשמירה ולהדפסה.</p></div></div>
+      <div class="step"><div><h3>קבוצת וואטסאפ ושיעור יומי</h3><p>כל יום תוכן קצר לתרגול, בכתב ובאודיו — כדי להתקדם בעקביות בכמה דקות ביום, גם בדרכים.</p></div></div>
+      <div class="step"><div><h3>8 מפגשי זום קבוצתיים</h3><p>פעם בשבוע, 60 דקות. משחקים ושיחות בספרדית — כאן צוברים ביטחון ומתחילים לדבר באמת.</p></div></div>
+      <div class="step" style="grid-column:1/-1"><div><h3>ליווי אישי מלאורה לאורך כל הדרך</h3><p>הכוונה, משוב אישי על כל משימה ותמיכה שוטפת, כדי שירגישו בטוחים וימשיכו להתקדם.</p></div></div>
+    </div>
+
+    <div class="shots">
+      <div class="shot"><img src="https://myfluentspanish.com/wp-content/uploads/2026/08/book1.webp" alt="ספר הקורס"><b>ספר הקורס</b></div>
+      <div class="shot"><img src="https://myfluentspanish.com/wp-content/uploads/2026/08/book2.webp" alt="חוברת העבודה"><b>חוברת העבודה</b></div>
+      <div class="shot"><img src="https://myfluentspanish.com/wp-content/uploads/2026/08/book3.webp" alt="חומרי התרגול"><b>חומרי תרגול</b></div>
+      <div class="shot"><img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laptop.webp" alt="מפגש זום עם לאורה" style="background:var(--white); padding:14px; border-radius:16px"><b>מפגשי הזום</b></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ FLIPPED CLASSROOM ============ -->
+<section class="bg-cream" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🔄 שיטת הכיתה ההפוכה</span>
+      <h2 class="h-lg">״ספרדית זה משחק ילדים״ עובדת<br>על פי עיקרון <span class="hl">הכיתה ההפוכה</span></h2>
+      <p class="lead">במקום להקדיש חלק גדול מהשיעור להסבר על חומר חדש ורק אחר כך לשלוח את התלמידים לתרגל אותו בבית — אנחנו הופכים את הסדר. כל דקת מפגש הולכת לדיבור.</p>
+    </div>
+
+    <div class="flip-steps-row">
+      <div class="flip-step"><span>🏠</span><div><b>בבית</b><p>סרטון קצר, הסבר ואוצר מילים — בקצב שלהם. עוצרים, חוזרים וצופים שוב במידת הצורך.</p></div></div>
+      <div class="flip-arrow">←</div>
+      <div class="flip-step"><span>💬</span><div><b>בכיתה</b><p>מתרגלים את מה שכבר מכירים: שואלים, בונים משפטים ומנהלים דיאלוגים אמיתיים.</p></div></div>
+      <div class="flip-arrow">←</div>
+      <div class="flip-step"><span>❤️</span><div><b>ובספרדית…</b><p>מתחילים להשתמש בשפה באמת — ולדבר אותה.</p></div></div>
+    </div>
+
+    <figure class="infographic">
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/flipped.webp" alt="מהי כיתה הפוכה ולמה אנחנו לומדים כך — הסבר מלא על השיטה">
+    </figure>
+    <p class="info-hint">↔ אפשר להזיז את התמונה לצדדים</p>
+  </div>
+</section>
+
+<!-- ============ CURRICULUM TABS ============ -->
+<section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">📚 הצצה לתוכן</span>
+      <h2 class="h-lg">מה נלמד, שלב אחרי שלב</h2>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-p="p1">1 · השיחה הראשונה</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="p2">2 · לדבר בלי לתרגם</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="p3">3 · שיחה אמיתית</button>
+    </div>
+    <div class="panel on" id="p1" role="tabpanel">
+      <h3>השיחה הראשונה שלי</h3>
+      <p>איך לנהל שיחת היכרות פשוטה בזרימה — לשאול את השאלות הנכונות ולענות כששואלים אותנו. במקום ללמוד אינספור מילים ופעלים, נכיר את השיטה שחוסכת את כל העומס הזה ועדיין מאפשרת לדבר. ובעיקר: איך לצבור ביטחון כבר תוך כדי השיחה, ולא לפחד ליזום.</p>
+    </div>
+    <div class="panel" id="p2" role="tabpanel">
+      <h3>לדבר בלי לתרגם</h3>
+      <p>השיטה שמפסיקה את התרגום בראש מעברית לספרדית. נלמד את הפעלים ההכרחיים לכל שיחה, נרחיב את אוצר המילים, ונכיר את הטעויות הנפוצות ואת קיצורי הדרך. וגם — איך לצאת מ״פדיחות״ בלי להיתקע, ולמנף כל טעות לשיפור.</p>
+    </div>
+    <div class="panel" id="p3" role="tabpanel">
+      <h3>לנהל שיחה אמיתית</h3>
+      <p>שאלות פתוחות וסגורות, כל מילות השאלה, ומילות מפתח שמשדרגות את השיחה. נרחיב את אוצר המילים דרך שאלות ותשובות, עם תרגול דיבור בכל שלב — עד שיחה שזורמת מעצמה.</p>
+    </div>
+
+    <div class="extra">
+      <h3>ומה עוד נלמד?</h3>
+      <ul>
+        <li>איך להמשיך לדבר גם כש״נתקעים״ — טריקים פשוטים שמוציאים אתכם מהשתיקה</li>
+        <li>איך לצבור ביטחון גם כשחסרות מילים — ולדבר כבר מהיום הראשון</li>
+        <li>איך לטעות בלי פחד — ולהפוך כל טעות לשיפור</li>
+        <li>בסוף כל שיעור: משימה קצרה ופידבק אישי מלא ממני, כדי שלא רק תבינו — אלא באמת תיישמו</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ HOW LEARNING FEELS ============ -->
+<section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🎈 ובסוף גם יהיה להם כיף</span>
+      <h2 class="h-lg">איך הלמידה מרגישה</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ico o">⏱️</div><h3>שיעורים קצרים</h3><p>ממוקדים וקלים לעיכול, כדי ללמוד בלי עומס ועם הרבה הנאה.</p></div>
+      <div class="card"><div class="ico">😎</div><h3>אווירה צעירה</h3><p>למידה בגובה העיניים, עם אנרגיה חיובית ותוכן שמדבר אל בני נוער.</p></div>
+      <div class="card"><div class="ico o">👥</div><h3>קבוצה של בני גילם</h3><p>לומדים יחד עם בני נוער אחרים, מתקדמים בקצב משותף ונהנים מהדרך.</p></div>
+      <div class="card"><div class="ico">🗨️</div><h3>הרבה דיבור</h3><p>כבר מההתחלה מתרגלים לדבר, כדי לצבור ביטחון ולהשתמש בשפה באמת.</p></div>
+      <div class="card"><div class="ico o">🏆</div><h3>הרבה הצלחות קטנות</h3><p>כל שיעור מוסיף עוד הצלחה שמחזקת את המוטיבציה ואת תחושת המסוגלות.</p></div>
+      <div class="card"><div class="ico">🤝</div><h3>ליווי לאורך כל הדרך</h3><p>אנחנו איתם בכל התהליך, עם תמיכה, הכוונה ומענה כדי שימשיכו להתקדם בביטחון.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GAINS ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🌱 הרבה יותר מקורס ספרדית</span>
+      <h2 class="h-lg">ספרדית היא רק השפה</h2>
+      <p class="lead">מה שהילדים באמת מרוויחים לוקח אותם הרבה מעבר לשיעור.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ico o">💪</div><h3>ביטחון עצמי</h3><p>לגלות את הביטחון לדבר, לנסות ולהצליח גם בסביבה חדשה ולא מוכרת.</p></div>
+      <div class="card"><div class="ico">🗣️</div><h3>יכולת לתקשר</h3><p>שפה שמאפשרת להתחבר לאנשים, לתרבויות ולהזדמנויות בכל העולם.</p></div>
+      <div class="card"><div class="ico o">🧑‍🤝‍🧑</div><h3>חברים חדשים</h3><p>בני נוער נוספים שחולקים את אותה הסקרנות ואת אותו הרצון להתקדם.</p></div>
+      <div class="card"><div class="ico">🎨</div><h3>חשיבה יצירתית</h3><p>גמישות מחשבתית ודרך חדשה להסתכל, להבין ולפתור בעיות.</p></div>
+      <div class="card"><div class="ico o">🧭</div><h3>עצמאות</h3><p>ביטחון להשתמש בשפה בעצמם — בטיולים, בתוכן ובמפגשים עם אנשים חדשים.</p></div>
+      <div class="card"><div class="ico">🌍</div><h3>פתיחות לעולם</h3><p>חשיפה לתרבות, למוזיקה ולמקומות חדשים שמרחיבה את האופקים.</p></div>
+      <div class="card"><div class="ico o">🌟</div><h3>תחושת מסוגלות</h3><p>הצלחות קטנות בדרך שמחזקות את האמונה ביכולת ללמוד ולהצליח בכל תחום.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEACHER ============ -->
+<section>
+  <div class="shell teacher rv">
+    <div class="teacher-photo">
+      <div class="ring"></div>
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
+    </div>
+    <div>
+      <span class="eyebrow">!Hola</span>
+      <blockquote>״המטרה שלי היא לא רק ללמד ספרדית — אלא לעזור לבני הנוער <span class="hl">להרגיש שהם מסוגלים</span>.״</blockquote>
+      <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם את החומר מהר, ולשמר את התוצאות לאורך זמן.</p>
+      <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות, ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם הצרכים של מאות תלמידים שלימדתי לאורך השנים.</p>
+      <div class="creds">
+        <div class="cred"><b>18</b><span>שנות הוראה</span></div>
+        <div class="cred"><b>5</b><span>שפות שאני דוברת</span></div>
+        <div class="cred"><b>מאות</b><span>תלמידים</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="bg-cream" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">💬 מה מספרים ההורים</span>
+      <h2 class="h-lg">לא רק אנחנו אומרים את זה</h2>
+    </div>
+    <div class="carousel">
+      <div class="track" id="track">
+        <figure class="slide">
+          <div class="q">”</div>
+          <p>בתוך זמן קצר אלה כבר ממש מדברת ספרדית בסיסית. היא רק בת 11 אבל כבר קיבלה ביטחון ויכולות, ואנחנו רואים את התוצאות פה בחופש בספרד. היא כבר סגורה מבחינתה שספרדית איתך היא אחד החוגים שלה לשנה הבאה.</p>
+          <footer><span class="av">א</span><span>אמא של אלה, בת 11</span></footer>
+        </figure>
+        <figure class="slide">
+          <div class="q">”</div>
+          <p>עידן לומד עם לאורה כבר כחודשיים, ובזמן הזה ניכר שיפור משמעותי בידע ובביטחון שלו בשפה. מעבר למקצועיות, היחס האישי והגישה החיובית שלה הופכים את השיעורים לחוויה נעימה, ומעודדים את עידן להתעניין, להשתתף ולהתקדם.</p>
+          <footer><span class="av">ע</span><span>אמא של עידן</span></footer>
+        </figure>
+        <figure class="slide">
+          <div class="q">”</div>
+          <p>מה שמייחד אותה במיוחד הוא היכולת להפוך את הלמידה לחוויה מהנה ומעניינת עבור מתבגר. היא יודעת למצוא בדיוק את האיזון בין אווירה נעימה לבין הצבת גבולות. העובדה שנער בן 14 מתאר בעצמו את המורה שלו כ״מצוינת, סבלנית, מקצועית וכיפית״ אומרת הכול 😊</p>
+          <footer><span class="av">ה</span><span>הורה לנער בן 14</span></footer>
+        </figure>
+        <figure class="slide">
+          <div class="q">”</div>
+          <p>בתי לומדת עם לאורה כבר ארבע שנים ומאוד אוהבת אותה. מורה מקצועית, חרוצה, בעלת ידע נרחב ומעשיר, ועושה זאת תוך אווירה נעימה, מכבדת ומהנה. הבת שלי עברה בגרות בספרדית בהצטיינות ומרגישה מאוד בנוח בשפה.</p>
+          <footer><span class="av">א</span><span>איתן</span></footer>
+        </figure>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO FOR ============ -->
+<section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🎯 למי זה מתאים</span>
+      <h2 class="h-lg">התוכנית נבנתה בדיוק בשבילם</h2>
+    </div>
+    <div class="checks">
+      <div class="check"><span class="mark">✓</span><div><b>נערים ונערות 12–16</b><p>מותאמת לגיל ההתבגרות, עם תכנים ושיטה שמדברים אל בני נוער.</p></div></div>
+      <div class="check"><span class="mark">✓</span><div><b>רמת מתחילים</b><p>לא צריך שום ידע קודם. מתחילים מהבסיס ומתקדמים יחד, צעד אחר צעד.</p></div></div>
+      <div class="check"><span class="mark">✓</span><div><b>מי שאוהב ללמוד דרך משחק</b><p>למידה אינטראקטיבית וחווייתית שהופכת את הספרדית למשחק ולא לעוד שיעור.</p></div></div>
+      <div class="check"><span class="mark">✓</span><div><b>מי שרוצה לדבר בביטחון</b><p>לבני נוער שרוצים לרכוש שפה, להאמין בעצמם ולהרגיש בטוחים לפתוח בשיחה.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BONUSES + DATES ============ -->
+<section style="padding-top:0">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🎁 בונוסים משלימים</span>
+      <h2 class="h-lg">מה עוד נכנס לחבילה</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ico o">📘</div><h3>ספר הקורס להורדה</h3><p>57 עמודים צבעוניים עם תרגולים, משימות ודוגמאות.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>קבוצת וואטסאפ תומכת</h3><p>מענה אישי, התייעצויות ומשוב על משימות.</p></div>
+      <div class="card"><div class="ico o">📝</div><h3>תרגול אחרי כל שיעור</h3><p>כדי לוודא שהם לא רק מבינים — אלא באמת שולטים.</p></div>
+      <div class="card" style="display:flex; gap:16px; align-items:center">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/abc.webp" alt="" style="width:74px; flex:0 0 auto">
+        <div><h3>שיעור ABC למתחילים</h3><p>קריאה, כתיבה והגייה + לוח אותיות להדפסה.</p></div>
+      </div>
+    </div>
+
+    <div class="checks" style="margin-top:16px">
+      <div class="check"><span class="mark">📅</span><div><b>תאריכי התוכנית</b><p>מתחילים ב־<span class="fill">להשלים</span> ומסיימים ב־<span class="fill">להשלים</span>.</p></div></div>
+      <div class="check"><span class="mark">💻</span><div><b>מפגשי הזום</b><p>ימי שני, 17:00–18:00. תאריכים: <span class="fill">להשלים 8 תאריכים</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ PRICE ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="price-box">
+      <p class="deadline">⏳ מחיר השקה — עד <span class="fill">להשלים תאריך</span></p>
+      <h2 class="h-lg" style="font-size:24px">מה ההשקעה?</h2>
+      <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:46ch; margin-inline:auto">תכנית מושקעת, ממוקדת דיבור, <b>ויחידה מסוגה בארץ</b> — שנבנתה במיוחד כדי שהילדים שלכם יתחילו לדבר מהר, בקלות ובביטחון.</p>
+      <div class="price-row"><b>990 ₪</b><s>1,500 ₪</s></div>
+      <p class="pay">כולל מע״מ · ניתן לחלק עד 3 תשלומים נוחים של 330 ₪</p>
+      <ul class="price-list">
+        <li>גישה מלאה לכל תכני הקורס, לתמיד</li>
+        <li>8 מפגשי זום קבוצתיים לתרגול דיבור</li>
+        <li>כל הבונוסים, החוברת והליווי האישי</li>
+      </ul>
+      <a class="btn btn-main" href="#form">אני רוצה לשריין מקום</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">❓ שאלות נפוצות</span>
+      <h2 class="h-lg">מה שהורים בדרך כלל שואלים</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>יש תמיכה אישית במהלך התוכנית?</summary>
+        <p>בהחלט. יש קבוצת וואטסאפ פרטית למשתתפי התוכנית — להתייעצות, שאלות, תרגול, קבלת פידבק על משימות וליווי ישיר ממני לאורך כל הדרך.</p>
+      </details>
+      <details>
+        <summary>קשה לו־לה להתרכז מול מסך. זה יתאים?</summary>
+        <p>חד־משמעית כן, וזאת בדיוק הסיבה שבניתי את התוכנית ככה: 32 שיעורים קצרים, ברורים ומדורגים, בקצב לימוד נוח. כל שיעור מקדם אותם צעד אחד — בלי הצפה ועם הרבה עידוד.</p>
+      </details>
+      <details>
+        <summary>צריך ידע קודם בספרדית?</summary>
+        <p>לא. התוכנית מיועדת למתחילים גמורים ומתחילה מהבסיס, כולל שיעור ABC על קריאה, כתיבה והגייה נכונה.</p>
+      </details>
+      <details>
+        <summary>אין לי כרטיס אשראי. אפשר לשלם אחרת?</summary>
+        <p>כן. אפשר גם בביט או בפייבוקס למספר 052-5013849. חשוב לציין בהעברה שם מלא, מייל ומספר טלפון.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ FINAL + FORM ============ -->
+<section class="bg-cream" id="form" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center" style="max-width:54ch">
+      <span class="eyebrow">🌅 ורגע לפני סיום</span>
+      <h2 class="h-lg">דמיינו אותו בעוד חמש שנים</h2>
+      <p class="lead">מטייל בעולם בביטחון. מדבר עם אנשים בלי לחשוש. מבין שירים, סדרות ותרבויות. ומרגיש שהעולם פתוח בפניו. לפעמים כל זה מתחיל בהחלטה אחת קטנה שמקבלים היום.</p>
+    </div>
+
+    <div class="after-signup">
+      <b>📬 מיד אחרי ההרשמה תקבלו</b>
+      <ul>
+        <li>גישה לכל שיעורי הקורס</li>
+        <li>ספר הקורס להורדה</li>
+        <li>הצטרפות לקבוצת התלמידים</li>
+        <li>והכי חשוב — את ההתחלה החדשה שלהם בספרדית 😊</li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <h3 style="font-size:21px; margin-bottom:6px">השאירו פרטים ונדבר</h3>
+      <p style="font-size:15px; color:var(--ink-soft); margin-bottom:20px">אחזור אליכם עם כל הפרטים על המחזור הקרוב.</p>
+      <!-- לחיבור הטופס: להחליף את ה-action בכתובת שאליה הפרטים נשלחים -->
+      <form action="#" method="post">
+        <div class="field"><label for="n">שם מלא</label><input id="n" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="e">אימייל</label><input id="e" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="p">טלפון</label><input id="p" name="phone" type="tel" autocomplete="tel" required></div>
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span>אני מאשר/ת את ההרשמה ומסכימ/ה לקבל עדכונים ותוכן שיווקי בהתאם למדיניות הפרטיות.</span>
+        </label>
+        <button class="btn btn-main" type="submit">שלחו לי את הפרטים</button>
+      </form>
+    </div>
+
+    <div class="contact">
+      <a href="https://wa.me/972525013849"><span>📱</span><div><b>וואטסאפ / טלפון</b><i>052-5013849</i></div></a>
+      <a href="mailto:laura@myfluentspanish.com"><span>📧</span><div><b>מייל</b><i>laura@myfluentspanish.com</i></div></a>
+    </div>
+    <p style="text-align:center; font-size:14.5px; color:var(--ink-soft); margin-top:18px">
+      יש שאלה או רוצים שיחת התאמה לפני ההרשמה? מוזמנים לפנות ישירות אליי. לאורה 🌸
+    </p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="shell">ספרדית זה משחק ילדים · לאורה אפשטיין · <a href="#" style="color:inherit">מדיניות פרטיות</a></div>
+</footer>
+
+<!-- sticky -->
+<div class="sticky">
+  <div class="p"><b>990 ₪</b>במקום 1,500 ₪</div>
+  <a class="btn btn-main" href="#form">שריון מקום</a>
+</div>
+
+
+
+<script>
+document.documentElement.classList.add('js');
+
+/* reveal on scroll */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {rootMargin:'0px 0px -40px 0px', threshold:0});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+setTimeout(() => document.querySelectorAll('.rv').forEach(el => el.classList.add('in')), 2500);
+
+/* phrase cards */
+document.querySelectorAll('.phrase').forEach(b =>
+  b.addEventListener('click', () => b.classList.toggle('open')));
+
+/* tabs */
+document.querySelectorAll('.tab').forEach(t =>
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(o => o.setAttribute('aria-selected', String(o === t)));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.id === t.dataset.p));
+  }));
+
+/* testimonial carousel */
+const track = document.getElementById('track');
+const dots = document.getElementById('dots');
+const slides = [...track.children];
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.setAttribute('aria-label', 'המלצה ' + (i+1));
+  d.setAttribute('aria-current', String(i === 0));
+  d.addEventListener('click', () => track.scrollTo({left: track.clientWidth * i * -1 * (getComputedStyle(track).direction === 'rtl' ? 1 : -1), behavior:'smooth'}));
+  dots.appendChild(d);
+});
+let raf;
+track.addEventListener('scroll', () => {
+  cancelAnimationFrame(raf);
+  raf = requestAnimationFrame(() => {
+    const i = Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
+    [...dots.children].forEach((d, n) => d.setAttribute('aria-current', String(n === i)));
+  });
+});
+
+
+</script>
