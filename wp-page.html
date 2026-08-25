@@ -239,7 +239,8 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .start-band .big{font-family:var(--f-head); font-weight:800; font-size:clamp(30px,5.6vw,46px); line-height:1.1}
 #lp .start-band .big span{color:var(--orange)}
 #lp .start-band .note{font-size:15.5px; color:var(--ink-soft); margin-top:10px}
-#lp .dates{display:grid; gap:11px; grid-template-columns:repeat(auto-fit,minmax(104px,1fr)); max-width:900px; margin-inline:auto}
+#lp .dates{display:grid; gap:11px; grid-template-columns:repeat(2,1fr); max-width:900px; margin-inline:auto}
+@media (min-width:560px){#lp .dates{grid-template-columns:repeat(4,1fr)} }
 #lp .date{
   background:var(--white); border-radius:16px; padding:15px 8px 13px; text-align:center;
   box-shadow:var(--soft); transition:transform .2s;
@@ -704,31 +705,8 @@ body{padding-bottom:78px; background:#FFFFFF}
   </div>
 </section>
 
-<!-- ============ TEACHER ============ -->
-<section>
-  <div class="shell teacher rv">
-    <div class="teacher-photo">
-      <div class="ring"></div>
-      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
-    </div>
-    <div>
-      <span class="eyebrow">!Hola</span>
-      <blockquote>״המטרה שלי היא לא רק ללמד ספרדית — אלא לעזור לבני הנוער <span class="hl">להרגיש שהם מסוגלים</span>.״</blockquote>
-      <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם את החומר מהר, ולשמר את התוצאות לאורך זמן.</p>
-      <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות, ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם הצרכים של מאות תלמידים שלימדתי לאורך השנים.</p>
-      <div class="creds">
-        <div class="cred"><b>18</b><span>שנות הוראה</span></div>
-        <div class="cred"><b>5</b><span>שפות שאני דוברת</span></div>
-        <div class="cred"><b>מאות</b><span>תלמידים</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
-
 <!-- ============ TESTIMONIALS ============ -->
-<section class="bg-sky" style="padding-top:34px">
+<section>
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">💬 מה מספרים ההורים</span>
@@ -762,8 +740,10 @@ body{padding-bottom:78px; background:#FFFFFF}
   </div>
 </section>
 
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
 <!-- ============ BONUSES + DATES ============ -->
-<section style="padding-top:0">
+<section class="bg-sky" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">🎁 בונוסים משלימים</span>
@@ -779,6 +759,27 @@ body{padding-bottom:78px; background:#FFFFFF}
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ============ TEACHER ============ -->
+<section>
+  <div class="shell teacher rv">
+    <div class="teacher-photo">
+      <div class="ring"></div>
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
+    </div>
+    <div>
+      <span class="eyebrow">!Hola</span>
+      <blockquote>״המטרה שלי היא לא רק ללמד ספרדית — אלא לעזור לבני הנוער <span class="hl">להרגיש שהם מסוגלים</span>.״</blockquote>
+      <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם את החומר מהר, ולשמר את התוצאות לאורך זמן.</p>
+      <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות, ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם הצרכים של מאות תלמידים שלימדתי לאורך השנים.</p>
+      <div class="creds">
+        <div class="cred"><b>18</b><span>שנות הוראה</span></div>
+        <div class="cred"><b>5</b><span>שפות שאני דוברת</span></div>
+        <div class="cred"><b>מאות</b><span>תלמידים</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
