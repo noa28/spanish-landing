@@ -62,7 +62,10 @@
 }#lp .reasons{display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:13px}#lp .reason{
   background:var(--white); border-radius:20px; padding:22px 10px; text-align:center;
   box-shadow:var(--soft); transition:transform .22s;
-}#lp .reason:hover{transform:translateY(-5px) rotate(-1.5deg)}#lp .reason span{font-size:31px; display:block; margin-bottom:7px}#lp .reason b{font-family:var(--f-head); font-size:15px; font-weight:700}#lp .taster{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); margin-top:30px}#lp .phrase{
+}#lp .reason:hover{transform:translateY(-5px) rotate(-1.5deg)}#lp .reason span{font-size:31px; display:block; margin-bottom:7px}#lp .reason b{font-family:var(--f-head); font-size:15px; font-weight:700}#lp .taster{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); margin-top:30px}
+
+@media(min-width:400px) and (max-width:599px){#lp .taster .phrase:last-child:nth-child(odd){display:none}
+}#lp .phrase{
   position:relative; background:var(--white); border-radius:20px;
   padding:22px 20px; text-align:center; cursor:pointer; border:none;
   font:inherit; color:inherit; box-shadow:var(--soft);
