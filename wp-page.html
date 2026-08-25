@@ -377,6 +377,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 }
 #lp details[open] summary::after{transform:rotate(45deg)}
 #lp details p{padding:0 0 21px; color:var(--ink-soft); font-size:16px; line-height:1.6}
+#lp #form{scroll-margin-top:22px}
 #lp .form-card{
   background:var(--white); border-radius:28px; padding:32px 28px;
   box-shadow:var(--soft-lg); max-width:520px; margin-inline:auto;
@@ -390,6 +391,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 }
 #lp .field input:focus{outline:none; border-color:var(--teal); background:var(--white)}
 #lp .consent{display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:var(--ink-soft); margin:16px 0 20px; line-height:1.5}
+#lp .consent a{color:var(--teal); text-decoration:underline; text-underline-offset:2px}
 #lp .consent input{margin-top:3px; accent-color:var(--teal); width:17px; height:17px; flex:0 0 auto}
 #lp .form-card .btn{width:100%}
 #lp .contact{display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); max-width:660px; margin:26px auto 0}
@@ -402,7 +404,11 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .contact span{font-size:22px}
 #lp .contact b{display:block; font-size:12.5px; color:var(--ink-faint); font-weight:700}
 #lp .contact i{font-style:normal; font-size:16px}
-#lp footer.site{background:var(--cream); padding:28px 0; font-size:13.5px; color:var(--ink-faint); text-align:center}
+#lp footer.site{background:var(--cream); padding:34px 0 30px; font-size:13.5px; color:var(--ink-faint); text-align:center}
+#lp footer.site .foot-logo{width:150px; height:auto; margin:0 auto 14px; display:block}
+#lp footer.site p{margin:0 0 6px}
+#lp footer.site a{color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px}
+#lp footer.site a:hover{color:var(--teal)}
 #lp .sticky{
   position:fixed; inset-inline:0; bottom:0; z-index:60;
   background:rgba(255,255,255,.97); backdrop-filter:blur(8px);
@@ -789,7 +795,7 @@ body{padding-bottom:78px; background:#FFFFFF}
 <section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="price-box">
-      <p class="deadline">⏳ מחיר השקה — עד <span class="fill">להשלים תאריך</span></p>
+      <p class="deadline">⏳ מחיר השקה — עד 30.09.26 בחצות</p>
       <h2 class="h-lg" style="font-size:24px">מה ההשקעה?</h2>
       <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:46ch; margin-inline:auto">תכנית מושקעת, ממוקדת דיבור, <b>ויחידה מסוגה בארץ</b> — שנבנתה במיוחד כדי שהילדים שלכם יתחילו לדבר מהר, בקלות ובביטחון.</p>
       <div class="price-row"><b>990 ₪</b><s>1,500 ₪</s></div>
@@ -835,11 +841,11 @@ body{padding-bottom:78px; background:#FFFFFF}
 <div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ FINAL + FORM ============ -->
-<section class="bg-sky" id="form" style="padding-top:34px">
+<section class="bg-sky" id="signup" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center" style="max-width:54ch">
       <span class="eyebrow">🌅 ורגע לפני סיום</span>
-      <h2 class="h-lg">דמיינו אותו בעוד חמש שנים</h2>
+      <h2 class="h-lg">דמיינו את הילד שלכם בעוד חמש שנים</h2>
       <p class="lead">מטייל בעולם בביטחון. מדבר עם אנשים בלי לחשוש. מבין שירים, סדרות ותרבויות. ומרגיש שהעולם פתוח בפניו. לפעמים כל זה מתחיל בהחלטה אחת קטנה שמקבלים היום.</p>
     </div>
 
@@ -853,7 +859,7 @@ body{padding-bottom:78px; background:#FFFFFF}
       </ul>
     </div>
 
-    <div class="form-card">
+    <div class="form-card" id="form">
       <h3 style="font-size:21px; margin-bottom:6px">השאירו פרטים ונדבר</h3>
       <p style="font-size:15px; color:var(--ink-soft); margin-bottom:20px">אחזור אליכם עם כל הפרטים על המחזור הקרוב.</p>
       <!-- לחיבור הטופס: להחליף את ה-action בכתובת שאליה הפרטים נשלחים -->
@@ -863,24 +869,28 @@ body{padding-bottom:78px; background:#FFFFFF}
         <div class="field"><label for="p">טלפון</label><input id="p" name="phone" type="tel" autocomplete="tel" required></div>
         <label class="consent">
           <input type="checkbox" name="consent" required>
-          <span>אני מאשר/ת את ההרשמה ומסכימ/ה לקבל עדכונים ותוכן שיווקי בהתאם למדיניות הפרטיות.</span>
+          <span>אני מאשר/ת את ההרשמה ומסכימ/ה לקבל עדכונים ותוכן שיווקי בהתאם <a href="https://myfluentspanish.com/privacy/" target="_blank" rel="noopener">למדיניות הפרטיות</a>.</span>
         </label>
         <button class="btn btn-main" type="submit">שלחו לי את הפרטים</button>
       </form>
     </div>
 
-    <div class="contact">
+    <p style="text-align:center; font-size:14.5px; color:var(--ink-soft); margin-top:30px">
+      יש לכם שאלה או רוצים שיחת התאמה לפני ההרשמה? מוזמנים לפנות ישירות אליי. לאורה 🌸
+    </p>
+    <div class="contact" style="margin-top:14px">
       <a href="https://wa.me/972525013849"><span>📱</span><div><b>וואטסאפ / טלפון</b><i>052-5013849</i></div></a>
       <a href="mailto:laura@myfluentspanish.com"><span>📧</span><div><b>מייל</b><i>laura@myfluentspanish.com</i></div></a>
     </div>
-    <p style="text-align:center; font-size:14.5px; color:var(--ink-soft); margin-top:18px">
-      יש שאלה או רוצים שיחת התאמה לפני ההרשמה? מוזמנים לפנות ישירות אליי. לאורה 🌸
-    </p>
   </div>
 </section>
 
 <footer class="site">
-  <div class="shell">ספרדית זה משחק ילדים · לאורה אפשטיין · <a href="#" style="color:inherit">מדיניות פרטיות</a></div>
+  <div class="shell">
+    <img class="foot-logo" src="https://myfluentspanish.com/wp-content/uploads/2023/01/logo-fondo-transparente.png" alt="לאורה אפשטיין · מדברים ספרדית">
+    <p>כל הזכויות שמורות ללאורה אפשטיין</p>
+    <p><a href="https://myfluentspanish.com/privacy/">מדיניות פרטיות</a></p>
+  </div>
 </footer>
 
 <!-- sticky -->
