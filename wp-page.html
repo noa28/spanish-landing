@@ -217,7 +217,7 @@
   display:inline-flex; align-items:center; gap:8px;
   background:var(--orange-soft); color:var(--orange-dark);
   font-weight:700; font-size:14.5px; padding:8px 17px; border-radius:999px; margin-bottom:14px;
-}#lp .cdown.done{display:none}#lp .cdown .cd-cells{display:none; direction:ltr; justify-content:center; gap:8px; margin:0 0 16px}#lp .cdown.live .cd-cells{display:flex}#lp .cdown.live .deadline{margin-bottom:12px}#lp .cd-cells>div{
+}#lp .cdown.done .cd-cells{display:none}#lp .cdown.done .deadline{background:var(--teal-soft); color:var(--teal); margin-bottom:14px}#lp .cdown .cd-cells{display:none; direction:ltr; justify-content:center; gap:8px; margin:0 0 16px}#lp .cdown.live .cd-cells{display:flex}#lp .cdown.live .deadline{margin-bottom:12px}#lp .cd-cells>div{
   background:var(--cream); border-radius:14px; padding:9px 6px 7px;
   min-width:66px; text-align:center; box-shadow:inset 0 0 0 1px var(--line);
 }#lp .cd-cells b{
@@ -649,7 +649,7 @@
   <div class="shell rv">
     <div class="price-box">
       <div class="cdown" data-deadline="2026-09-30T23:59:59+03:00">
-        <p class="deadline">⏳ מחיר השקה — עד 30.09.26 בחצות</p>
+        <p class="deadline">⏳ מחיר ההשקה — עד 30.09.26 בחצות</p>
         <div class="cd-cells">
           <div><b data-cd="d">00</b><i>ימים</i></div>
           <div><b data-cd="h">00</b><i>שעות</i></div>
@@ -932,22 +932,31 @@ track.addEventListener('scroll', () => {
   const label = box.querySelector('.deadline');
   const cell = {}; box.querySelectorAll('[data-cd]').forEach(el => cell[el.dataset.cd] = el);
   const pad = n => String(n).padStart(2, '0');
+  let timer = null;
+
+  function expire(){
+    box.classList.remove('live');
+    box.classList.add('done');
+    label.textContent = '📅 אין תאריך למחזור קרוב';
+    if (timer) { clearInterval(timer); timer = null; }
+  }
 
   function tick(){
     const left = end - Date.now();
-    if (left <= 0){ box.classList.add('done'); clearInterval(timer); return; }
+    if (left <= 0){ expire(); return; }
     const s = Math.floor(left / 1000);
     cell.d.textContent = Math.floor(s / 86400);
     cell.h.textContent = pad(Math.floor(s / 3600) % 24);
     cell.m.textContent = pad(Math.floor(s / 60) % 60);
     cell.s.textContent = pad(s % 60);
   }
+
   tick();
   if (!box.classList.contains('done')){
-    label.textContent = '⏳ מחיר השקה מסתיים בעוד';
+    label.textContent = '⏳ מחיר ההשקה מסתיים בעוד';
     box.classList.add('live');
+    timer = setInterval(tick, 1000);
   }
-  const timer = setInterval(tick, 1000);
 })();
 
 </script>
