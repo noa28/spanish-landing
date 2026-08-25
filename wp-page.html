@@ -133,7 +133,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .phrase:hover{transform:translateY(-4px); box-shadow:var(--soft-lg)}
 #lp .phrase:focus-visible{outline:3px solid var(--teal); outline-offset:3px}
 #lp .phrase .es{font-family:var(--f-head); font-weight:700; font-size:20px; color:var(--teal); direction:ltr; unicode-bidi:isolate; display:block}
-#lp .phrase .tap{font-size:13px; color:var(--ink-faint); margin-top:8px}
+#lp .phrase .tap{display:block; font-size:13px; color:var(--ink-faint); margin-top:8px}
 #lp .phrase .rev{
   display:grid; gap:3px; margin-top:10px;
   max-height:0; opacity:0; overflow:hidden;
@@ -202,15 +202,24 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .infographic{margin:0 auto; max-width:860px}
 #lp .infographic img{width:100%; border-radius:24px; box-shadow:var(--soft-lg); background:var(--white)}
 #lp .info-hint{display:none}
-@media (max-width:700px){#lp .infographic{
-    overflow-x:auto; -webkit-overflow-scrolling:touch;
-    border-radius:24px; box-shadow:var(--soft-lg);
-  }
-#lp .infographic img{width:auto; min-width:680px; border-radius:0; box-shadow:none}
+@media (max-width:700px){#lp .infographic{cursor:zoom-in}
+#lp .infographic img{width:100%}
 #lp .info-hint{
     display:block; text-align:center; font-size:13px; color:var(--ink-faint);
     margin-top:10px;
   }
+}
+#lp .imgview{
+  position:fixed; inset:0; z-index:130; display:none;
+  background:rgba(12,32,40,.94); overflow:auto; -webkit-overflow-scrolling:touch;
+  padding:56px 8px 24px;
+}
+#lp .imgview.on{display:block}
+#lp .imgview img{width:auto; max-width:none; min-width:100%; margin:0 auto; display:block; border-radius:8px}
+#lp .imgview .x{
+  position:fixed; top:10px; inset-inline-end:10px; z-index:2;
+  width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--white); color:var(--ink); font-size:20px;
 }
 #lp .extra{
   max-width:760px; margin:20px auto 0; background:var(--white);
@@ -286,7 +295,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 }
 #lp .lesson:hover .play{transform:scale(1.09)}
 #lp .lesson .play svg{width:22px; height:22px; fill:var(--orange); margin-inline-start:4px}
-#lp .lesson .meta{background:var(--white); padding:16px 18px; text-align:start}
+#lp .lesson .meta{display:block; background:var(--white); padding:16px 18px; text-align:start}
 #lp .lesson .meta b{display:block; font-family:var(--f-head); font-size:16.5px; margin-bottom:3px}
 #lp .lesson .meta span{font-size:13.5px; color:var(--ink-faint)}
 #lp .vmodal{
@@ -346,7 +355,8 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .arw svg{width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round}
 #lp .arw.prev{inset-inline-start:-56px}
 #lp .arw.next{inset-inline-end:-56px}
-#lp .dots{display:flex; gap:8px; justify-content:center; margin-top:18px}
+#lp .dots{display:flex; gap:8px; justify-content:center; margin-top:14px}
+#lp .track{transition:height .25s ease}
 #lp .dots button{
   width:9px; height:9px; border-radius:50%; border:none; padding:0; cursor:pointer;
   background:var(--line); transition:background .2s, width .2s;
@@ -439,6 +449,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 }
 #lp .contact a:hover{transform:translateY(-3px)}
 #lp .contact span{font-size:22px}
+#lp .contact .c-txt{display:block}
 #lp .contact b{display:block; font-size:12.5px; color:var(--ink-faint); font-weight:700}
 #lp .contact i{font-style:normal; font-size:16px}
 #lp footer.site{background:var(--cream); padding:34px 0 30px; font-size:13.5px; color:var(--ink-faint); text-align:center}
@@ -528,11 +539,11 @@ body{padding-bottom:78px; background:#FFFFFF}
       <p class="lead">לחצו על משפט כדי לראות מה הוא אומר ואיך אומרים אותו. ככה בדיוק מרגישים השיעורים — קטן, ברור, ומיד מצליחים.</p>
     </div>
     <div class="taster">
-      <button class="phrase"><span class="es">¡Hola! ¿Qué tal?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">היי, מה נשמע?</span><span class="say">אוֹלָה, קֶה טַאל</span></div></button>
-      <button class="phrase"><span class="es">Me llamo…</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">קוראים לי…</span><span class="say">מֶה יָאמוֹ</span></div></button>
-      <button class="phrase"><span class="es">¿De dónde eres?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">מאיפה אתה?</span><span class="say">דֶה דוֹנְדֶה אֶרֶס</span></div></button>
-      <button class="phrase"><span class="es">Mucho gusto</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">נעים מאוד</span><span class="say">מוּצ'וֹ גוּסְטוֹ</span></div></button>
-      <button class="phrase"><span class="es">¿Quieres jugar?</span><div class="tap">👆 לחצו לגילוי</div><div class="rev"><span class="he">רוצה לשחק?</span><span class="say">קְיֶרֶס חוּגָאר</span></div></button>
+      <button class="phrase"><span class="es">¡Hola! ¿Qué tal?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">היי, מה נשמע?</span><span class="say">אוֹלָה, קֶה טַאל</span></span></button>
+      <button class="phrase"><span class="es">Me llamo…</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">קוראים לי…</span><span class="say">מֶה יָאמוֹ</span></span></button>
+      <button class="phrase"><span class="es">¿De dónde eres?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">מאיפה אתה?</span><span class="say">דֶה דוֹנְדֶה אֶרֶס</span></span></button>
+      <button class="phrase"><span class="es">Mucho gusto</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">נעים מאוד</span><span class="say">מוּצ'וֹ גוּסְטוֹ</span></span></button>
+      <button class="phrase"><span class="es">¿Quieres jugar?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">רוצה לשחק?</span><span class="say">קְיֶרֶס חוּגָאר</span></span></button>
     </div>
   </div>
 </section>
@@ -578,7 +589,7 @@ body{padding-bottom:78px; background:#FFFFFF}
     <figure class="infographic">
       <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/flipped2.webp" alt="מהי כיתה הפוכה ולמה אנחנו לומדים כך — הסבר מלא על השיטה">
     </figure>
-    <p class="info-hint">↔ אפשר להזיז את התמונה לצדדים</p>
+    <p class="info-hint">👆 לחצו על התמונה כדי לראות אותה גדולה</p>
   </div>
 </section>
 
@@ -884,7 +895,7 @@ body{padding-bottom:78px; background:#FFFFFF}
       </details>
       <details>
         <summary>אין לי כרטיס אשראי. אפשר לשלם אחרת?</summary>
-        <p>כן. אפשר גם בביט או בפייבוקס למספר 052-5013849. חשוב לציין בהעברה שם מלא, מייל ומספר טלפון.</p>
+        <p>כן. אפשר גם בביט או בפייבוקס למספר 058-5013849. חשוב לציין בהעברה שם מלא, מייל ומספר טלפון.</p>
       </details>
     </div>
   </div>
@@ -907,7 +918,7 @@ body{padding-bottom:78px; background:#FFFFFF}
         <li>גישה לכל שיעורי הקורס</li>
         <li>ספר הקורס להורדה</li>
         <li>הצטרפות לקבוצת התלמידים</li>
-        <li>והכי חשוב — את ההתחלה החדשה שלהם בספרדית 😊</li>
+        <li>והכי חשוב — את ההתחלה החדשה שלהם בספרדית&nbsp;😊&#x200F;</li>
       </ul>
     </div>
 
@@ -920,8 +931,8 @@ body{padding-bottom:78px; background:#FFFFFF}
       יש לכם שאלה או רוצים שיחת התאמה לפני ההרשמה? מוזמנים לפנות ישירות אליי. לאורה 🌸
     </p>
     <div class="contact" style="margin-top:14px">
-      <a href="https://wa.me/972525013849"><span>📱</span><div><b>וואטסאפ / טלפון</b><i>052-5013849</i></div></a>
-      <a href="mailto:laura@myfluentspanish.com"><span>📧</span><div><b>מייל</b><i>laura@myfluentspanish.com</i></div></a>
+      <a href="https://wa.me/972585013849"><span>📱</span><span class="c-txt"><b>וואטסאפ / טלפון</b><i>058-5013849</i></span></a>
+      <a href="mailto:laura@myfluentspanish.com"><span>📧</span><span class="c-txt"><b>מייל</b><i>laura@myfluentspanish.com</i></span></a>
     </div>
   </div>
 </section>
@@ -950,8 +961,32 @@ body{padding-bottom:78px; background:#FFFFFF}
   </div>
 </div>
 
+<div class="imgview" id="imgview"><button class="x" id="imgviewX" aria-label="סגירה">✕</button></div>
+
 <script>
 document.documentElement.classList.add('js');
+
+/* ---- full-screen image viewer, mobile only ---- */
+const iv = document.getElementById('imgview');
+const infoFig = document.querySelector('.infographic');
+if (iv && infoFig){
+  const openIV = () => {
+    if (!window.matchMedia('(max-width:700px)').matches) return;
+    const im0 = infoFig.querySelector('img');
+    iv.querySelectorAll('img').forEach(n => n.remove());
+    const im = new Image();
+    im.src = im0.currentSrc || im0.src;
+    im.alt = im0.alt;
+    im.style.width = Math.round(window.innerWidth * 2.2) + 'px';
+    iv.appendChild(im);
+    iv.classList.add('on'); document.body.style.overflow = 'hidden';
+  };
+  const closeIV = () => { iv.classList.remove('on'); document.body.style.overflow = ''; };
+  infoFig.addEventListener('click', openIV);
+  document.getElementById('imgviewX').addEventListener('click', closeIV);
+  iv.addEventListener('click', e => { if (e.target === iv) closeIV(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && iv.classList.contains('on')) closeIV(); });
+}
 
 /* ---- lesson previews ---- */
 const LESSONS = [
@@ -965,8 +1000,8 @@ const mmss = sec => Math.floor(sec/60) + ':' + String(sec % 60).padStart(2,'0');
 LESSONS.forEach(v => {
   const b = document.createElement('button');
   b.className = 'lesson';
-  b.innerHTML = '<div class="thumb"><span class="play">' + PLAY + '</span><span class="dur"></span></div>' +
-                '<div class="meta"><b>' + v.title + '</b><span>' + v.sub + '</span></div>';
+  b.innerHTML = '<span class="thumb"><span class="play">' + PLAY + '</span><span class="dur"></span></span>' +
+                '<span class="meta"><b>' + v.title + '</b><span>' + v.sub + '</span></span>';
   b.addEventListener('click', () => openVideo(v));
   lessonsHost.appendChild(b);
 
@@ -1070,12 +1105,23 @@ slides.forEach((_, i) => {
 });
 document.getElementById('cPrev').addEventListener('click', () => goTo(current() - 1));
 document.getElementById('cNext').addEventListener('click', () => goTo(current() + 1));
+/* keep the track only as tall as the visible slide (mobile: avoids a huge gap) */
+const fitTrack = () => {
+  if (!window.matchMedia('(max-width:820px)').matches){ track.style.height = ''; return; }
+  const cur = slides[current()];
+  if (cur) track.style.height = cur.getBoundingClientRect().height + 'px';
+};
+window.addEventListener('resize', fitTrack);
+window.addEventListener('load', fitTrack);
+setTimeout(fitTrack, 300);
+
 let raf;
 track.addEventListener('scroll', () => {
   cancelAnimationFrame(raf);
   raf = requestAnimationFrame(() => {
     const i = Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
     [...dots.children].forEach((d, n) => d.setAttribute('aria-current', String(n === i)));
+    fitTrack();
   });
 });
 
