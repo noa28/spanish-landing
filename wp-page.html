@@ -321,16 +321,29 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .cred b{display:block; font-family:var(--f-head); font-weight:800; font-size:32px; color:var(--orange); line-height:1}
 #lp .cred span{font-size:14px; color:var(--ink-soft)}
 #lp .carousel{position:relative; max-width:780px; margin-inline:auto}
-#lp .track{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:16px; scrollbar-width:none; padding-bottom:6px}
+#lp .track{display:flex; align-items:flex-start; overflow-x:auto; scroll-snap-type:x mandatory; gap:16px; scrollbar-width:none; padding-bottom:6px}
 #lp .track::-webkit-scrollbar{display:none}
 #lp .slide{
   flex:0 0 100%; scroll-snap-align:center;
   background:var(--white); border-radius:24px; padding:30px 28px; box-shadow:var(--soft);
 }
 #lp .slide .q{font-size:24px; color:var(--teal-soft); font-family:var(--f-head); line-height:1}
-#lp .slide p{font-size:16px; color:var(--ink-soft); line-height:1.62; margin:10px 0}
+#lp .slide p{font-size:16px; color:var(--ink-soft); line-height:1.62; margin:0 0 12px}
+#lp .slide p:last-of-type{margin-bottom:0}
 #lp .slide footer{display:flex; align-items:center; gap:11px; margin-top:16px; font-size:14.5px; color:var(--ink-faint)}
 #lp .slide .av{width:36px; height:36px; border-radius:50%; background:var(--orange-soft); color:var(--orange-dark); display:grid; place-items:center; font-weight:700; font-family:var(--f-head)}
+#lp .arw{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+  width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--white); color:var(--ink); box-shadow:var(--soft);
+  display:none; place-items:center; transition:background .18s, color .18s, transform .18s;
+}
+@media (min-width:820px){#lp .arw{display:grid} }
+#lp .arw:hover{background:var(--ink); color:var(--white); transform:translateY(-50%) scale(1.07)}
+#lp .arw:focus-visible{outline:3px solid var(--orange); outline-offset:3px}
+#lp .arw svg{width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round}
+#lp .arw.prev{inset-inline-end:-56px}
+#lp .arw.next{inset-inline-start:-56px}
 #lp .dots{display:flex; gap:8px; justify-content:center; margin-top:18px}
 #lp .dots button{
   width:9px; height:9px; border-radius:50%; border:none; padding:0; cursor:pointer;
@@ -724,25 +737,37 @@ body{padding-bottom:78px; background:#FFFFFF}
       <div class="track" id="track">
         <figure class="slide">
           <div class="q">”</div>
-          <p>בתוך זמן קצר אלה כבר ממש מדברת ספרדית בסיסית. היא רק בת 11 אבל כבר קיבלה ביטחון ויכולות, ואנחנו רואים את התוצאות פה בחופש בספרד. היא כבר סגורה מבחינתה שספרדית איתך היא אחד החוגים שלה לשנה הבאה.</p>
+          <p>היי לאורה, רציתי להגיד לך תודה רבה על ההשקעה והמקצועיות.</p>
+          <p>בתוך זמן קצר אלה כבר ממש מדברת ספרדית בסיסית. היא רק בת 11 אבל כבר קיבלה ביטחון ויכולות, ואנחנו רואים את התוצאות פה בחופש בספרד.</p>
+          <p>היא כבר סגורה מבחינתה שספרדית איתך היא אחד החוגים שלה לשנה הבאה. נתראה בקרוב!</p>
           <footer><span class="av">א</span><span>אמא של אלה, בת 11</span></footer>
         </figure>
         <figure class="slide">
           <div class="q">”</div>
-          <p>עידן לומד עם לאורה כבר כחודשיים, ובזמן הזה ניכר שיפור משמעותי בידע ובביטחון שלו בשפה. מעבר למקצועיות, היחס האישי והגישה החיובית שלה הופכים את השיעורים לחוויה נעימה, ומעודדים את עידן להתעניין, להשתתף ולהתקדם.</p>
+          <p>אני שמחה להמליץ בחום על לאורה, המורה הפרטית לספרדית של בני עידן.</p>
+          <p>עידן לומד עם לאורה כבר כחודשיים, ובזמן הזה ניכר שיפור משמעותי בידע ובביטחון שלו בשפה. לאורה מקצועית מאוד, סבלנית, נעימה ויודעת להתאים את הלמידה לקצב ולצרכים האישיים של התלמיד.</p>
+          <p>מעבר למקצועיות, היחס האישי והגישה החיובית שלה הופכים את השיעורים לחוויה נעימה, ומעודדים את עידן להתעניין, להשתתף ולהתקדם.</p>
+          <p>אנחנו מאוד מרוצים מהתהליך ומהתוצאות, וממליצים עליה מכל הלב לכל מי שמחפש מורה מצוינת לספרדית.</p>
           <footer><span class="av">ע</span><span>אמא של עידן</span></footer>
         </figure>
         <figure class="slide">
           <div class="q">”</div>
-          <p>מה שמייחד אותה במיוחד הוא היכולת להפוך את הלמידה לחוויה מהנה ומעניינת עבור מתבגר. היא יודעת למצוא בדיוק את האיזון בין אווירה נעימה לבין הצבת גבולות. העובדה שנער בן 14 מתאר בעצמו את המורה שלו כ״מצוינת, סבלנית, מקצועית וכיפית״ אומרת הכול 😊</p>
+          <p>לאורה היא מורה מצוינת, מקצועית וגם נעימה, עם שליטה מצוינת ושוטפת בשפה הספרדית.</p>
+          <p>מעבר לידע ולמקצועיות, מה שמייחד אותה במיוחד הוא היכולת להפוך את הלמידה לחוויה מהנה ומעניינת עבור מתבגר.</p>
+          <p>היא יודעת למצוא בדיוק את האיזון הנכון בין אווירה נעימה וכיפית לבין הצבת גבולות ודרישות — לא קשוחה מדי, אבל בהחלט יודעת לדרוש כשצריך ולגרום לתלמיד להתקדם.</p>
+          <p>לאורה משקיעה בהתאמת השיעורים לבן שלי באופן אישי, ומביאה תכנים מעניינים שמתחברים לתחומי העניין שלו. כתוצאה מכך הוא מגיע לשיעורים ברצון, נהנה מהם ומרגיש שהוא באמת לומד ומתקדם.</p>
+          <p>מבחינתי, העובדה שנער בן 14 מתאר בעצמו את המורה שלו כ״מורה מצוינת, סבלנית, מקצועית וכיפית״ אומרת הכול 😊</p>
           <footer><span class="av">ה</span><span>הורה לנער בן 14</span></footer>
         </figure>
         <figure class="slide">
           <div class="q">”</div>
-          <p>בתי לומדת עם לאורה כבר ארבע שנים ומאוד אוהבת אותה. מורה מקצועית, חרוצה, בעלת ידע נרחב ומעשיר, ועושה זאת תוך אווירה נעימה, מכבדת ומהנה. הבת שלי עברה בגרות בספרדית בהצטיינות ומרגישה מאוד בנוח בשפה.</p>
+          <p>בתי לומדת עם לאורה כבר ארבע שנים ומאוד אוהבת אותה. לאורה היא מורה מקצועית, חרוצה, בעלת ידע נרחב ומעשיר, ועושה זאת תוך אווירה נעימה, מכבדת ומהנה.</p>
+          <p>הבת שלי עברה בגרות בספרדית בהצטיינות ומרגישה מאוד בנוח בספרדית. אני יכול לסכם בזה שלאורה מורה מעולה, וממליץ עליה בחום.</p>
           <footer><span class="av">א</span><span>איתן</span></footer>
         </figure>
       </div>
+      <button class="arw prev" id="cPrev" aria-label="המלצה קודמת"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button class="arw next" id="cNext" aria-label="המלצה הבאה"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <div class="dots" id="dots"></div>
     </div>
   </div>
@@ -1019,13 +1044,22 @@ document.querySelectorAll('.tab').forEach(t =>
 const track = document.getElementById('track');
 const dots = document.getElementById('dots');
 const slides = [...track.children];
+const rtl = getComputedStyle(track).direction === 'rtl';
+const goTo = i => {
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  track.scrollTo({left: track.clientWidth * i * (rtl ? -1 : 1), behavior:'smooth'});
+};
+const current = () => Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
+
 slides.forEach((_, i) => {
   const d = document.createElement('button');
   d.setAttribute('aria-label', 'המלצה ' + (i+1));
   d.setAttribute('aria-current', String(i === 0));
-  d.addEventListener('click', () => track.scrollTo({left: track.clientWidth * i * -1 * (getComputedStyle(track).direction === 'rtl' ? 1 : -1), behavior:'smooth'}));
+  d.addEventListener('click', () => goTo(i));
   dots.appendChild(d);
 });
+document.getElementById('cPrev').addEventListener('click', () => goTo(current() - 1));
+document.getElementById('cNext').addEventListener('click', () => goTo(current() + 1));
 let raf;
 track.addEventListener('scroll', () => {
   cancelAnimationFrame(raf);
