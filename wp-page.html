@@ -249,6 +249,15 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .date b{display:block; font-family:var(--f-head); font-weight:800; font-size:21px; color:var(--teal); font-variant-numeric:tabular-nums}
 #lp .date i{display:block; font-style:normal; font-size:12px; color:var(--ink-faint); margin-top:3px}
 #lp .date .yr{font-size:12.5px; color:var(--ink-faint); font-weight:400}
+#lp .cta-strip{
+  background:var(--white); border-radius:24px; box-shadow:var(--soft);
+  border-top:5px solid var(--orange);
+  max-width:600px; margin:34px auto 0; padding:26px 26px 24px; text-align:center;
+}
+#lp .cta-strip p{
+  font-family:var(--f-head); font-weight:700; line-height:1.45;
+  font-size:clamp(17px,2.2vw,20px); margin-bottom:18px;
+}
 #lp .lessons{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,320px)); justify-content:center}
 #lp .lesson{
   position:relative; border:none; padding:0; cursor:pointer; font:inherit; color:inherit;
@@ -400,7 +409,7 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 #lp .field{display:grid; gap:6px; margin-bottom:15px}
 #lp .field label{font-size:14.5px; font-weight:700}
 #lp .field .hint{font-size:12.5px; color:var(--ink-faint); font-weight:400}
-#lp .field input:invalid:not(:placeholder-shown){border-color:#E0705A}
+#lp .field input:user-invalid{border-color:#E0705A; background:#FFF6F4}
 #lp .field input{
   font:inherit; font-size:16px; padding:14px 16px;
   border:1.5px solid var(--line); border-radius:14px; background:var(--cream); color:var(--ink);
@@ -725,6 +734,11 @@ body{padding-bottom:78px; background:#FFFFFF}
       <div class="date"><b>23/11</b><i>מפגש 7</i></div>
       <div class="date"><b>30/11</b><i>מפגש 8</i></div>
     </div>
+
+    <div class="cta-strip">
+      <p>המחזור נפתח ב־12 באוקטובר.<br>מספר המקומות בקבוצה מוגבל.</p>
+      <a class="btn btn-main" href="#form">אני רוצה לשריין מקום</a>
+    </div>
   </div>
 </section>
 
@@ -899,7 +913,7 @@ body{padding-bottom:78px; background:#FFFFFF}
         <div class="field"><label for="e">אימייל</label><input id="e" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="p">טלפון</label>
           <input id="p" name="phone" type="tel" inputmode="numeric" autocomplete="tel"
-                 pattern="0[0-9]{9}" minlength="10" maxlength="10" placeholder="0501234567" required>
+                 pattern="0[0-9]{9}" minlength="10" maxlength="10" required>
           <small class="hint">10 ספרות, בלי מקפים ובלי רווחים</small>
         </div>
         <label class="consent">
