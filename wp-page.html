@@ -384,6 +384,8 @@ html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 }
 #lp .field{display:grid; gap:6px; margin-bottom:15px}
 #lp .field label{font-size:14.5px; font-weight:700}
+#lp .field .hint{font-size:12.5px; color:var(--ink-faint); font-weight:400}
+#lp .field input:invalid:not(:placeholder-shown){border-color:#E0705A}
 #lp .field input{
   font:inherit; font-size:16px; padding:14px 16px;
   border:1.5px solid var(--line); border-radius:14px; background:var(--cream); color:var(--ink);
@@ -866,7 +868,11 @@ body{padding-bottom:78px; background:#FFFFFF}
       <form action="#" method="post">
         <div class="field"><label for="n">שם מלא</label><input id="n" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="e">אימייל</label><input id="e" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="p">טלפון</label><input id="p" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="p">טלפון</label>
+          <input id="p" name="phone" type="tel" inputmode="numeric" autocomplete="tel"
+                 pattern="0[0-9]{9}" minlength="10" maxlength="10" placeholder="0501234567" required>
+          <small class="hint">10 ספרות, בלי מקפים ובלי רווחים</small>
+        </div>
         <label class="consent">
           <input type="checkbox" name="consent" required>
           <span>אני מאשר/ת את ההרשמה ומסכימ/ה לקבל עדכונים ותוכן שיווקי בהתאם <a href="https://myfluentspanish.com/privacy/" target="_blank" rel="noopener">למדיניות הפרטיות</a>.</span>
@@ -969,6 +975,23 @@ function closeVideo(){
   vframe.innerHTML = '';               /* removing the iframe stops playback */
   document.body.style.overflow = '';
 }
+/* ---- phone field: digits only, exactly 10 ---- */
+const phone = document.getElementById('p');
+if (phone){
+  const check = () => {
+    if (!phone.value) return phone.setCustomValidity('');
+    if (!/^0\d{9}$/.test(phone.value))
+      phone.setCustomValidity('מספר טלפון צריך להיות 10 ספרות ולהתחיל ב-0, בלי מקפים ובלי רווחים');
+    else phone.setCustomValidity('');
+  };
+  phone.addEventListener('input', () => {
+    const clean = phone.value.replace(/\D/g, '').slice(0, 10);   /* מנקה מקפים, רווחים ו-+ */
+    if (clean !== phone.value) phone.value = clean;
+    check();
+  });
+  phone.addEventListener('blur', check);
+}
+
 document.getElementById('vclose').addEventListener('click', closeVideo);
 vmodal.addEventListener('click', e => { if (e.target === vmodal) closeVideo(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && vmodal.classList.contains('on')) closeVideo(); });
