@@ -217,6 +217,14 @@
   display:inline-flex; align-items:center; gap:8px;
   background:var(--orange-soft); color:var(--orange-dark);
   font-weight:700; font-size:14.5px; padding:8px 17px; border-radius:999px; margin-bottom:14px;
+}#lp .cdown.done{display:none}#lp .cdown .cd-cells{display:none; justify-content:center; gap:8px; margin:0 0 16px}#lp .cdown.live .cd-cells{display:flex}#lp .cdown.live .deadline{margin-bottom:12px}#lp .cd-cells>div{
+  background:var(--cream); border-radius:14px; padding:9px 6px 7px;
+  min-width:66px; text-align:center; box-shadow:inset 0 0 0 1px var(--line);
+}#lp .cd-cells b{
+  display:block; font-family:var(--f-head); font-weight:800; font-size:27px;
+  line-height:1; color:var(--ink); font-variant-numeric:tabular-nums;
+}#lp .cd-cells i{font-style:normal; font-size:11.5px; color:var(--ink-faint)}
+@media(max-width:430px){#lp .cd-cells>div{min-width:56px; padding:8px 4px 6px}#lp .cd-cells b{font-size:23px}
 }#lp .price-row{display:flex; align-items:baseline; justify-content:center; gap:14px; flex-wrap:wrap; margin:10px 0 6px}#lp .price-row b{font-family:var(--f-head); font-weight:800; font-size:clamp(44px,9vw,66px); line-height:1}#lp .price-row s{font-size:21px; color:var(--ink-faint)}#lp .price-box .pay{font-size:15.5px; color:var(--ink-soft)}#lp .price-list{list-style:none; padding:0; display:grid; gap:10px; margin:26px auto; max-width:400px; text-align:start}#lp .price-list li{display:flex; gap:10px; font-size:15.5px}#lp .price-list li::before{content:"🎁"; flex:0 0 auto}#lp .faq{max-width:740px; margin-inline:auto; display:grid; gap:11px}#lp details{background:var(--white); border-radius:20px; padding:0 24px; box-shadow:var(--soft)}#lp summary{
   list-style:none; cursor:pointer; padding:20px 0;
   font-family:var(--f-head); font-size:17px; font-weight:700;
@@ -640,7 +648,15 @@
 <section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="price-box">
-      <p class="deadline">⏳ מחיר השקה — עד 30.09.26 בחצות</p>
+      <div class="cdown" data-deadline="2026-09-30T23:59:59+03:00">
+        <p class="deadline">⏳ מחיר השקה — עד 30.09.26 בחצות</p>
+        <div class="cd-cells">
+          <div><b data-cd="d">00</b><i>ימים</i></div>
+          <div><b data-cd="h">00</b><i>שעות</i></div>
+          <div><b data-cd="m">00</b><i>דקות</i></div>
+          <div><b data-cd="s">00</b><i>שניות</i></div>
+        </div>
+      </div>
       <h2 class="h-lg" style="font-size:24px">מה ההשקעה?</h2>
       <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:46ch; margin-inline:auto">תכנית מושקעת, ממוקדת דיבור, <b>ויחידה מסוגה בארץ</b> — שנבנתה במיוחד כדי שהילדים שלכם יתחילו לדבר מהר, בקלות ובביטחון.</p>
       <div class="price-row"><b>990 ₪</b><s>1,500 ₪</s></div>
@@ -906,6 +922,33 @@ track.addEventListener('scroll', () => {
   });
 });
 
+
+/* ספירה לאחור למחיר ההשקה */
+(function(){
+  const box = document.querySelector('.cdown');
+  if (!box) return;
+  const end = new Date(box.dataset.deadline).getTime();
+  if (isNaN(end)) return;                       // תאריך לא תקין - נשארים עם הטקסט הסטטי
+  const label = box.querySelector('.deadline');
+  const cell = {}; box.querySelectorAll('[data-cd]').forEach(el => cell[el.dataset.cd] = el);
+  const pad = n => String(n).padStart(2, '0');
+
+  function tick(){
+    const left = end - Date.now();
+    if (left <= 0){ box.classList.add('done'); clearInterval(timer); return; }
+    const s = Math.floor(left / 1000);
+    cell.d.textContent = Math.floor(s / 86400);
+    cell.h.textContent = pad(Math.floor(s / 3600) % 24);
+    cell.m.textContent = pad(Math.floor(s / 60) % 60);
+    cell.s.textContent = pad(s % 60);
+  }
+  tick();
+  if (!box.classList.contains('done')){
+    label.textContent = '⏳ מחיר השקה מסתיים בעוד';
+    box.classList.add('live');
+  }
+  const timer = setInterval(tick, 1000);
+})();
 
 </script>
 </div>
