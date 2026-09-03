@@ -270,7 +270,11 @@
 }html.js #lp .rv{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.3,1)}html.js #lp .rv.in{opacity:1; transform:none}
 
 @media (prefers-reduced-motion: reduce){#lp{scroll-behavior:auto}#lp *{transition-duration:.01ms !important; animation:none !important}html.js #lp .rv{opacity:1; transform:none}
-}
+}#lp .who-list{display:grid; gap:14px; max-width:70ch; margin:30px auto 0}#lp .who-list li{
+  display:flex; gap:12px; align-items:flex-start; background:var(--white);
+  border-radius:16px; padding:16px 18px; box-shadow:var(--soft); list-style:none;
+  font-size:15.5px; color:var(--ink-soft); line-height:1.6;
+}#lp .who-list li::before{content:"⇐"; color:var(--orange); font-weight:700; font-size:18px; flex:0 0 auto}#lp .who-close{text-align:center; max-width:52ch; margin:26px auto 0; font-size:16px; color:var(--ink)}#lp .testi-shot{max-width:820px; margin:0 auto; border-radius:24px; overflow:hidden; box-shadow:var(--soft-lg)}#lp .testi-shot img{width:100%; display:block}#lp .bonus-book img{width:100px; flex:0 0 auto; border-radius:8px; box-shadow:var(--soft)}
 </style>
 <!-- ============ HERO ============ -->
 <header class="hero">
@@ -286,16 +290,16 @@
     <div>
       <span class="eyebrow">🗣️ קורס דיגיטלי · קצב אישי</span>
       <h1>השיחה הראשונה שלי <span class="hl">בספרדית</span></h1>
-      <p class="lead">המקום שבו מתחילים <b>לדבר ספרדית באמת</b>, בלי <b>שינון אינסופי</b> ובלי <b>דקדוק מסובך</b> &#45; ב־<b>15 דקות ביום</b>.</p>
+      <p class="lead">חולמים לדבר ספרדית, אבל אין לכם זמן להתחיל?</p>
       <div class="trust">
-        <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-laura.webp" alt="לאורה אפשטיין">
         <div>עם <b>לאורה אפשטיין</b> · מורה לספרדית 18 שנה · דוברת 5 שפות</div>
       </div>
     </div>
 
     <div class="hero-art">
       <div class="blob"></div>
-      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/hero-laura2.webp" alt="לאורה אפשטיין, מורה לספרדית">
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-laura.webp" alt="לאורה אפשטיין, מורה לספרדית">
       <div class="hero-badge">
         <b>348₪</b><span>מחיר השקה<br>במקום 697₪</span><a class="btn btn-main badge-cta" href="#form">אני רוצה להתחיל</a>
       </div>
@@ -306,9 +310,9 @@
 <!-- ============ ARGUMENT ============ -->
 <section>
   <div class="shell argument rv">
-    <p>חולמים לדבר ספרדית, אבל אין לכם זמן להתחיל? למדתם מילים, ראיתם סרטונים, אולי אפילו ניסיתם אפליקציות &#45; אבל עדיין לא מצליחים לדבר?</p>
+    <p>למדתם מילים, ראיתם סרטונים, אולי אפילו ניסיתם אפליקציות &#45; אבל עדיין לא מצליחים לדבר?</p>
     <p class="pull">כנראה שפשוט<br>לא לימדו אתכם נכון.<br><span class="hl">וזה בדיוק מה שהולך להשתנות.</span></p>
-    <p>בקורס ״השיחה הראשונה שלי בספרדית״ תתחילו לדבר באמת &#45; בלי לבזבז חודשים, בלי דקדוק מסובך, ובלי לשבור שיניים. גם אם אין לכם זמן או עם מי לתרגל, תדברו ספרדית כבר מהשיעור הראשון, בקצב שמתאים לכם.</p>
+    <p>בקורס ״השיחה הראשונה שלי בספרדית״ &#45; תתחילו לדבר באמת &#45; בלי לבזבז חודשים, בלי דקדוק מסובך, ובלי לשבור שיניים. גם אם אין לכם זמן או עם מי לתרגל, תדברו ספרדית כבר מהשיעור הראשון, בקצב שמתאים לכם.</p>
   </div>
 </section>
 
@@ -332,43 +336,24 @@
   </div>
 </section>
 
-<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
-
-<!-- ============ WHY SPANISH ============ -->
-<section>
-  <div class="shell rv">
-    <div class="section-head center">
-      <span class="eyebrow">🌎 למה דווקא ספרדית</span>
-      <h2 class="h-lg">השפה שאתם כבר פוגשים כל יום</h2>
-      <p class="lead">יותר מ־500 מיליון אנשים מדברים ספרדית. לא שפה שלומדים בשביל מבחן &#45; שפה שנהנים להשתמש בה.</p>
-    </div>
-    <div class="reasons">
-      <div class="reason"><span>✈️</span><b>טיולים</b></div>
-      <div class="reason"><span>⚽</span><b>כדורגל</b></div>
-      <div class="reason"><span>🎧</span><b>מוזיקה</b></div>
-      <div class="reason"><span>🎬</span><b>נטפליקס</b></div>
-      <div class="reason"><span>💼</span><b>עסקים</b></div>
-      <div class="reason"><span>🤝</span><b>אנשים</b></div>
-    </div>
-  </div>
-</section>
-
 <div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ WHY IT WORKS ============ -->
 <section class="bg-sky" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
-      <span class="eyebrow">⏱️ 15 דקות ביום</span>
+      <span class="eyebrow">⏱️ יש לכם 15 דקות ביום?</span>
       <h2 class="h-lg">זה כל מה שצריך</h2>
-      <p class="lead">30 שיעורים קצרים, במשך חודש &#45; וזה מספיק כדי להתחיל לדבר ספרדית באמת.</p>
+      <p class="lead">במקום לגלול באפליקציות וללמוד מילים שגם ככה תשכחו, תשקיעו אותן בלימוד מדויק. כל מה שצריך זה 15 דקות ביום, במשך 30 יום &#45; כדי להתחיל לדבר ספרדית באמת.</p>
     </div>
+    <p style="text-align:center; max-width:60ch; margin:0 auto 30px; font-size:15.5px; color:var(--ink-soft)">בניתי עבורכם תוכנית ממוקדת שמובילה אתכם לדבר ספרדית מהשיעור הראשון. הקורס מבוסס על ניסיון של אלפי שעות הוראה עם קהל ישראלי &#45; והוא נבנה במיוחד בשבילכם: אנשים עסוקים שרוצים לדבר תכלס.</p>
     <div class="cards">
-      <div class="card"><div class="ico o">🐢</div><h3>בקצב שלכם</h3><p>אפשר לעצור, לחזור ולתרגל מתי שנוח &#45; בלי לחץ ובלי זמן קבוע.</p></div>
-      <div class="card"><div class="ico">🗣️</div><h3>מתמקדים בדיבור</h3><p>מההתחלה. לא בשינון פעלים ולא בחוקי דקדוק.</p></div>
-      <div class="card"><div class="ico o">📈</div><h3>שיטה הדרגתית</h3><p>כל שיעור בונה עוד שלב בביטחון וביכולת לדבר.</p></div>
-      <div class="card"><div class="ico">🌍</div><h3>מכל מקום בעולם</h3><p>במחשב, בטלפון, בזמן הפנוי שלכם &#45; גם תוך כדי נסיעה.</p></div>
+      <div class="card"><div class="ico o">🐢</div><h3>לומדים בקצב שלכם</h3><p>אפשר לעצור, לחזור, לתרגל מתי שנוח לכם.</p></div>
+      <div class="card"><div class="ico">🗣️</div><h3>מתמקדים בדיבור מההתחלה</h3><p>לא בלשנן פעלים או לזכור חוקים.</p></div>
+      <div class="card"><div class="ico o">📈</div><h3>שיטה הדרגתית שמובילה לתוצאות</h3><p>כל שיעור בונה שלב נוסף בביטחון וביכולת לדבר.</p></div>
+      <div class="card"><div class="ico">🌍</div><h3>גישה מלאה מכל מקום בעולם</h3><p>במחשב, בטלפון, בזמנכם הפנוי.</p></div>
     </div>
+    <p style="text-align:center; margin-top:30px; font-size:19px; font-family:var(--f-head); font-weight:700; color:var(--ink)">התוצאה? אתם מתחילים לדבר. בקלות. באמת.</p>
   </div>
 </section>
 
@@ -382,10 +367,10 @@
       <h2 class="h-lg">ארבעה דברים, מיד עם ההרשמה</h2>
     </div>
     <div class="steps">
-      <div class="step"><div><h3>גישה מיידית לכל 30 השיעורים</h3><p>שיעורים מוקלטים, ברורים ואינטואיטיביים &#45; לצפייה חוזרת בכל זמן, וגישה לתמיד.</p></div></div>
-      <div class="step"><div><h3>חוברת עבודה דיגיטלית</h3><p>57 עמודים צבעוניים עם תרגולים, משימות ודוגמאות. להורדה, לשמירה ולהדפסה.</p></div></div>
-      <div class="step"><div><h3>קבוצת וואטסאפ תומכת</h3><p>תוכן קצר לתרגול, שאלות ומענה אישי ממני לאורך כל הדרך.</p></div></div>
-      <div class="step" style="grid-column:1/-1"><div><h3>שיעורים בקצב שמתאים לכם</h3><p>גישה מלאה ממחשב או מהטלפון &#45; לומדים מתי שנוח, בלי להתאים את עצמכם למערכת.</p></div></div>
+      <div class="step"><div><h3>30 שיעורים מוקלטים</h3><p>לצפייה מכל מקום ובכל זמן.</p></div></div>
+      <div class="step"><div><h3>חוברת לימוד ותרגול צבעונית</h3><p>57 עמודים להדפסה או עבודה דיגיטלית.</p></div></div>
+      <div class="step"><div><h3>גישה מלאה ממחשב או נייד</h3><p>אתם לומדים בזמן שלכם, בקצב שלכם.</p></div></div>
+      <div class="step"><div><h3>שיעורים ברורים ואינטואיטיביים</h3><p>צעד אחר צעד אל עבר שיחה שוטפת.</p></div></div>
     </div>
   </div>
 </section>
@@ -406,24 +391,24 @@
     </div>
     <div class="panel on" id="p1" role="tabpanel">
       <h3>השיחה הראשונה שלי בספרדית!</h3>
-      <p><b>בחלק הראשון של הקורס נלמד</b> איך לנהל שיחת היכרות פשוטה בזרימה &#45; לשאול את השאלות הנכונות ולענות כששואלים אותנו. נלמד איך לפנות לאנשים חדשים, להכיר אותם ולהתחבר אליהם, כולל משימה ותרגול דיבור. במקום ללמוד אינספור מילים ופעלים, נכיר את השיטה שחוסכת את כל העומס הזה ועדיין מאפשרת לדבר. ובעיקר: איך לצבור ביטחון כבר תוך כדי השיחה, ולא לפחד ליזום.</p>
+      <p><b>בחלק הראשון של הקורס נלמד</b> איך לנהל שיחת היכרות פשוטה בקלות ובזרימה. איך לשאול את השאלות הנכונות ואיך לענות כששואלים אותנו. נלמד איך לפנות לאנשים חדשים, להכיר אותם ולהתחבר אליהם כולל משימה ותרגול דיבור. במקום ללמוד אינספור מילים ופעלים (אני יודעת שדקדוק זה מבאס), נכיר את השיטה שתחסוך לכם כל העומס הזה ועדיין תאפשר לכם לדבר. בנוסף &#45; כדי לדבר אנחנו צריכים להרגיש ביטחון, נלמד איך לצבור את הביטחון שלנו כבר במהלך השיחה, ולא לפחד ליזום שיחה עם כל אחד.</p>
     </div>
     <div class="panel" id="p2" role="tabpanel">
       <h3>לדבר בלי לתרגם</h3>
-      <p><b>בחלק השני של הקורס נלמד</b> את השיטה שמפסיקה את התרגום בראש מעברית לספרדית. נלמד את הפעלים ההכרחיים לכל שיחה, נרחיב את אוצר המילים, ונכיר את הטעויות הנפוצות ואת קיצורי הדרך. כשמדובר בשפה, יש לנו חשש לעשות טעויות. בשלב הזה נלמד איך לצאת מ״פדיחות״, ולא לפחד לטעות &#45; איך למנף כל טעות לשיפור השפה.</p>
+      <p><b>בחלק השני של הקורס נלמד</b> את השיטה שתעזור לכם להפסיק לתרגם בראש מעברית לספרדית, ולהתחיל לדבר ספרדית. נלמד מספר פעלים הכרחיים לכל שיחה ונרחיב את אוצר המילים כדי שתוכלו לנסח אין־סוף משפטים שימושיים בשטח. נכיר את הטעויות הנפוצות וניישם קיצורי דרך + תרגול דיבור. כשמדובר בשפה, יש לנו חשש לעשות טעויות. בשלב הזה אני רוצה שתלמדו איך לצאת מ״פדיחות״, ולא לפחד לטעות. אנחנו הולכים ללמוד איך למנף את הטעויות לשיפור השפה.</p>
     </div>
     <div class="panel" id="p3" role="tabpanel">
       <h3>לנהל שיחה אמיתית</h3>
-      <p><b>בחלק השלישי של הקורס נלמד</b> לנסח שאלות פתוחות וסגורות, כל מילות השאלה, ומילות מפתח שמשדרגות את השיחה. נרחיב את אוצר המילים דרך שאלות ותשובות, עם תרגול דיבור בכל שלב &#45; עד שיחה שזורמת מעצמה.</p>
+      <p><b>בחלק השלישי של הקורס נלמד</b> לנסח שאלות פתוחות וסגורות, ונכיר את כל מילות השאלה. נלמד מילות מפתח שישדרגו את השיחה שלכם וטיפים להתנהלות בהמשך הדרך. נרחיב את אוצר המילים באמצעות שאלות ותשובות + תרגול דיבור.</p>
     </div>
 
     <div class="extra">
       <h3>ומה עוד נלמד?</h3>
       <ul>
-        <li>איך להמשיך לדבר גם כש״נתקעים״ &#45; טריקים פשוטים שמוציאים אתכם מהשתיקה</li>
-        <li>איך לצבור ביטחון גם כשחסרות מילים &#45; ולדבר כבר מהיום הראשון</li>
-        <li>איך לטעות בלי פחד &#45; ולהפוך כל טעות לשיפור</li>
-        <li>בסוף כל שיעור: משימה קצרה ופידבק אישי ממני, כדי שלא רק תבינו &#45; אלא באמת תיישמו</li>
+        <li>איך להמשיך לדבר גם כש״נתקעים״ &#45; בעזרת טריקים פשוטים שמוציאים אתכם מהשתיקה</li>
+        <li>איך לצבור ביטחון, גם כשחסרות לכם מילים &#45; ולדבר מהיום הראשון</li>
+        <li>איך לטעות בלי פחד &#45; וללמוד מכל טעות להשתפר</li>
+        <li>ובסוף כל שיעור? משימה קצרה + פידבק אישי מלא ממני &#45; כדי שלא רק תבינו, אלא גם תצליחו ליישם</li>
       </ul>
     </div>
   </div>
@@ -436,14 +421,18 @@
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">🎯 למי זה מתאים</span>
-      <h2 class="h-lg">הקורס נבנה בדיוק בשבילכם</h2>
+      <h2 class="h-lg">האם זה בשבילכם?</h2>
     </div>
-    <div class="checks">
-      <div class="check"><span class="mark">✓</span><div><b>מתחילים לגמרי, או כבר תקועים</b><p>לא משנה מאיפה אתם מתחילים &#45; הקורס בנוי מהבסיס, צעד אחר צעד.</p></div></div>
-      <div class="check"><span class="mark">✓</span><div><b>יודעים מילים אבל לא יודעים לדבר</b><p>הזמן להפוך את מה שאתם כבר יודעים למשפטים אמיתיים.</p></div></div>
-      <div class="check"><span class="mark">✓</span><div><b>יש לכם רק 15 דקות ביום</b><p>זה כל מה שצריך &#45; בלי לפנות זמן מיוחד ובלי לצאת מהבית.</p></div></div>
-      <div class="check"><span class="mark">✓</span><div><b>רוצים להתחבר לעולם דובר הספרדית</b><p>מתכננים טיול, או שיש לכם משפחה וחברים דוברי ספרדית &#45; ורוצים סוף־סוף להבין ולהתחבר.</p></div></div>
-    </div>
+    <ul class="who-list">
+      <li>לכם, שמפנטזים כבר שנים לדבר ספרדית &#45; אבל זה תמיד נדחה ל״יום אחד״…</li>
+      <li>לכם, אנשים בלי ידע קודם, וגם למי שכבר התחיל ללמוד ומרגיש תקוע.</li>
+      <li>לכם, אנשים שיודעים הרבה מילים אבל רוצים להפוך אותן למשפטים אמיתיים ולהתחיל לדבר.</li>
+      <li>לכם, שהתחלתם ללמוד &#45; אבל נתקעתם בשינון ולא הצלחתם לחבר משפט פשוט.</li>
+      <li>לכם, שיש לכם משפחה או חברים דוברי ספרדית &#45; ואתם כל כך רוצים להבין ולהתחבר.</li>
+      <li>לכם, שמתכננים לטייל, ורוצים סוף־סוף להרגיש שאתם באמת מתקשרים.</li>
+      <li>ולכם, שפשוט מרגישים בפנים שזה אפשרי &#45; אם רק מישהו היה מסביר את זה בצורה ברורה, בלי חוקים מסובכים, בלי דקדוק מבלבל, ועם הרבה אמונה בדרך.</li>
+    </ul>
+    <p class="who-close">אם זה אתם &#45; הקורס הזה נבנה בדיוק בשבילכם. כדי שתוכלו לדבר בביטחון, בשקט פנימי, ובשמחה.</p>
   </div>
 </section>
 
@@ -454,7 +443,7 @@
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">🎬 הצצה קטנה לשיעורים</span>
-      <h2 class="h-lg">מה מחכה לכם בקורס</h2>
+      <h2 class="h-lg">מה מחכה לכם בקורס הדיגיטלי</h2>
       <p class="lead">ככה נראה שיעור אמיתי מתוך הקורס. לחצו כדי לצפות.</p>
     </div>
     <div class="lessons" id="lessons"></div>
@@ -463,87 +452,75 @@
 
 <div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
-<!-- ============ TESTIMONIALS ============ -->
+<!-- ============ WHEN ============ -->
 <section class="bg-sky" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
-      <span class="eyebrow">💬 מה מספרים התלמידים</span>
-      <h2 class="h-lg">לא רק אני אומרת את זה</h2>
+      <span class="eyebrow">📅 מתי מתחילים</span>
+      <h2 class="h-lg">מיד לאחר ההרשמה!</h2>
+      <p class="lead">ברגע שנרשמים &#45; מקבלים גישה מלאה לקורס, והכל נשאר שלכם לתמיד. לא צריך לחכות, לא צריך לצאת מהבית, ולא צריך להתאים את עצמכם למערכת.</p>
     </div>
-    <div class="carousel">
-      <div class="track" id="track">
-        <blockquote class="slide">
-          <span class="q">"</span>
-          <p>לאורה תודה רבה על הנגשת הספרדית בעברית. זה עזר לי להבין איפה שהתקשתי. Mucho gracias</p>
-          <footer><span class="av">א</span><span>אירים, קורטני ספרדית</span></footer>
-        </blockquote>
-        <blockquote class="slide">
-          <span class="q">"</span>
-          <p>תודה לאורה! היה שיעור יעיל 🙏.. כמה שניסיתי ללמוד עם אפליקציות וספרים לא הרגשתי שלמדתי והפנמתי כמו בשיעור אחד 🤙</p>
-          <footer><span class="av">ע</span><span>עינת, קורס זום</span></footer>
-        </blockquote>
-        <blockquote class="slide">
-          <span class="q">"</span>
-          <p>בוקר טוב, הסרטונים ששלחת מצוינים &#45; זו שיטה מצוינת ללמוד. זה עזר לי אתמול, היה מצוין. תודה ענקית, אני שמחה בשיעורים.</p>
-          <footer><span class="av">ב</span><span>בתיה, קורס זום</span></footer>
-        </blockquote>
-        <blockquote class="slide">
-          <span class="q">"</span>
-          <p>לאורה, את ממש מורה מדהימה. יכולות ההוראה, התמיכה, הסבלנות וההשקעה בתלמידים ראויים לציון. וגם השיטה שלך נהדרת. אני כבר מדברת שיחות ראשונות אמיתיות עם אנשים שאני לא מכירה &#45; בדיוק השיחות שתרגלנו איתך. Muchas gracias</p>
-          <footer><span class="av">ז</span><span>זיוה, ספרדית לאנשים עסוקים</span></footer>
-        </blockquote>
-        <blockquote class="slide">
-          <span class="q">"</span>
-          <p>שיטות הלימוד שלך שונות, גורמות לי לזכור יותר את הפעלים. את מביאה גישה חדשה ורוח חדשה בלימוד השפה. גם הספר שלך קריא וברור ותמיד נותן חשק לפתוח אותו. נהניתי מכל דקה בזום! נראה לי שבקרוב אנשים רבים בישראל בזכותך יפטפטו בספרדית. יישר כוחך!</p>
-          <footer><span class="av">ר</span><span>רות, ספרדית</span></footer>
-        </blockquote>
-        <blockquote class="slide">
-          <span class="q">"</span>
-          <p>היי לאורה, חשבתי לעדכן אותך &#45; משהו אחרי השיעור אתמול פתאום הסתדר לי, ואני ממש כותב, קורא ואפילו מדבר כמעט בלי טרנסליט (עוד לא מושלם, אבל לאט לאט) ❤️</p>
-          <footer><span class="av">ת</span><span>תלמיד בקורס</span></footer>
-        </blockquote>
-      </div>
-      <button class="arw prev" id="cPrev" aria-label="המלצה קודמת"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-      <button class="arw next" id="cNext" aria-label="המלצה הבאה"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <div class="dots" id="dots"></div>
+    <div class="cards">
+      <div class="card"><div class="ico o">🚗</div><p>אפשר ללמוד מכל מקום ובכל זמן &#45; גם תוך כדי נהיגה, הליכה או בישולים.</p></div>
+      <div class="card"><div class="ico">🔁</div><p>עוצרים, חוזרים, צופים שוב &#45; בקצב שנכון לכם.</p></div>
+      <div class="card"><div class="ico o">📝</div><p>תרגולים ומשימות עם תמיכה אישית בקבוצת וואטסאפ.</p></div>
+      <div class="card"><div class="ico">🗓️</div><p>ואתם קובעים מתי לומדים &#45; בלי פקקים, בלי תירוצים.</p></div>
     </div>
   </div>
 </section>
 
 <div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
 
-<!-- ============ BONUSES ============ -->
+<!-- ============ TESTIMONIALS ============ -->
 <section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
-      <span class="eyebrow">🎁 בונוסים משלימים</span>
-      <h2 class="h-lg">מה עוד נכנס לחבילה</h2>
+      <span class="eyebrow">💬 מה מספרים התלמידים</span>
+      <h2 class="h-lg">מה מספרים התלמידים שהשתתפו בקורס</h2>
     </div>
-    <div class="cards">
-      <div class="card"><div class="ico o">📘</div><h3>ספר הקורס להורדה</h3><p>57 עמודים צבעוניים עם תרגולים, משימות ודוגמאות.</p></div>
-      <div class="card"><div class="ico">💬</div><h3>קבוצת וואטסאפ תומכת</h3><p>מענה אישי, התייעצויות ומשוב על משימות.</p></div>
-      <div class="card"><div class="ico o">📝</div><h3>תרגול אחרי כל שיעור</h3><p>כדי לוודא שאתם לא רק מבינים &#45; אלא באמת שולטים.</p></div>
-      <div class="card" style="display:flex; gap:16px; align-items:center">
-        <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/abc.webp" alt="" style="width:74px; flex:0 0 auto">
-        <div><h3>שיעור ABC למתחילים</h3><p>קריאה, כתיבה והגייה + לוח אותיות להדפסה.</p></div>
-      </div>
-    </div>
+    <figure class="testi-shot">
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-testimonials.webp" alt="הודעות תודה אמיתיות מתלמידים שהשתתפו בקורס של לאורה אפשטיין">
+    </figure>
   </div>
 </section>
 
 <div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
-<!-- ============ TEACHER ============ -->
+<!-- ============ BONUSES ============ -->
 <section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🎁 בונוסים</span>
+      <h2 class="h-lg">מה עוד נכנס לחבילה</h2>
+    </div>
+    <div class="cards">
+      <div class="card bonus-book" style="display:flex; gap:16px; align-items:center">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-book.webp" alt="ספר הקורס &#45; השיחה הראשונה שלי בספרדית">
+        <div><h3>ספר הקורס להורדה</h3><p>57 עמודים צבעוניים עם תרגולים, משימות ודוגמאות שיעזרו לכם לבנות ביטחון ולשדרג את אוצר המילים.</p></div>
+      </div>
+      <div class="card"><div class="ico o">💬</div><h3>קבוצת וואטסאפ תומכת</h3><p>מענה אישי, התייעצויות, משוב על משימות וחיבור לקהילה לומדת בדיוק כמוכם.</p></div>
+      <div class="card"><div class="ico">📝</div><h3>תרגול ומשימות אחרי כל שיעור</h3><p>כדי לוודא שאתם לא רק מבינים &#45; אלא באמת שולטים בחומר.</p></div>
+      <div class="card" style="display:flex; gap:16px; align-items:center">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-abc.webp" alt="" style="width:74px; flex:0 0 auto">
+        <div><h3>שיעור ABC מיוחד למתחילים</h3><p>הסבר מלא על הקריאה, הכתיבה וההגייה הנכונה בספרדית + לוח אותיות להדפסה.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ TEACHER ============ -->
+<section class="bg-cream" style="padding-top:34px">
   <div class="shell teacher rv">
     <div class="teacher-photo">
       <div class="ring"></div>
-      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-laura.webp" alt="לאורה אפשטיין">
     </div>
     <div>
       <span class="eyebrow">!Hola</span>
-      <blockquote>״המטרה שלי ב״השיחה הראשונה שלי בספרדית״ היא לא רק ללמד ספרדית &#45; אלא לעזור לכם לפתח ביטחון, ליהנות מהדרך ולהרגיש שאתם <span class="hl">מסוגלים להצליח</span>.״</blockquote>
-      <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת כיצד לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם במהירות את החומר הנלמד, ולשמר את התוצאות לאורך זמן.</p>
+      <h2 class="h-lg" style="margin-bottom:14px">מי אני ולמה ללמוד ממני</h2>
+      <p>שמי לאורה אפשטיין, ואני מורה לספרדית מזה 18 שנה. אני מלמדת כיצד לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם במהירות את החומר הנלמד, ולשמר את התוצאות לאורך זמן.</p>
       <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות (באופן אישי אני דוברת חמש שפות), ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם צרכים שונים של מאות תלמידים שלימדתי בשנים אלה.</p>
       <p class="invite">אז רוצים להתחיל לדבר, ובקלות?<br>הגשמת החלום שלכם &#45; במרחק קליק אחד!<br>אני אתכם במסע.</p>
       <p class="sig">Laura Epstein</p>
@@ -556,17 +533,6 @@
   </div>
 </section>
 
-<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
-
-<!-- ============ PERSONAL NOTE ============ -->
-<section class="bg-cream" style="padding-top:34px">
-  <div class="shell argument rv">
-    <p>רוב האנשים חושבים שצריך ללמוד המון לפני שמתחילים לדבר. בקורס הזה אתם לא מחכים לשליטה ״מושלמת״.</p>
-    <p class="pull">אתם מתחילים לדבר -<br>גם אם טועים.<br><span class="hl">ככה בדיוק לומדים.</span></p>
-    <p>מותר לטעות, מותר לתקן. אני מזמינה אתכם לקפוץ ישר למים &#45; אני אהיה שם איתכם, עם מצופים (וגם עם מצילה).</p>
-  </div>
-</section>
-
 <div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ PRICE ============ -->
@@ -574,14 +540,14 @@
   <div class="shell rv">
     <div class="price-box">
       <p class="deadline">⏳ מחיר השקה מיוחד לזמן מוגבל</p>
-      <h2 class="h-lg" style="font-size:24px">מה ההשקעה?</h2>
-      <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:46ch; margin-inline:auto">קורס דיגיטלי מושקע, ממוקד דיבור, <b>ויחיד מסוגו בארץ</b> &#45; שנבנה במיוחד כדי שתתחילו לדבר מהר, בקלות ובביטחון.</p>
+      <h2 class="h-lg" style="font-size:22px">כמה הייתם משקיעים כדי להגשים את החלום שלכם ולדבר ספרדית בביטחון?</h2>
+      <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:46ch; margin-inline:auto">״השיחה הראשונה שלי בספרדית״ הוא קורס מושקע, ממוקד דיבור, <b>ויחיד מסוגו בארץ</b> &#45; שנבנה במיוחד כדי שתתחילו לדבר מהר, בקלות, ובביטחון.</p>
       <div class="price-row"><b>348 ₪</b><s>697 ₪</s></div>
       <p class="pay">כולל מע״מ · ניתן לחלק עד 3 תשלומים נוחים של 116 ₪</p>
       <ul class="price-list">
-        <li>גישה מלאה לכל 30 השיעורים, לתמיד</li>
-        <li>חוברת עבודה וקבוצת וואטסאפ תומכת</li>
-        <li>כל הבונוסים והליווי האישי</li>
+        <li>גישה מלאה לכל התכנים, לתמיד</li>
+        <li>כל הבונוסים, הליווי והחוברת</li>
+        <li>המחיר המוזל תקף לזמן מוגבל בלבד</li>
       </ul>
       <a class="btn btn-main" href="#form">אני רוצה להתחיל לדבר</a>
     </div>
@@ -590,8 +556,20 @@
 
 <div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
-<!-- ============ FAQ ============ -->
+<!-- ============ PERSONAL NOTE ============ -->
 <section class="bg-sky" style="padding-top:34px">
+  <div class="shell argument rv">
+    <span class="eyebrow" style="margin-bottom:18px">בנימה אישית</span>
+    <p>כשתרגישו את הביטחון לדבר &#45; תדעו שזה היה שווה כל שקל. רוב האנשים חושבים שצריך ללמוד המון לפני שמתחילים לדבר. בקורס הזה אתם לא מחכים לשליטה ״מושלמת״.</p>
+    <p class="pull">אתם מתחילים לדבר -<br>גם אם טועים.<br><span class="hl">גם אם לא יודעים הכל.</span></p>
+    <p>מותר לטעות, מותר לתקן &#45; ככה לומדים לדבר. אני מזמינה אתכם לקפוץ ישר למים &#45; אני אהיה שם עם מצופים (וגם עם מצילה). כל מה שצריך זו שיטה מדויקת, פשוטה, שעובדת &#45; וזה בדיוק מה שתקבלו כאן.</p>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ FAQ ============ -->
+<section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">❓ שאלות נפוצות</span>
@@ -604,41 +582,41 @@
       </details>
       <details>
         <summary>אין לי זמן עכשיו, כדאי לחכות?</summary>
-        <p>דווקא לא! הקורס בנוי כך שאפשר ללמוד בקצב אישי ובגמישות מלאה. כל מה שצריך זה רבע שעה ביום &#45; כי זה קורס שמוביל לתכלס, לא לשינון אינסופי.</p>
+        <p>דווקא לא! הקורס בנוי כך שאפשר ללמוד בקצב אישי ובגמישות מלאה. כל מה שאתם צריכים זה רבע שעה ביום! &#45; כי זה קורס שמוביל לתכלס, לא לשינון אינסופי.</p>
       </details>
       <details>
         <summary>אבל שפות צריך לתרגל…</summary>
-        <p>נכון! בדיוק בגלל זה תמצאו בקורס משימות קצרות, תרגולים חכמים והכוונה צעד־צעד. בנוסף, אתם לא לבד &#45; יש מעל 600 מיליון דוברי ספרדית בעולם, ועוד תלמידים בקבוצה שרק מחכים לתרגל איתכם.</p>
+        <p>נכון! בדיוק בגלל זה תמצאו בקורס משימות קצרות, תרגולים חכמים והכוונה צעד־צעד. בנוסף, אתם לא לבד &#45; יש מעל 600 מיליון דוברי ספרדית בעולם (ועוד עשרות אלפי לומדים שרק מחכים לתרגל איתכם).</p>
       </details>
       <details>
-        <summary>קשה לי להתרכז מול מסך. זה יתאים?</summary>
-        <p>חד־משמעית כן, וזאת בדיוק הסיבה שבניתי את הקורס ככה: 30 שיעורים קצרים, ברורים ומדורגים, בקצב לימוד נעים ונוח. כל שיעור מקדם אתכם צעד אחד &#45; בלי הצפה, ועם הרבה עידוד.</p>
+        <summary>קשה לי להתרכז מול מסך. זה יתאים לי?</summary>
+        <p>חד־משמעית כן. הקורס בנוי בדיוק לאנשים כמוך &#45; עם שיעורים קצרים, ברורים, מדורגים, וקצב לימוד נעים ונוח. כל שיעור מתקדם בכם צעד אחד קדימה &#45; בלי הצפה, ועם הרבה עידוד.</p>
       </details>
       <details>
-        <summary>אין לי כרטיס אשראי. אפשר לשלם אחרת?</summary>
-        <p>כן. אפשר גם בביט או בפייבוקס למספר 058-5013849. חשוב לציין בהעברה שם מלא, מייל ומספר טלפון.</p>
+        <summary>אין לי כרטיס אשראי. אפשר לשלם בדרך אחרת?</summary>
+        <p>כן! אפשר גם דרך ביט או פייבוקס למספר 058-5013849 (רק לא לשכוח לציין שם, מייל ומספר טלפון).</p>
       </details>
     </div>
   </div>
 </section>
 
-<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ FINAL + FORM ============ -->
-<section class="bg-cream" id="signup" style="padding-top:34px">
+<section id="signup" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center" style="max-width:54ch">
       <span class="eyebrow">🌅 ורגע לפני סיום</span>
-      <h2 class="h-lg">מוכנים להתחיל לדבר ספרדית, באמת?</h2>
+      <h2 class="h-lg">מוכנים להתחיל לדבר ספרדית &#45; באמת?</h2>
       <p class="lead">הקורס ״השיחה הראשונה שלי בספרדית״ מחכה לכם ממש עכשיו. זה פשוט, זה נעים, וזה שלכם לתמיד.</p>
     </div>
 
     <div class="after-signup">
-      <b>📬 מיד אחרי ההרשמה תקבלו</b>
+      <b>📬 כל מה שצריך לעשות</b>
       <ul>
-        <li><span>גישה מיידית לכל 30 שיעורי הקורס</span></li>
-        <li><span>חוברת הקורס להורדה</span></li>
-        <li><span>הצטרפות לקבוצת התלמידים</span></li>
+        <li><span>מלאו את הפרטים בטופס</span></li>
+        <li><span>עברו לעמוד התשלום המאובטח</span></li>
+        <li><span>ותוך דקות תקבלו גישה מלאה למייל</span></li>
         <li><span>והכי חשוב &#45; את ההתחלה החדשה שלכם <span class="nb">בספרדית&nbsp;😊</span></span></li>
       </ul>
     </div>
@@ -649,7 +627,7 @@
     </div>
 
     <p style="text-align:center; font-size:14.5px; color:var(--ink-soft); margin-top:30px">
-      יש לכם שאלה או רוצים שיחת התאמה לפני ההרשמה? מוזמנים לפנות ישירות אליי. לאורה 🌸
+      שאלות? רוצים להתייעץ לפני ההרשמה? אני כאן בשבילכם! אפשר לשאול, לבדוק, להרגיש בטוחים &#45; ולקבל מענה אישי ממני, לאורה 🌸
     </p>
     <div class="contact" style="margin-top:14px">
       <a href="https://wa.me/972585013849"><span>📱</span><span class="c-txt"><b>וואטסאפ / טלפון</b><i>058-5013849</i></span></a>
