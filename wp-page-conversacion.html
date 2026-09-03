@@ -1,0 +1,882 @@
+<!-- wp:html -->
+<div id="lp">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Rubik:wght@500;700;800&display=swap">
+<style>#lp{
+  --white:#FFFFFF;
+  --cream:#FFF9F2;
+  --sky:#F1FAFB;
+  --orange:#F79320;
+  --orange-dark:#DD7A08;
+  --orange-soft:#FFEEDA;
+  --teal:#1EA6B6;
+  --teal-soft:#E1F4F7;
+  --ink:#1C3A50;
+  --ink-soft:#5E7789;
+  --ink-faint:#93A6B3;
+  --line:#EBEFF2;
+
+  --f-head:"Rubik", "Segoe UI", sans-serif;
+  --f-body:"Assistant", "Segoe UI", sans-serif;
+
+  --shell:min(1100px, 100% - 36px);
+  --soft:0 18px 40px -24px rgba(28,58,80,.28);
+  --soft-lg:0 30px 60px -30px rgba(28,58,80,.34);
+}#lp *{box-sizing:border-box}#lp{scroll-behavior:smooth; -webkit-text-size-adjust:100%}#lp{
+  direction:rtl; margin:0;
+  background:var(--white); color:var(--ink);
+  font-family:var(--f-body); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:78px;
+}
+@media (min-width:780px){#lp{padding-bottom:0} }#lp h1, #lp h2, #lp h3{font-family:var(--f-head); font-weight:800; line-height:1.18; margin:0; text-wrap:balance; letter-spacing:-.01em}#lp p{margin:0}#lp a{color:inherit}#lp img{max-width:100%; display:block}#lp .shell{width:var(--shell); margin-inline:auto}#lp section{padding:44px 0; position:relative}
+@media (min-width:780px){#lp section{padding:58px 0} }#lp .bg-cream{background:var(--cream)}#lp .bg-sky{background:var(--sky)}#lp .wave{display:block; width:100%; height:52px}#lp .wave path{fill:currentColor}#lp .eyebrow{
+  display:inline-flex; align-items:center; gap:7px;
+  font-family:var(--f-head); font-size:13px; font-weight:700; letter-spacing:.06em;
+  color:var(--orange-dark); background:var(--orange-soft);
+  padding:6px 14px; border-radius:999px; margin-bottom:16px;
+}#lp .h-xl{font-size:clamp(31px,6vw,54px)}#lp .h-lg{font-size:clamp(26px,4.2vw,38px)}#lp .lead{font-size:clamp(16.5px,2vw,19.5px); color:var(--ink-soft); max-width:62ch}#lp .section-head{margin-bottom:30px; max-width:64ch}#lp .section-head.center{margin-inline:auto; text-align:center}#lp .section-head.center .lead{margin-inline:auto}#lp .section-head p{margin-top:14px}#lp .hl{color:var(--orange)}#lp .hl-t{color:var(--teal)}#lp .btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  font-family:var(--f-head); font-weight:700; font-size:17.5px;
+  padding:16px 32px; border-radius:999px; border:none; cursor:pointer;
+  text-decoration:none; transition:transform .2s cubic-bezier(.3,1.3,.5,1), box-shadow .2s, background .2s;
+}#lp .btn-main{background:var(--orange); color:var(--white); box-shadow:0 10px 26px -10px rgba(247,147,32,.85)}#lp .btn-main:hover{background:var(--orange-dark); transform:translateY(-3px); box-shadow:0 16px 30px -12px rgba(247,147,32,.9)}#lp .btn-soft{background:var(--white); color:var(--teal); box-shadow:var(--soft); border:1.5px solid var(--teal-soft)}#lp .btn-soft:hover{transform:translateY(-3px); border-color:var(--teal)}#lp .btn:focus-visible{outline:3px solid var(--teal); outline-offset:3px}#lp .doodle{position:absolute; pointer-events:none; color:var(--teal); opacity:.5}#lp .doodle.o{color:var(--orange)}#lp .hero{padding:38px 0 20px; position:relative; overflow:hidden}
+@media (min-width:880px){#lp .hero{padding:58px 0 40px} }#lp .hero-grid{display:grid; gap:30px; align-items:center}
+@media (min-width:880px){#lp .hero-grid{grid-template-columns:1.14fr .86fr; gap:44px} }#lp .hero h1{font-size:clamp(32px,6.4vw,54px)}#lp .hero .lead{margin-top:18px}#lp .hero .lead b{color:var(--teal); font-weight:700}#lp .hero-cta{display:flex; flex-wrap:wrap; gap:13px; margin-top:28px}#lp .trust{display:flex; align-items:center; gap:12px; margin-top:24px; font-size:15px; color:var(--ink-soft)}#lp .trust img{width:44px; height:44px; border-radius:50%; object-fit:cover; box-shadow:var(--soft)}#lp .trust b{color:var(--ink)}#lp .hero-art{position:relative}#lp .hero-art .blob{
+  position:absolute; inset:6% -6% -2% 4%;
+  background:linear-gradient(150deg, var(--teal-soft), var(--orange-soft));
+  border-radius:46% 54% 52% 48% / 56% 44% 56% 44%;
+}#lp .hero-art img{position:relative; border-radius:26px; box-shadow:var(--soft-lg); width:100%}#lp .hero-badge{
+  position:absolute; z-index:2; bottom:14px; inset-inline-start:-6px;
+  background:var(--white); border-radius:18px; padding:12px 17px;
+  box-shadow:var(--soft-lg); display:flex; align-items:center; gap:11px;
+}#lp .hero-badge b{font-family:var(--f-head); font-size:26px; color:var(--orange); line-height:1}#lp .hero-badge span{font-size:13px; color:var(--ink-soft); line-height:1.3}#lp .badge-cta{padding:11px 18px; font-size:15px; white-space:nowrap}
+@media (max-width:430px){#lp .hero-badge{gap:9px; padding:10px 12px}#lp .hero-badge b{font-size:22px}#lp .badge-cta{padding:9px 13px; font-size:13.5px}
+}#lp .cards{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(238px,1fr))}#lp .card{
+  background:var(--white); border-radius:22px; padding:26px 24px;
+  box-shadow:var(--soft); transition:transform .22s, box-shadow .22s;
+}#lp .card:hover{transform:translateY(-5px); box-shadow:var(--soft-lg)}#lp .card .ico{
+  width:48px; height:48px; border-radius:15px; display:grid; place-items:center;
+  font-size:23px; background:var(--teal-soft); margin-bottom:15px;
+}#lp .card .ico.o{background:var(--orange-soft)}#lp .card h3{font-size:19px; margin-bottom:7px}#lp .card p{font-size:15.5px; color:var(--ink-soft); line-height:1.55}#lp .argument{max-width:60ch; margin-inline:auto; text-align:center}#lp .argument p{font-size:clamp(17.5px,2.2vw,21px); color:var(--ink-soft); margin-bottom:18px}#lp .pull{
+  font-family:var(--f-head); font-weight:800;
+  font-size:clamp(24px,3.6vw,34px); color:var(--ink) !important;
+  line-height:1.28; margin:28px 0 !important;
+}#lp .reasons{display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:13px}#lp .reason{
+  background:var(--white); border-radius:20px; padding:22px 10px; text-align:center;
+  box-shadow:var(--soft); transition:transform .22s;
+}#lp .reason:hover{transform:translateY(-5px) rotate(-1.5deg)}#lp .reason span{font-size:31px; display:block; margin-bottom:7px}#lp .reason b{font-family:var(--f-head); font-size:15px; font-weight:700}#lp .taster{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); margin-top:30px}
+
+@media(min-width:400px) and (max-width:599px){#lp .taster .phrase:last-child:nth-child(odd){display:none}#lp .taster .phrase:nth-child(1){order:1}#lp .taster .phrase:nth-child(3){order:2}#lp .taster .phrase:nth-child(2){order:3}#lp .taster .phrase:nth-child(4){order:4}   
+}#lp .phrase{
+  position:relative; background:var(--white); border-radius:20px;
+  padding:22px 20px; text-align:center; cursor:pointer; border:none;
+  font:inherit; color:inherit; box-shadow:var(--soft);
+  transition:transform .22s, box-shadow .22s;
+}#lp .phrase:hover{transform:translateY(-4px); box-shadow:var(--soft-lg)}#lp .phrase:focus-visible{outline:3px solid var(--teal); outline-offset:3px}#lp .phrase .es{font-family:var(--f-head); font-weight:700; font-size:20px; color:var(--teal); direction:ltr; unicode-bidi:isolate; display:block}#lp .phrase .tap{display:block; font-size:13px; color:var(--ink-faint); margin-top:8px}#lp .phrase .rev{
+  display:grid; gap:3px; margin-top:10px;
+  max-height:0; opacity:0; overflow:hidden;
+  transition:max-height .32s ease, opacity .3s ease, margin .3s;
+}#lp .phrase.open .rev{max-height:110px; opacity:1}#lp .phrase.open .tap{display:none}#lp .phrase .he{font-size:16.5px; font-weight:700}#lp .steps{display:grid; gap:15px; counter-reset:s}
+@media (min-width:880px){#lp .steps{grid-template-columns:1fr 1fr} }#lp .step{
+  counter-increment:s; background:var(--white); border-radius:22px;
+  padding:24px 24px; display:flex; gap:16px; box-shadow:var(--soft);
+  transition:transform .22s;
+}#lp .step:hover{transform:translateY(-4px)}#lp .step::before{
+  content:counter(s); flex:0 0 auto;
+  width:42px; height:42px; border-radius:50%;
+  background:var(--teal); color:var(--white);
+  font-family:var(--f-head); font-weight:800; font-size:19px;
+  display:grid; place-items:center;
+}#lp .step:nth-child(even)::before{background:var(--orange)}#lp .step h3{font-size:18px; margin-bottom:5px}#lp .step p{font-size:15.5px; color:var(--ink-soft); line-height:1.55}#lp .tabs{display:flex; gap:9px; flex-wrap:wrap; justify-content:center; margin-bottom:26px}#lp .tab{
+  font:inherit; font-family:var(--f-head); font-weight:700; font-size:16px;
+  background:var(--white); color:var(--ink-soft); border:none; cursor:pointer;
+  padding:12px 24px; border-radius:999px; box-shadow:var(--soft);
+  transition:background .2s, color .2s, transform .2s;
+}#lp .tab:hover{transform:translateY(-2px)}#lp .tab[aria-selected="true"]{background:var(--teal); color:var(--white)}#lp .tab:focus-visible{outline:3px solid var(--orange); outline-offset:3px}#lp .panel{
+  display:none; background:var(--white); border-radius:24px;
+  padding:30px 28px; box-shadow:var(--soft); max-width:760px; margin-inline:auto;
+  animation:fade .32s ease;
+}#lp .panel.on{display:block}
+@keyframes fade{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}#lp .panel h3{font-size:22px; margin-bottom:12px; color:var(--teal)}#lp .panel p{color:var(--ink-soft); font-size:16px}#lp .panel p b{color:var(--ink); font-weight:700}#lp .flip-row{display:grid; gap:26px; align-items:center}
+@media (min-width:880px){#lp .flip-row{grid-template-columns:1fr 1fr; gap:44px} }#lp .flip-steps{display:grid; gap:14px}#lp .flip-step{display:flex; align-items:center; gap:14px; background:var(--white); border-radius:18px; padding:16px 20px; box-shadow:var(--soft)}#lp .flip-step span{font-size:26px}#lp .flip-step b{font-family:var(--f-head); font-size:17px; display:block}#lp .flip-step p{font-size:14.5px; color:var(--ink-soft)}#lp .flip-row{display:grid; gap:26px; align-items:center}
+@media (min-width:880px){#lp .flip-row{grid-template-columns:1fr 1fr; gap:44px} }#lp .flip-steps{display:grid; gap:14px}#lp .flip-step{display:flex; align-items:center; gap:14px; background:var(--white); border-radius:18px; padding:16px 20px; box-shadow:var(--soft)}#lp .flip-step span{font-size:26px}#lp .flip-step b{font-family:var(--f-head); font-size:17px; display:block}#lp .flip-step p{font-size:14.5px; color:var(--ink-soft)}#lp .flip-steps-row{display:grid; gap:12px; margin-bottom:34px}
+@media (min-width:900px){#lp .flip-steps-row{grid-template-columns:1fr auto 1fr auto 1fr; align-items:center} }#lp .flip-arrow{display:none}
+@media (min-width:900px){#lp .flip-arrow{display:block; font-size:26px; color:var(--orange); font-weight:700; text-align:center} }#lp .journey{list-style:none; margin:0 auto; padding:0; max-width:760px; position:relative}#lp .journey::before{
+  content:""; position:absolute; top:28px; bottom:30px; inset-inline-start:25px;
+  border-inline-start:3px dashed var(--teal); opacity:.3;
+}#lp .journey li{position:relative; padding-inline-start:78px; padding-bottom:26px}#lp .journey li:last-child{padding-bottom:0}#lp .journey .jn{
+  position:absolute; inset-inline-start:0; top:0; z-index:1;
+  width:53px; height:53px; border-radius:50%; display:grid; place-items:center;
+  font-size:25px; box-shadow:var(--soft); background:var(--teal-soft);
+}#lp .journey li:nth-child(even) .jn{background:var(--orange-soft)}#lp .journey li:not(:last-child)::after{
+  content:"▼"; position:absolute; inset-inline-start:16px; bottom:1px; z-index:1;
+  color:var(--orange); font-size:15px; line-height:1;
+  background:var(--white); padding:3px 4px;
+}#lp .journey .jbox{
+  background:var(--white); border-radius:20px; padding:18px 22px;
+  box-shadow:var(--soft); transition:transform .22s, box-shadow .22s;
+}#lp .journey li:hover .jbox{transform:translateY(-4px); box-shadow:var(--soft-lg)}#lp .journey .jbox h3{font-size:18px; margin-bottom:5px}#lp .journey .jbox p{font-size:15.5px; color:var(--ink-soft); line-height:1.55}
+@media(max-width:560px){#lp .journey::before{inset-inline-start:21px}#lp .journey li{padding-inline-start:64px}#lp .journey .jn{width:45px; height:45px; font-size:21px}#lp .journey li:not(:last-child)::after{inset-inline-start:13px}
+}#lp .gains-head{display:grid; gap:14px; justify-items:center; text-align:center; margin-bottom:40px}#lp .gains-head .section-head{margin-bottom:0}
+@media(min-width:820px){#lp .gains-head{grid-template-columns:auto 1fr; gap:36px; align-items:center; justify-items:start; text-align:start}#lp .gains-head .section-head{max-width:56ch}#lp .gains-head .lead{margin-inline:0}
+}#lp .gains-photo{position:relative; margin:0; line-height:0; width:196px}
+@media(min-width:820px){#lp .gains-photo{width:246px}}#lp .gains-photo::before{
+  content:""; position:absolute; z-index:0; inset:18% -9% 4% -9%;
+  background:linear-gradient(150deg, var(--teal-soft), var(--orange-soft));
+  border-radius:46% 54% 52% 48% / 56% 44% 56% 44%;
+}#lp .gains-photo img{position:relative; z-index:1; width:100%; height:auto;
+  filter:drop-shadow(0 16px 22px rgba(28,58,80,.16))}#lp .banner{margin:0 auto 30px; max-width:900px; border-radius:24px; overflow:hidden;
+  box-shadow:var(--soft-lg); background:var(--white); line-height:0}#lp .banner img{width:100%; height:auto; display:block}#lp .banner-end{margin:34px auto 0}
+@media(max-width:700px){#lp .banner-end{margin-top:26px}}
+@media(max-width:700px){#lp .banner{margin-bottom:22px; border-radius:18px}}#lp .infographic{margin:0 auto; max-width:860px}#lp .infographic img{width:100%; border-radius:24px; box-shadow:var(--soft-lg); background:var(--white)}#lp .info-hint{display:none}
+@media (max-width:700px){#lp .infographic{cursor:zoom-in}#lp .infographic img{width:100%}#lp .info-hint{
+    display:block; text-align:center; font-size:13px; color:var(--ink-faint);
+    margin-top:10px;
+  }
+}#lp .imgview{
+  position:fixed; inset:0; z-index:130; display:none;
+  background:rgba(12,32,40,.94); overflow-y:auto; overflow-x:hidden;
+  -webkit-overflow-scrolling:touch; padding:56px 10px 30px;
+}#lp .imgview .tip{
+  color:#BFDCE2; font-size:13px; text-align:center; margin:0 0 12px;
+}#lp .imgview.on{display:block}#lp .imgview img{width:100%; max-width:100%; height:auto; margin:0 auto; display:block; border-radius:8px}#lp .imgview .x{
+  position:fixed; top:10px; inset-inline-end:10px; z-index:2;
+  width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--white); color:var(--ink); font-size:20px;
+}#lp .extra{
+  max-width:760px; margin:20px auto 0; background:var(--white);
+  border-radius:24px; padding:28px 28px 24px; box-shadow:var(--soft);
+  border-top:5px solid var(--orange);
+}#lp .extra h3{font-size:20px; margin-bottom:14px}#lp .extra ul{list-style:none; padding:0; margin:0; display:grid; gap:11px}#lp .extra li{display:flex; gap:11px; font-size:15.5px; color:var(--ink-soft); line-height:1.55}#lp .extra li::before{content:"✅"; flex:0 0 auto}#lp .after-signup{
+  max-width:520px; margin:0 auto 20px; background:var(--white);
+  border-radius:24px; padding:24px 26px; box-shadow:var(--soft);
+  border:2px dashed var(--teal);
+}#lp .after-signup b{font-family:var(--f-head); font-size:17px; display:block; margin-bottom:12px}#lp .after-signup ul{list-style:none; padding:0; margin:0; display:grid; gap:9px}#lp .after-signup li{display:flex; gap:10px; font-size:15.5px; color:var(--ink-soft)}#lp .after-signup li::before{content:"✔️"; flex:0 0 auto}#lp .after-signup li>span{flex:1 1 auto}#lp .after-signup .nb{white-space:nowrap}#lp .start-band{
+  background:var(--white); border-radius:26px; box-shadow:var(--soft-lg);
+  padding:30px 28px; text-align:center; max-width:760px; margin:0 auto 26px;
+  border-top:6px solid var(--orange);
+}#lp .start-band .kick{font-family:var(--f-head); font-size:15px; font-weight:700; color:var(--orange-dark); margin-bottom:6px}#lp .start-band .big{font-family:var(--f-head); font-weight:800; font-size:clamp(30px,5.6vw,46px); line-height:1.1}#lp .start-band .big span{color:var(--orange)}#lp .start-band .note{font-size:15.5px; color:var(--ink-soft); margin-top:10px}#lp .dates{display:grid; gap:11px; grid-template-columns:repeat(2,1fr); max-width:900px; margin-inline:auto}
+@media (min-width:560px){#lp .dates{grid-template-columns:repeat(4,1fr)} }#lp .date{
+  background:var(--white); border-radius:16px; padding:15px 8px 13px; text-align:center;
+  box-shadow:var(--soft); transition:transform .2s;
+}#lp .date:hover{transform:translateY(-4px)}#lp .date b{display:block; font-family:var(--f-head); font-weight:800; font-size:21px; color:var(--teal); font-variant-numeric:tabular-nums}#lp .date i{display:block; font-style:normal; font-size:12px; color:var(--ink-faint); margin-top:3px}#lp .date .yr{font-size:12.5px; color:var(--ink-faint); font-weight:400}#lp .lessons{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,320px)); justify-content:center}#lp .lesson{
+  position:relative; border:none; padding:0; cursor:pointer; font:inherit; color:inherit;
+  background:none; border-radius:22px; overflow:hidden; box-shadow:var(--soft);
+  transition:transform .22s, box-shadow .22s;
+}#lp .lesson:hover{transform:translateY(-5px); box-shadow:var(--soft-lg)}#lp .lesson:focus-visible{outline:3px solid var(--orange); outline-offset:3px}#lp .lesson .thumb{
+  aspect-ratio:16/9; display:grid; place-items:center;
+  background:linear-gradient(140deg, var(--teal) 0%, #14808D 100%);
+  background-size:cover; background-position:center;
+  position:relative; transition:background-image .3s;
+}#lp .lesson .thumb::after{
+  content:""; position:absolute; inset:0; opacity:.22;
+  background-image:radial-gradient(circle at 22% 26%, #fff 1.5px, transparent 2px);
+  background-size:26px 26px; transition:opacity .3s;
+}#lp .lesson .thumb.has-img::after{
+  opacity:1; background-image:linear-gradient(to top, rgba(10,40,50,.55), rgba(10,40,50,.12) 55%, transparent);
+  background-size:auto;
+}#lp .lesson .dur{
+  position:absolute; z-index:1; bottom:10px; inset-inline-end:10px;
+  background:rgba(12,32,40,.82); color:#fff; font-family:var(--f-head);
+  font-size:12.5px; font-weight:700; padding:3px 9px; border-radius:6px;
+  opacity:0; transition:opacity .3s;
+}#lp .lesson .dur.on{opacity:1}#lp .lesson .play{
+  position:relative; z-index:1; width:60px; height:60px; border-radius:50%;
+  background:var(--white); display:grid; place-items:center;
+  box-shadow:0 10px 24px -10px rgba(0,0,0,.5); transition:transform .22s;
+}#lp .lesson:hover .play{transform:scale(1.09)}#lp .lesson .play svg{width:22px; height:22px; fill:var(--orange); margin-inline-start:4px}#lp .lesson .meta{display:block; background:var(--white); padding:16px 18px; text-align:start}#lp .lesson .meta b{display:block; font-family:var(--f-head); font-size:16.5px; margin-bottom:3px}#lp .lesson .meta span{font-size:13.5px; color:var(--ink-faint)}#lp .vmodal{
+  position:fixed; inset:0; z-index:120; display:none;
+  background:rgba(28,58,80,.9); padding:20px;
+  align-items:center; justify-content:center;
+}#lp .vmodal.on{display:flex}#lp .vmodal .box{width:min(980px, 100%); position:relative}#lp .vmodal .frame{position:relative; padding-top:56.25%; border-radius:16px; overflow:hidden; background:#000}#lp .vmodal .frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0}#lp .vmodal .close{
+  position:absolute; top:-52px; inset-inline-end:0;
+  width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--white); color:var(--ink); font-size:20px;
+}#lp .vmodal .cap{color:#CFE9ED; font-size:14.5px; margin-top:12px; text-align:center}#lp .teacher{display:grid; gap:32px; align-items:center}
+@media (min-width:860px){#lp .teacher{grid-template-columns:330px 1fr; gap:52px} }#lp .teacher-photo{position:relative}#lp .teacher-photo img{border-radius:26px; box-shadow:var(--soft-lg); width:100%}#lp .teacher-photo .ring{
+  position:absolute; inset:-14px -14px 14px 14px; border-radius:30px;
+  border:2px dashed var(--teal); opacity:.45; z-index:-1;
+}#lp .teacher blockquote{
+  margin:0 0 20px; font-family:var(--f-head); font-weight:700;
+  font-size:clamp(18.5px,2.2vw,23px); line-height:1.45;
+}#lp .teacher p{margin-bottom:14px; color:var(--ink-soft)}#lp .teacher .invite{color:var(--ink); font-weight:600; line-height:1.7}#lp .teacher .sig{font-family:var(--f-head); font-weight:700; font-size:18px; color:var(--teal); direction:ltr; text-align:right; margin:18px 0 0}#lp .creds{display:flex; gap:28px; flex-wrap:wrap; margin-top:24px}#lp .cred b{display:block; font-family:var(--f-head); font-weight:800; font-size:32px; color:var(--orange); line-height:1.05}#lp .cred span{font-size:14px; color:var(--ink-soft)}#lp .carousel{position:relative; max-width:780px; margin-inline:auto}#lp .track{display:flex; align-items:flex-start; overflow-x:auto; scroll-snap-type:x mandatory; gap:16px; scrollbar-width:none; padding-bottom:6px}#lp .track::-webkit-scrollbar{display:none}#lp .slide{
+  flex:0 0 100%; scroll-snap-align:center;
+  background:var(--white); border-radius:24px; padding:30px 28px; box-shadow:var(--soft);
+}#lp .slide .q{font-size:24px; color:var(--teal-soft); font-family:var(--f-head); line-height:1}#lp .slide p{font-size:16px; color:var(--ink-soft); line-height:1.62; margin:0 0 12px}#lp .slide p:last-of-type{margin-bottom:0}#lp .slide footer{display:flex; align-items:center; gap:11px; margin-top:16px; font-size:14.5px; color:var(--ink-faint)}#lp .slide .av{width:36px; height:36px; border-radius:50%; background:var(--orange-soft); color:var(--orange-dark); display:grid; place-items:center; font-weight:700; font-family:var(--f-head)}#lp .arw{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+  width:42px; height:42px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--white); color:var(--ink); box-shadow:var(--soft);
+  display:none; place-items:center; transition:background .18s, color .18s, transform .18s;
+}
+@media (min-width:820px){#lp .arw{display:grid} }#lp .arw:hover{background:var(--ink); color:var(--white); transform:translateY(-50%) scale(1.07)}#lp .arw:focus-visible{outline:3px solid var(--orange); outline-offset:3px}#lp .arw svg{width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round}#lp .arw.prev{inset-inline-start:-56px}#lp .arw.next{inset-inline-end:-56px}#lp .dots{display:flex; gap:8px; justify-content:center; margin-top:14px}#lp .track{transition:height .25s ease}#lp .dots button{
+  width:9px; height:9px; border-radius:50%; border:none; padding:0; cursor:pointer;
+  background:var(--line); transition:background .2s, width .2s;
+}#lp .dots button[aria-current="true"]{background:var(--orange); width:26px; border-radius:999px}#lp .checks{display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}#lp .check{display:flex; gap:13px; background:var(--white); border-radius:20px; padding:19px 21px; box-shadow:var(--soft)}#lp .check .mark{flex:0 0 auto; width:27px; height:27px; border-radius:50%; background:var(--teal); color:var(--white); display:grid; place-items:center; font-size:14px; font-weight:800}#lp .check b{display:block; font-family:var(--f-head); font-size:16.5px; margin-bottom:3px}#lp .check p{font-size:15px; color:var(--ink-soft); line-height:1.5}#lp .price-box{
+  background:var(--white); border-radius:30px; padding:38px 30px; text-align:center;
+  max-width:640px; margin-inline:auto; box-shadow:var(--soft-lg);
+  position:relative; overflow:hidden;
+}#lp .price-box::before{
+  content:""; position:absolute; top:0; inset-inline:0; height:6px;
+  background:linear-gradient(90deg, var(--orange), var(--teal));
+}#lp .deadline{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--orange-soft); color:var(--orange-dark);
+  font-weight:700; font-size:14.5px; padding:8px 17px; border-radius:999px; margin-bottom:14px;
+}#lp .cdown.done .cd-cells{display:none}#lp .cdown.done .deadline{background:var(--teal-soft); color:var(--teal); margin-bottom:14px}#lp .cdown .cd-cells{display:none; direction:ltr; justify-content:center; gap:8px; margin:0 0 16px}#lp .cdown.live .cd-cells{display:flex}#lp .cdown.live .deadline{margin-bottom:12px}#lp .cd-cells>div{
+  background:var(--cream); border-radius:14px; padding:9px 6px 7px;
+  min-width:66px; text-align:center; box-shadow:inset 0 0 0 1px var(--line);
+}#lp .cd-cells b{
+  display:block; font-family:var(--f-head); font-weight:800; font-size:27px;
+  line-height:1; color:var(--ink); font-variant-numeric:tabular-nums;
+}#lp .cd-cells i{font-style:normal; font-size:11.5px; color:var(--ink-faint); direction:rtl; unicode-bidi:isolate}
+@media(max-width:430px){#lp .cd-cells>div{min-width:56px; padding:8px 4px 6px}#lp .cd-cells b{font-size:23px}
+}#lp .price-row{display:flex; align-items:baseline; justify-content:center; gap:14px; flex-wrap:wrap; margin:10px 0 6px}#lp .price-row b{font-family:var(--f-head); font-weight:800; font-size:clamp(44px,9vw,66px); line-height:1}#lp .price-row s{font-size:21px; color:var(--ink-faint)}#lp .price-box .pay{font-size:15.5px; color:var(--ink-soft)}#lp .price-list{list-style:none; padding:0; display:grid; gap:10px; margin:26px auto; max-width:400px; text-align:start}#lp .price-list li{display:flex; gap:10px; font-size:15.5px}#lp .price-list li::before{content:"🎁"; flex:0 0 auto}#lp .faq{max-width:740px; margin-inline:auto; display:grid; gap:11px}#lp details{background:var(--white); border-radius:20px; padding:0 24px; box-shadow:var(--soft)}#lp summary{
+  list-style:none; cursor:pointer; padding:20px 0;
+  font-family:var(--f-head); font-size:17px; font-weight:700;
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+}#lp summary::-webkit-details-marker{display:none}#lp summary::after{
+  content:"+"; font-size:22px; color:var(--orange); font-weight:400; line-height:1;
+  transition:transform .25s;
+}#lp details[open] summary::after{transform:rotate(45deg)}#lp details p{padding:0 0 21px; color:var(--ink-soft); font-size:16px; line-height:1.6}#lp #form{scroll-margin-top:22px}#lp .form-card{
+  background:var(--white); border-radius:28px; padding:32px 28px;
+  box-shadow:var(--soft-lg); max-width:520px; margin-inline:auto;
+}#lp .field{display:grid; gap:6px; margin-bottom:15px}#lp .field label{font-size:14.5px; font-weight:700}#lp .field .hint{font-size:12.5px; color:var(--ink-faint); font-weight:400}#lp .field input:user-invalid{border-color:#E0705A; background:#FFF6F4}#lp .field input{
+  font:inherit; font-size:16px; padding:14px 16px; width:100%;
+  border:1.5px solid var(--line); border-radius:14px; background:var(--cream); color:var(--ink);
+  transition:border-color .2s, background .2s;
+}#lp .field input:focus{outline:none; border-color:var(--teal); background:var(--white)}#lp .consent{display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:var(--ink-soft); margin:16px 0 20px; line-height:1.5}#lp .consent a{color:var(--teal); text-decoration:underline; text-underline-offset:2px}#lp .consent input{margin-top:3px; accent-color:var(--teal); width:17px; height:17px; flex:0 0 auto}#lp .form-card .btn{width:100%}#lp .form-card .wpcf7{margin:0}#lp .form-card .wpcf7-form-control-wrap{display:block}#lp .form-card .wpcf7-not-valid-tip{font-size:13px; color:#C4472F; margin-top:5px}#lp .form-card input.wpcf7-not-valid{border-color:#E0705A; background:#FFF6F4}#lp .form-card .wpcf7-response-output{
+  margin:16px 0 0; padding:12px 15px; border:none; border-radius:12px;
+  font-size:14.5px; background:var(--cream); color:var(--ink-soft);
+}#lp .form-card .wpcf7-spinner{display:block; margin:12px auto 0}#lp .form-card .wpcf7-acceptance{display:block; margin:16px 0 20px}#lp .form-card .wpcf7-acceptance .wpcf7-list-item{margin:0}#lp .form-card .wpcf7-acceptance label{
+  display:flex; gap:10px; align-items:flex-start;
+  font-size:13.5px; color:var(--ink-soft); line-height:1.5; cursor:pointer;
+}#lp .form-card .wpcf7-acceptance input[type=checkbox]{
+  margin-top:3px; accent-color:var(--teal); width:17px; height:17px; flex:0 0 auto;
+}#lp .form-card .wpcf7-acceptance a{color:var(--teal); text-decoration:underline; text-underline-offset:2px}#lp .form-card input.wpcf7-submit{width:100%; margin-top:2px}#lp .contact{display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); max-width:660px; margin:26px auto 0}#lp .contact a{
+  display:flex; align-items:center; gap:13px; text-decoration:none;
+  background:var(--white); border-radius:20px; padding:17px 21px; box-shadow:var(--soft);
+  transition:transform .2s;
+}#lp .contact a:hover{transform:translateY(-3px)}#lp .contact span{font-size:22px}#lp .contact .c-txt{display:block}#lp .contact b{display:block; font-size:12.5px; color:var(--ink-faint); font-weight:700}#lp .contact i{font-style:normal; font-size:16px}#lp footer.site{background:var(--cream); padding:34px 0 30px; font-size:13.5px; color:var(--ink-faint); text-align:center}#lp footer.site .foot-logo{width:150px; height:auto; margin:0 auto 14px; display:block}#lp footer.site p{margin:0 0 6px}#lp footer.site a{color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px}#lp footer.site a:hover{color:var(--teal)}#lp .sticky{
+  position:fixed; inset-inline:0; bottom:0; z-index:60;
+  background:rgba(255,255,255,.97); backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  box-shadow:0 -10px 30px -20px rgba(28,58,80,.5);
+}#lp .sticky .p{font-size:13.5px; color:var(--ink-soft); line-height:1.25}#lp .sticky .p b{font-family:var(--f-head); font-weight:800; font-size:21px; color:var(--ink); display:block}#lp .sticky .btn{padding:12px 22px; font-size:16px}
+@media (min-width:780px){#lp .sticky{display:none} }#lp .fill{
+  background:#FFF3D6; color:#946200; border:1px dashed #E0A93A;
+  border-radius:7px; padding:1px 9px; font-size:.93em; font-weight:700; white-space:nowrap;
+}html.js #lp .rv{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.3,1)}html.js #lp .rv.in{opacity:1; transform:none}
+
+@media (prefers-reduced-motion: reduce){#lp{scroll-behavior:auto}#lp *{transition-duration:.01ms !important; animation:none !important}html.js #lp .rv{opacity:1; transform:none}
+}
+</style>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <svg class="doodle" style="top:22px; inset-inline-end:4%; width:70px" viewBox="0 0 80 60" fill="none" aria-hidden="true">
+    <path d="M4 30 L74 6 L46 54 L38 34 Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M4 30 L38 34" stroke="currentColor" stroke-width="2.6"/>
+  </svg>
+  <svg class="doodle o" style="top:120px; inset-inline-start:3%; width:54px" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+    <path d="M30 4 L35 25 L56 30 L35 35 L30 56 L25 35 L4 30 L25 25 Z" fill="currentColor" opacity=".75"/>
+  </svg>
+
+  <div class="shell hero-grid">
+    <div>
+      <span class="eyebrow">🗣️ קורס דיגיטלי · קצב אישי</span>
+      <h1>השיחה הראשונה שלי <span class="hl">בספרדית</span></h1>
+      <p class="lead">המקום שבו מתחילים <b>לדבר ספרדית באמת</b>, בלי <b>שינון אינסופי</b> ובלי <b>דקדוק מסובך</b> &#45; ב־<b>15 דקות ביום</b>.</p>
+      <div class="trust">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
+        <div>עם <b>לאורה אפשטיין</b> · מורה לספרדית 18 שנה · דוברת 5 שפות</div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="blob"></div>
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/hero-laura2.webp" alt="לאורה אפשטיין, מורה לספרדית">
+      <div class="hero-badge">
+        <b>348₪</b><span>מחיר השקה<br>במקום 697₪</span><a class="btn btn-main badge-cta" href="#form">אני רוצה להתחיל</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ARGUMENT ============ -->
+<section>
+  <div class="shell argument rv">
+    <p>חולמים לדבר ספרדית, אבל אין לכם זמן להתחיל? למדתם מילים, ראיתם סרטונים, אולי אפילו ניסיתם אפליקציות &#45; אבל עדיין לא מצליחים לדבר?</p>
+    <p class="pull">כנראה שפשוט<br>לא לימדו אתכם נכון.<br><span class="hl">וזה בדיוק מה שהולך להשתנות.</span></p>
+    <p>בקורס ״השיחה הראשונה שלי בספרדית״ תתחילו לדבר באמת &#45; בלי לבזבז חודשים, בלי דקדוק מסובך, ובלי לשבור שיניים. גם אם אין לכם זמן או עם מי לתרגל, תדברו ספרדית כבר מהשיעור הראשון, בקצב שמתאים לכם.</p>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ TASTER ============ -->
+<section class="bg-cream" id="taster" style="padding-top:34px; padding-top:32px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">✨ טעימה קטנה</span>
+      <h2 class="h-lg">תוך דקה אתם כבר יודעים משהו</h2>
+      <p class="lead">לחצו על משפט כדי לראות מה הוא אומר ואיך אומרים אותו. ככה בדיוק מרגישים השיעורים &#45; קטן, ברור, ומיד מצליחים.</p>
+    </div>
+    <div class="taster">
+      <button class="phrase"><span class="es">¡Hola! ¿Qué tal?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">היי, מה נשמע?</span></span></button>
+      <button class="phrase"><span class="es">Me llamo…</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">קוראים לי…</span></span></button>
+      <button class="phrase"><span class="es">¿De dónde eres?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">מאיפה אתה?</span></span></button>
+      <button class="phrase"><span class="es">Mucho gusto</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">נעים מאוד</span></span></button>
+      <button class="phrase"><span class="es">¿Nos vemos mañana?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">נתראה מחר?</span></span></button>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ WHY SPANISH ============ -->
+<section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🌎 למה דווקא ספרדית</span>
+      <h2 class="h-lg">השפה שאתם כבר פוגשים כל יום</h2>
+      <p class="lead">יותר מ־500 מיליון אנשים מדברים ספרדית. לא שפה שלומדים בשביל מבחן &#45; שפה שנהנים להשתמש בה.</p>
+    </div>
+    <div class="reasons">
+      <div class="reason"><span>✈️</span><b>טיולים</b></div>
+      <div class="reason"><span>⚽</span><b>כדורגל</b></div>
+      <div class="reason"><span>🎧</span><b>מוזיקה</b></div>
+      <div class="reason"><span>🎬</span><b>נטפליקס</b></div>
+      <div class="reason"><span>💼</span><b>עסקים</b></div>
+      <div class="reason"><span>🤝</span><b>אנשים</b></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ WHY IT WORKS ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">⏱️ 15 דקות ביום</span>
+      <h2 class="h-lg">זה כל מה שצריך</h2>
+      <p class="lead">30 שיעורים קצרים, במשך חודש &#45; וזה מספיק כדי להתחיל לדבר ספרדית באמת.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ico o">🐢</div><h3>בקצב שלכם</h3><p>אפשר לעצור, לחזור ולתרגל מתי שנוח &#45; בלי לחץ ובלי זמן קבוע.</p></div>
+      <div class="card"><div class="ico">🗣️</div><h3>מתמקדים בדיבור</h3><p>מההתחלה. לא בשינון פעלים ולא בחוקי דקדוק.</p></div>
+      <div class="card"><div class="ico o">📈</div><h3>שיטה הדרגתית</h3><p>כל שיעור בונה עוד שלב בביטחון וביכולת לדבר.</p></div>
+      <div class="card"><div class="ico">🌍</div><h3>מכל מקום בעולם</h3><p>במחשב, בטלפון, בזמן הפנוי שלכם &#45; גם תוך כדי נסיעה.</p></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section class="bg-cream" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">📦 מה מקבלים בקורס</span>
+      <h2 class="h-lg">ארבעה דברים, מיד עם ההרשמה</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div><h3>גישה מיידית לכל 30 השיעורים</h3><p>שיעורים מוקלטים, ברורים ואינטואיטיביים &#45; לצפייה חוזרת בכל זמן, וגישה לתמיד.</p></div></div>
+      <div class="step"><div><h3>חוברת עבודה דיגיטלית</h3><p>57 עמודים צבעוניים עם תרגולים, משימות ודוגמאות. להורדה, לשמירה ולהדפסה.</p></div></div>
+      <div class="step"><div><h3>קבוצת וואטסאפ תומכת</h3><p>תוכן קצר לתרגול, שאלות ומענה אישי ממני לאורך כל הדרך.</p></div></div>
+      <div class="step" style="grid-column:1/-1"><div><h3>שיעורים בקצב שמתאים לכם</h3><p>גישה מלאה ממחשב או מהטלפון &#45; לומדים מתי שנוח, בלי להתאים את עצמכם למערכת.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ CURRICULUM TABS ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center" style="max-width:none">
+      <span class="eyebrow">📚 הצצה לתוכן</span>
+      <h2 class="h-lg">מה נלמד ב״השיחה הראשונה שלי בספרדית״ &#45; שלב אחרי שלב</h2>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-p="p1">1 · השיחה הראשונה שלי</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="p2">2 · לדבר בלי לתרגם</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="p3">3 · שיחה אמיתית</button>
+    </div>
+    <div class="panel on" id="p1" role="tabpanel">
+      <h3>השיחה הראשונה שלי בספרדית!</h3>
+      <p><b>בחלק הראשון של הקורס נלמד</b> איך לנהל שיחת היכרות פשוטה בזרימה &#45; לשאול את השאלות הנכונות ולענות כששואלים אותנו. נלמד איך לפנות לאנשים חדשים, להכיר אותם ולהתחבר אליהם, כולל משימה ותרגול דיבור. במקום ללמוד אינספור מילים ופעלים, נכיר את השיטה שחוסכת את כל העומס הזה ועדיין מאפשרת לדבר. ובעיקר: איך לצבור ביטחון כבר תוך כדי השיחה, ולא לפחד ליזום.</p>
+    </div>
+    <div class="panel" id="p2" role="tabpanel">
+      <h3>לדבר בלי לתרגם</h3>
+      <p><b>בחלק השני של הקורס נלמד</b> את השיטה שמפסיקה את התרגום בראש מעברית לספרדית. נלמד את הפעלים ההכרחיים לכל שיחה, נרחיב את אוצר המילים, ונכיר את הטעויות הנפוצות ואת קיצורי הדרך. כשמדובר בשפה, יש לנו חשש לעשות טעויות. בשלב הזה נלמד איך לצאת מ״פדיחות״, ולא לפחד לטעות &#45; איך למנף כל טעות לשיפור השפה.</p>
+    </div>
+    <div class="panel" id="p3" role="tabpanel">
+      <h3>לנהל שיחה אמיתית</h3>
+      <p><b>בחלק השלישי של הקורס נלמד</b> לנסח שאלות פתוחות וסגורות, כל מילות השאלה, ומילות מפתח שמשדרגות את השיחה. נרחיב את אוצר המילים דרך שאלות ותשובות, עם תרגול דיבור בכל שלב &#45; עד שיחה שזורמת מעצמה.</p>
+    </div>
+
+    <div class="extra">
+      <h3>ומה עוד נלמד?</h3>
+      <ul>
+        <li>איך להמשיך לדבר גם כש״נתקעים״ &#45; טריקים פשוטים שמוציאים אתכם מהשתיקה</li>
+        <li>איך לצבור ביטחון גם כשחסרות מילים &#45; ולדבר כבר מהיום הראשון</li>
+        <li>איך לטעות בלי פחד &#45; ולהפוך כל טעות לשיפור</li>
+        <li>בסוף כל שיעור: משימה קצרה ופידבק אישי ממני, כדי שלא רק תבינו &#45; אלא באמת תיישמו</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ WHO FOR ============ -->
+<section class="bg-cream" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🎯 למי זה מתאים</span>
+      <h2 class="h-lg">הקורס נבנה בדיוק בשבילכם</h2>
+    </div>
+    <div class="checks">
+      <div class="check"><span class="mark">✓</span><div><b>מתחילים לגמרי, או כבר תקועים</b><p>לא משנה מאיפה אתם מתחילים &#45; הקורס בנוי מהבסיס, צעד אחר צעד.</p></div></div>
+      <div class="check"><span class="mark">✓</span><div><b>יודעים מילים אבל לא יודעים לדבר</b><p>הזמן להפוך את מה שאתם כבר יודעים למשפטים אמיתיים.</p></div></div>
+      <div class="check"><span class="mark">✓</span><div><b>יש לכם רק 15 דקות ביום</b><p>זה כל מה שצריך &#45; בלי לפנות זמן מיוחד ובלי לצאת מהבית.</p></div></div>
+      <div class="check"><span class="mark">✓</span><div><b>רוצים להתחבר לעולם דובר הספרדית</b><p>מתכננים טיול, או שיש לכם משפחה וחברים דוברי ספרדית &#45; ורוצים סוף־סוף להבין ולהתחבר.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ LESSON PREVIEWS ============ -->
+<section>
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🎬 הצצה קטנה לשיעורים</span>
+      <h2 class="h-lg">מה מחכה לכם בקורס</h2>
+      <p class="lead">ככה נראה שיעור אמיתי מתוך הקורס. לחצו כדי לצפות.</p>
+    </div>
+    <div class="lessons" id="lessons"></div>
+  </div>
+</section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">💬 מה מספרים התלמידים</span>
+      <h2 class="h-lg">לא רק אני אומרת את זה</h2>
+    </div>
+    <div class="carousel">
+      <div class="track" id="track">
+        <blockquote class="slide">
+          <span class="q">"</span>
+          <p>לאורה תודה רבה על הנגשת הספרדית בעברית. זה עזר לי להבין איפה שהתקשתי. Mucho gracias</p>
+          <footer><span class="av">א</span><span>אירים, קורטני ספרדית</span></footer>
+        </blockquote>
+        <blockquote class="slide">
+          <span class="q">"</span>
+          <p>תודה לאורה! היה שיעור יעיל 🙏.. כמה שניסיתי ללמוד עם אפליקציות וספרים לא הרגשתי שלמדתי והפנמתי כמו בשיעור אחד 🤙</p>
+          <footer><span class="av">ע</span><span>עינת, קורס זום</span></footer>
+        </blockquote>
+        <blockquote class="slide">
+          <span class="q">"</span>
+          <p>בוקר טוב, הסרטונים ששלחת מצוינים &#45; זו שיטה מצוינת ללמוד. זה עזר לי אתמול, היה מצוין. תודה ענקית, אני שמחה בשיעורים.</p>
+          <footer><span class="av">ב</span><span>בתיה, קורס זום</span></footer>
+        </blockquote>
+        <blockquote class="slide">
+          <span class="q">"</span>
+          <p>לאורה, את ממש מורה מדהימה. יכולות ההוראה, התמיכה, הסבלנות וההשקעה בתלמידים ראויים לציון. וגם השיטה שלך נהדרת. אני כבר מדברת שיחות ראשונות אמיתיות עם אנשים שאני לא מכירה &#45; בדיוק השיחות שתרגלנו איתך. Muchas gracias</p>
+          <footer><span class="av">ז</span><span>זיוה, ספרדית לאנשים עסוקים</span></footer>
+        </blockquote>
+        <blockquote class="slide">
+          <span class="q">"</span>
+          <p>שיטות הלימוד שלך שונות, גורמות לי לזכור יותר את הפעלים. את מביאה גישה חדשה ורוח חדשה בלימוד השפה. גם הספר שלך קריא וברור ותמיד נותן חשק לפתוח אותו. נהניתי מכל דקה בזום! נראה לי שבקרוב אנשים רבים בישראל בזכותך יפטפטו בספרדית. יישר כוחך!</p>
+          <footer><span class="av">ר</span><span>רות, ספרדית</span></footer>
+        </blockquote>
+        <blockquote class="slide">
+          <span class="q">"</span>
+          <p>היי לאורה, חשבתי לעדכן אותך &#45; משהו אחרי השיעור אתמול פתאום הסתדר לי, ואני ממש כותב, קורא ואפילו מדבר כמעט בלי טרנסליט (עוד לא מושלם, אבל לאט לאט) ❤️</p>
+          <footer><span class="av">ת</span><span>תלמיד בקורס</span></footer>
+        </blockquote>
+      </div>
+      <button class="arw prev" id="cPrev" aria-label="המלצה קודמת"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button class="arw next" id="cNext" aria-label="המלצה הבאה"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ BONUSES ============ -->
+<section class="bg-cream" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">🎁 בונוסים משלימים</span>
+      <h2 class="h-lg">מה עוד נכנס לחבילה</h2>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ico o">📘</div><h3>ספר הקורס להורדה</h3><p>57 עמודים צבעוניים עם תרגולים, משימות ודוגמאות.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>קבוצת וואטסאפ תומכת</h3><p>מענה אישי, התייעצויות ומשוב על משימות.</p></div>
+      <div class="card"><div class="ico o">📝</div><h3>תרגול אחרי כל שיעור</h3><p>כדי לוודא שאתם לא רק מבינים &#45; אלא באמת שולטים.</p></div>
+      <div class="card" style="display:flex; gap:16px; align-items:center">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/abc.webp" alt="" style="width:74px; flex:0 0 auto">
+        <div><h3>שיעור ABC למתחילים</h3><p>קריאה, כתיבה והגייה + לוח אותיות להדפסה.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ TEACHER ============ -->
+<section>
+  <div class="shell teacher rv">
+    <div class="teacher-photo">
+      <div class="ring"></div>
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/08/laura.webp" alt="לאורה אפשטיין">
+    </div>
+    <div>
+      <span class="eyebrow">!Hola</span>
+      <blockquote>״המטרה שלי ב״השיחה הראשונה שלי בספרדית״ היא לא רק ללמד ספרדית &#45; אלא לעזור לכם לפתח ביטחון, ליהנות מהדרך ולהרגיש שאתם <span class="hl">מסוגלים להצליח</span>.״</blockquote>
+      <p>שמי לאורה אפשטיין, ואני מורה לספרדית כבר 18 שנה. אני מלמדת כיצד לדבר ספרדית בביטחון כבר מהשיעור הראשון, ליישם במהירות את החומר הנלמד, ולשמר את התוצאות לאורך זמן.</p>
+      <p>זאת באמצעות שיטה שפיתחתי ללימוד שפות זרות (באופן אישי אני דוברת חמש שפות), ניסיון רב־שנים בהוראה, והיכרות מעמיקה עם צרכים שונים של מאות תלמידים שלימדתי בשנים אלה.</p>
+      <p class="invite">אז רוצים להתחיל לדבר, ובקלות?<br>הגשמת החלום שלכם &#45; במרחק קליק אחד!<br>אני אתכם במסע.</p>
+      <p class="sig">Laura Epstein</p>
+      <div class="creds">
+        <div class="cred"><b>18</b><span>שנות הוראה</span></div>
+        <div class="cred"><b>5</b><span>שפות שאני דוברת</span></div>
+        <div class="cred"><b>15,453</b><span>תלמידים</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ PERSONAL NOTE ============ -->
+<section class="bg-cream" style="padding-top:34px">
+  <div class="shell argument rv">
+    <p>רוב האנשים חושבים שצריך ללמוד המון לפני שמתחילים לדבר. בקורס הזה אתם לא מחכים לשליטה ״מושלמת״.</p>
+    <p class="pull">אתם מתחילים לדבר -<br>גם אם טועים.<br><span class="hl">ככה בדיוק לומדים.</span></p>
+    <p>מותר לטעות, מותר לתקן. אני מזמינה אתכם לקפוץ ישר למים &#45; אני אהיה שם איתכם, עם מצופים (וגם עם מצילה).</p>
+  </div>
+</section>
+
+<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ PRICE ============ -->
+<section>
+  <div class="shell rv">
+    <div class="price-box">
+      <p class="deadline">⏳ מחיר השקה מיוחד לזמן מוגבל</p>
+      <h2 class="h-lg" style="font-size:24px">מה ההשקעה?</h2>
+      <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:46ch; margin-inline:auto">קורס דיגיטלי מושקע, ממוקד דיבור, <b>ויחיד מסוגו בארץ</b> &#45; שנבנה במיוחד כדי שתתחילו לדבר מהר, בקלות ובביטחון.</p>
+      <div class="price-row"><b>348 ₪</b><s>697 ₪</s></div>
+      <p class="pay">כולל מע״מ · ניתן לחלק עד 3 תשלומים נוחים של 116 ₪</p>
+      <ul class="price-list">
+        <li>גישה מלאה לכל 30 השיעורים, לתמיד</li>
+        <li>חוברת עבודה וקבוצת וואטסאפ תומכת</li>
+        <li>כל הבונוסים והליווי האישי</li>
+      </ul>
+      <a class="btn btn-main" href="#form">אני רוצה להתחיל לדבר</a>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--sky)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ FAQ ============ -->
+<section class="bg-sky" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center">
+      <span class="eyebrow">❓ שאלות נפוצות</span>
+      <h2 class="h-lg">מה שבדרך כלל שואלים</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>יש תמיכה אישית במהלך הקורס?</summary>
+        <p>בהחלט! יש קבוצת וואטסאפ פרטית למשתתפי הקורס &#45; להתייעצות, שאלות, תרגול, קבלת פידבק על משימות וליווי ישיר ממני לאורך כל הדרך.</p>
+      </details>
+      <details>
+        <summary>אין לי זמן עכשיו, כדאי לחכות?</summary>
+        <p>דווקא לא! הקורס בנוי כך שאפשר ללמוד בקצב אישי ובגמישות מלאה. כל מה שצריך זה רבע שעה ביום &#45; כי זה קורס שמוביל לתכלס, לא לשינון אינסופי.</p>
+      </details>
+      <details>
+        <summary>אבל שפות צריך לתרגל…</summary>
+        <p>נכון! בדיוק בגלל זה תמצאו בקורס משימות קצרות, תרגולים חכמים והכוונה צעד־צעד. בנוסף, אתם לא לבד &#45; יש מעל 600 מיליון דוברי ספרדית בעולם, ועוד תלמידים בקבוצה שרק מחכים לתרגל איתכם.</p>
+      </details>
+      <details>
+        <summary>קשה לי להתרכז מול מסך. זה יתאים?</summary>
+        <p>חד־משמעית כן, וזאת בדיוק הסיבה שבניתי את הקורס ככה: 30 שיעורים קצרים, ברורים ומדורגים, בקצב לימוד נעים ונוח. כל שיעור מקדם אתכם צעד אחד &#45; בלי הצפה, ועם הרבה עידוד.</p>
+      </details>
+      <details>
+        <summary>אין לי כרטיס אשראי. אפשר לשלם אחרת?</summary>
+        <p>כן. אפשר גם בביט או בפייבוקס למספר 058-5013849. חשוב לציין בהעברה שם מלא, מייל ומספר טלפון.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
+
+<!-- ============ FINAL + FORM ============ -->
+<section class="bg-cream" id="signup" style="padding-top:34px">
+  <div class="shell rv">
+    <div class="section-head center" style="max-width:54ch">
+      <span class="eyebrow">🌅 ורגע לפני סיום</span>
+      <h2 class="h-lg">מוכנים להתחיל לדבר ספרדית, באמת?</h2>
+      <p class="lead">הקורס ״השיחה הראשונה שלי בספרדית״ מחכה לכם ממש עכשיו. זה פשוט, זה נעים, וזה שלכם לתמיד.</p>
+    </div>
+
+    <div class="after-signup">
+      <b>📬 מיד אחרי ההרשמה תקבלו</b>
+      <ul>
+        <li><span>גישה מיידית לכל 30 שיעורי הקורס</span></li>
+        <li><span>חוברת הקורס להורדה</span></li>
+        <li><span>הצטרפות לקבוצת התלמידים</span></li>
+        <li><span>והכי חשוב &#45; את ההתחלה החדשה שלכם <span class="nb">בספרדית&nbsp;😊</span></span></li>
+      </ul>
+    </div>
+
+    <div class="form-card" id="form">
+      <h3 style="font-size:21px; margin-bottom:20px">השאירו פרטים ותתחילו לדבר ספרדית</h3>
+      [contact-form-7 id="c528f00" title="השיחה הראשונה שלי בספרדית &#45; דף חדש"]
+    </div>
+
+    <p style="text-align:center; font-size:14.5px; color:var(--ink-soft); margin-top:30px">
+      יש לכם שאלה או רוצים שיחת התאמה לפני ההרשמה? מוזמנים לפנות ישירות אליי. לאורה 🌸
+    </p>
+    <div class="contact" style="margin-top:14px">
+      <a href="https://wa.me/972585013849"><span>📱</span><span class="c-txt"><b>וואטסאפ / טלפון</b><i>058-5013849</i></span></a>
+      <a href="mailto:laura@myfluentspanish.com"><span>📧</span><span class="c-txt"><b>מייל</b><i>laura@myfluentspanish.com</i></span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="shell">
+    <img class="foot-logo" src="https://myfluentspanish.com/wp-content/uploads/2023/01/logo-fondo-transparente.png" alt="לאורה אפשטיין · מדברים ספרדית">
+    <p>כל הזכויות שמורות ללאורה אפשטיין</p>
+    <p><a href="https://myfluentspanish.com/privacy/">מדיניות פרטיות</a></p>
+  </div>
+</footer>
+
+<!-- sticky -->
+<div class="sticky">
+  <div class="p"><b>348 ₪</b>במקום 697 ₪</div>
+  <a class="btn btn-main" href="#form">אני רוצה להתחיל</a>
+</div>
+
+<div class="vmodal" id="vmodal">
+  <div class="box">
+    <button class="close" id="vclose" aria-label="סגירה">✕</button>
+    <div class="frame" id="vframe"></div>
+    <p class="cap" id="vcap"></p>
+  </div>
+</div>
+<script>
+document.documentElement.classList.add('js');
+
+/* ---- full-screen image viewer, mobile only ---- */
+const iv = document.getElementById('imgview');
+const infoFig = document.querySelector('.infographic');
+if (iv && infoFig){
+  const openIV = () => {
+    if (!window.matchMedia('(max-width:700px)').matches) return;
+    const im0 = infoFig.querySelector('img');
+    iv.querySelectorAll('img').forEach(n => n.remove());
+    const im = new Image();
+    im.src = im0.currentSrc || im0.src;
+    im.alt = im0.alt;
+    iv.appendChild(im);
+    iv.classList.add('on'); document.body.style.overflow = 'hidden';
+  };
+  const closeIV = () => { iv.classList.remove('on'); document.body.style.overflow = ''; };
+  infoFig.addEventListener('click', openIV);
+  document.getElementById('imgviewX').addEventListener('click', closeIV);
+  iv.addEventListener('click', e => { if (e.target === iv) closeIV(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && iv.classList.contains('on')) closeIV(); });
+}
+
+/* ---- lesson previews ---- */
+const LESSONS = [
+  {id:'1103729776', title:'שיעור לדוגמה', sub:'חלק 1 · שיחת היכרות'},
+  {id:'1102197119', title:'שיעור לדוגמה', sub:'חלק 2 · לדבר בלי לתרגם'}
+];
+const PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+const lessonsHost = document.getElementById('lessons');
+const mmss = sec => Math.floor(sec/60) + ':' + String(sec % 60).padStart(2,'0');
+
+LESSONS.forEach(v => {
+  const b = document.createElement('button');
+  b.className = 'lesson';
+  b.innerHTML = '<span class="thumb"><span class="play">' + PLAY + '</span><span class="dur"></span></span>' +
+                '<span class="meta"><b>' + v.title + '</b><span>' + v.sub + '</span></span>';
+  b.addEventListener('click', () => openVideo(v));
+  lessonsHost.appendChild(b);
+
+  /* poster frame + length straight from Vimeo.
+     if it fails the card keeps the teal tile, so nothing breaks. */
+  fetch('https://vimeo.com/api/oembed.json?url=' + encodeURIComponent('https://vimeo.com/' + v.id) + '&width=800')
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (!d) return;
+      if (d.thumbnail_url){
+        const img = new Image();
+        img.onload = () => {
+          const t = b.querySelector('.thumb');
+          t.style.backgroundImage = 'url("' + d.thumbnail_url + '")';
+          t.classList.add('has-img');
+        };
+        img.src = d.thumbnail_url;
+      }
+      if (d.duration){
+        const el = b.querySelector('.dur');
+        el.textContent = mmss(d.duration);
+        el.classList.add('on');
+      }
+    })
+    .catch(() => {});
+});
+const vmodal = document.getElementById('vmodal');
+const vframe = document.getElementById('vframe');
+const vcap   = document.getElementById('vcap');
+function openVideo(v){
+  vframe.innerHTML = '<iframe src="https://player.vimeo.com/video/' + v.id +
+    '?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" ' +
+    'allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" ' +
+    'referrerpolicy="strict-origin-when-cross-origin" title="' + v.title + '"></iframe>';
+  vcap.textContent = v.title + ' · ' + v.sub;
+  vmodal.classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closeVideo(){
+  vmodal.classList.remove('on');
+  vframe.innerHTML = '';               /* removing the iframe stops playback */
+  document.body.style.overflow = '';
+}
+/* ---- phone field: digits only, exactly 10 ---- */
+const phone = document.querySelector('input[name="your-phone"]');
+if (phone){
+  const check = () => {
+    if (!phone.value) return phone.setCustomValidity('');
+    if (!/^0\d{9}$/.test(phone.value))
+      phone.setCustomValidity('מספר טלפון צריך להיות 10 ספרות ולהתחיל ב-0, בלי מקפים ובלי רווחים');
+    else phone.setCustomValidity('');
+  };
+  phone.addEventListener('input', () => {
+    const clean = phone.value.replace(/\D/g, '').slice(0, 10);   /* מנקה מקפים, רווחים ו-+ */
+    if (clean !== phone.value) phone.value = clean;
+    check();
+  });
+  phone.addEventListener('blur', check);
+}
+
+document.getElementById('vclose').addEventListener('click', closeVideo);
+vmodal.addEventListener('click', e => { if (e.target === vmodal) closeVideo(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && vmodal.classList.contains('on')) closeVideo(); });
+
+/* reveal on scroll */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {rootMargin:'0px 0px -40px 0px', threshold:0});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+setTimeout(() => document.querySelectorAll('.rv').forEach(el => el.classList.add('in')), 2500);
+
+/* phrase cards */
+document.querySelectorAll('.phrase').forEach(b =>
+  b.addEventListener('click', () => b.classList.toggle('open')));
+
+/* tabs */
+document.querySelectorAll('.tab').forEach(t =>
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(o => o.setAttribute('aria-selected', String(o === t)));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('on', p.id === t.dataset.p));
+  }));
+
+/* testimonial carousel */
+const track = document.getElementById('track');
+const dots = document.getElementById('dots');
+const slides = [...track.children];
+const rtl = getComputedStyle(track).direction === 'rtl';
+const goTo = i => {
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  track.scrollTo({left: track.clientWidth * i * (rtl ? -1 : 1), behavior:'smooth'});
+};
+const current = () => Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
+
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.setAttribute('aria-label', 'המלצה ' + (i+1));
+  d.setAttribute('aria-current', String(i === 0));
+  d.addEventListener('click', () => goTo(i));
+  dots.appendChild(d);
+});
+document.getElementById('cPrev').addEventListener('click', () => goTo(current() - 1));
+document.getElementById('cNext').addEventListener('click', () => goTo(current() + 1));
+/* keep the track only as tall as the visible slide (mobile: avoids a huge gap) */
+const fitTrack = () => {
+  if (!window.matchMedia('(max-width:820px)').matches){ track.style.height = ''; return; }
+  const cur = slides[current()];
+  if (cur) track.style.height = cur.getBoundingClientRect().height + 'px';
+};
+window.addEventListener('resize', fitTrack);
+window.addEventListener('load', fitTrack);
+setTimeout(fitTrack, 300);
+
+let raf;
+track.addEventListener('scroll', () => {
+  cancelAnimationFrame(raf);
+  raf = requestAnimationFrame(() => {
+    const i = Math.round(Math.abs(track.scrollLeft) / track.clientWidth);
+    [...dots.children].forEach((d, n) => d.setAttribute('aria-current', String(n === i)));
+    fitTrack();
+  });
+});
+
+
+/* ספירה לאחור למחיר ההשקה */
+(function(){
+  const box = document.querySelector('.cdown');
+  if (!box) return;
+  const end = new Date(box.dataset.deadline).getTime();
+  if (isNaN(end)) return;                       // תאריך לא תקין - נשארים עם הטקסט הסטטי
+  const label = box.querySelector('.deadline');
+  const cell = {}; box.querySelectorAll('[data-cd]').forEach(el => cell[el.dataset.cd] = el);
+  const pad = n => String(n).padStart(2, '0');
+  let timer = null;
+
+  function expire(){
+    box.classList.remove('live');
+    box.classList.add('done');
+    label.textContent = '📅 אין תאריך למחזור קרוב';
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  function tick(){
+    const left = end - Date.now();
+    if (left <= 0){ expire(); return; }
+    const s = Math.floor(left / 1000);
+    cell.d.textContent = Math.floor(s / 86400);
+    cell.h.textContent = pad(Math.floor(s / 3600) % 24);
+    cell.m.textContent = pad(Math.floor(s / 60) % 60);
+    cell.s.textContent = pad(s % 60);
+  }
+
+  tick();
+  if (!box.classList.contains('done')){
+    label.textContent = '⏳ מחיר ההשקה מסתיים בעוד';
+    box.classList.add('live');
+    timer = setInterval(tick, 1000);
+  }
+})();
+
+</script>
+</div>
+<!-- /wp:html -->
