@@ -307,7 +307,14 @@
   position:absolute; top:12px; inset-inline-end:12px; width:30px; height:30px; border-radius:50%;
   border:none; background:var(--cream); cursor:pointer; font-size:15px; display:grid; place-items:center;
   color:#000;
-}#lp .notice-modal-note a{color:var(--teal); font-weight:700; text-decoration:underline}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto !important; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
+}#lp .notice-modal-note a{color:var(--teal); font-weight:700; text-decoration:underline}#lp .phone-copy-row{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background:var(--cream); border-radius:14px; padding:10px 14px; margin:14px 0;
+}#lp .phone-copy-num{font-family:var(--f-head); font-weight:800; font-size:18px; color:var(--ink); direction:ltr; unicode-bidi:isolate}#lp .phone-copy-btn{
+  font:inherit; font-family:var(--f-head); font-weight:700; font-size:13px;
+  background:var(--teal); color:#fff; border:none; border-radius:999px;
+  padding:7px 14px; cursor:pointer; white-space:nowrap; transition:background .15s;
+}#lp .phone-copy-btn.copied{background:var(--orange)}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto !important; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
   display:flex; align-items:flex-start; gap:14px; width:100%; text-align:start;
   background:var(--white); border:none; border-radius:16px; padding:16px 18px;
   box-shadow:var(--soft); cursor:pointer; font:inherit; color:var(--ink-soft);
@@ -732,9 +739,13 @@
 <div class="notice-modal" id="appNoticeModal">
   <div class="notice-modal-box">
     <button class="notice-modal-close" id="appNoticeClose" aria-label="סגירה">✕</button>
-    <p class="notice-modal-emoji">📱</p>
-    <h3>תשלום מהטלפון</h3>
-    <p class="notice-modal-note">אי אפשר לפתוח את אפליקציית התשלום ממחשב. כנסו לעמוד הזה מהטלפון שלכם ולחצו שוב על הכפתור &#45; זה יוביל אתכם ישירות לאפליקציה.</p>
+    <p class="notice-modal-emoji">💙</p>
+    <h3>תשלום בביט / פייבוקס</h3>
+    <p class="notice-modal-note">פתחו את אפליקציית ביט או פייבוקס והעבירו את התשלום למספר הבא:</p>
+    <div class="phone-copy-row">
+      <span class="phone-copy-num">052-5013849</span>
+      <button type="button" class="phone-copy-btn" id="phoneCopyBtn">העתקה 📋</button>
+    </div>
     <p class="notice-modal-note">לאחר ביצוע התשלום באפליקציה, אנא <a href="https://wa.me/972525013849" target="_blank" rel="noopener">שלחו לוואטסאפ שלי</a> אסמכתא של התשלום, בצירוף שם מלא וכתובת מייל.</p>
   </div>
 </div>
@@ -1016,7 +1027,6 @@ track.addEventListener('scroll', () => {
     if(e.target === vmodal){ vmodal.classList.remove('on'); vframe.innerHTML=''; document.body.style.overflow=''; }
   });
 
-  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   var appNoticeModal = document.getElementById('appNoticeModal');
   var appNoticeClose = document.getElementById('appNoticeClose');
   function openAppNotice(){
@@ -1029,15 +1039,39 @@ track.addEventListener('scroll', () => {
     appNoticeModal.classList.remove('on');
     document.body.style.overflow = '';
   }
-  if(!isMobile){
-    ['bitBtn','payboxBtn'].forEach(function(id){
-      var btn = document.getElementById(id);
-      if(btn) btn.addEventListener('click', function(e){ e.preventDefault(); openAppNotice(); });
-    });
-  }
+  ['bitBtn','payboxBtn'].forEach(function(id){
+    var btn = document.getElementById(id);
+    if(btn) btn.addEventListener('click', function(e){ e.preventDefault(); openAppNotice(); });
+  });
   if(appNoticeClose) appNoticeClose.addEventListener('click', closeAppNotice);
   if(appNoticeModal) appNoticeModal.addEventListener('click', function(e){
     if(e.target === appNoticeModal) closeAppNotice();
+  });
+  var phoneCopyBtn = document.getElementById('phoneCopyBtn');
+  if(phoneCopyBtn) phoneCopyBtn.addEventListener('click', function(){
+    var num = '0525013849';
+    function done(){
+      phoneCopyBtn.textContent = 'הועתק! ✓';
+      phoneCopyBtn.classList.add('copied');
+      setTimeout(function(){
+        phoneCopyBtn.textContent = 'העתקה 📋';
+        phoneCopyBtn.classList.remove('copied');
+      }, 1800);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(num).then(done).catch(function(){
+        fallbackCopy(num); done();
+      });
+    } else {
+      fallbackCopy(num); done();
+    }
+    function fallbackCopy(text){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta);
+    }
   });
 
   var items = document.querySelectorAll('#whoForCheck .familiar-item');
