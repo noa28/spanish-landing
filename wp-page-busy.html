@@ -286,14 +286,23 @@
   width:24px; height:24px; border-radius:50%; flex:0 0 auto;
   display:grid; place-items:center; background:var(--teal); color:#fff;
   font-size:12px; font-weight:800;
-}#lp .date-chip:nth-child(even) .n{background:var(--orange)}#lp .testi-grid{display:grid; gap:16px; grid-template-columns:repeat(2,1fr); max-width:820px; margin:0 auto}
+}#lp .testi-grid{display:grid; gap:16px; grid-template-columns:repeat(2,1fr); max-width:820px; margin:0 auto}
 @media(min-width:700px){#lp .testi-grid{grid-template-columns:repeat(4,1fr)}}#lp .testi-grid figure{margin:0; border-radius:18px; overflow:hidden; box-shadow:var(--soft-lg); line-height:0}#lp .testi-grid img{width:100%; display:block}#lp .price-box .price-row{margin:20px 0}#lp .lesson .thumb{aspect-ratio:3/4}
 @media(min-width:820px){#lp .bonus-cards{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:880px){#lp .steps-span-last .step:last-child{grid-column:1/-1}}#lp .pay-options{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:26px}#lp .pay-chip{
   display:inline-flex; align-items:center; gap:6px; background:var(--white); border-radius:999px;
   padding:9px 18px; box-shadow:var(--soft); font-family:var(--f-head); font-weight:700;
   font-size:14px; color:var(--ink); text-decoration:none; transition:transform .15s, box-shadow .15s;
-}#lp a.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto !important; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
+}#lp a.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp .notice-modal{
+  position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center;
+  background:rgba(20,30,40,.55); padding:20px;
+}#lp .notice-modal.on{display:flex}#lp .notice-modal-box{
+  position:relative; background:var(--white); border-radius:22px; padding:32px 28px;
+  max-width:380px; width:100%; box-shadow:var(--soft-lg); text-align:center;
+}#lp .notice-modal-emoji{font-size:34px; margin:0 0 8px}#lp .notice-modal-box h3{font-family:var(--f-head); font-size:19px; margin:0 0 12px}#lp .notice-modal-note{font-size:15px; color:var(--ink-soft); line-height:1.6; margin:0}#lp .notice-modal-close{
+  position:absolute; top:12px; inset-inline-end:12px; width:30px; height:30px; border-radius:50%;
+  border:none; background:var(--cream); cursor:pointer; font-size:15px; display:grid; place-items:center;
+}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto !important; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
   display:flex; align-items:flex-start; gap:14px; width:100%; text-align:start;
   background:var(--white); border:none; border-radius:16px; padding:16px 18px;
   box-shadow:var(--soft); cursor:pointer; font:inherit; color:var(--ink-soft);
@@ -570,7 +579,7 @@
       <h2 class="h-lg" style="font-size:22px">כמה ההשקעה שלכם ואיך מצטרפים?</h2>
       <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:52ch; margin-inline:auto">״ספרדית לאנשים עסוקים: ממתחילים למתקדמים ב-8 מפגשים״ היא התוכנית המקיפה והמושקעת ביותר בישראל ללימוד ספרדית מדוברת בזמן קצר, והיחידה מסוגה בארץ &#45; הנפרשת על פני 8 שבועות של תוכן, בקרה על ההתקדמות, וכמובן &#45; חוויה ושפה חדשה במוצ׳ילה.</p>
       <div class="price-row"><b>1,697 ₪</b></div>
-      <p class="pay">ניתן לחלק עד 6 תשלומים ללא ריבית · ניתן לשלם בביט, Paybox או העברה בנקאית</p>
+      <p class="pay">ניתן לחלק עד 6 תשלומים ללא ריבית</p>
       <figure style="max-width:150px; margin:20px auto 4px"><img src="https://myfluentspanish.com/wp-content/uploads/2026/09/busy-guarantee.png" alt="100% אחריות &#45; שיפור בדיבור או קורס חדש" style="width:100%; display:block"></figure>
       <p style="font-size:15px; color:var(--ink-soft); max-width:48ch; margin:6px auto 0">אני בטוחה בתוכנית שיצרתי. אם בתום 60 יום מסיום התוכנית &#45; לאחר שהשתתפתם בכל המפגשים וביצעתם את כל המשימות &#45; תרגישו שיכולת הדיבור שלכם לא השתפרה, תקבלו סבב נוסף ללא תשלום.</p>
       <a class="btn btn-main" href="#form" style="margin-top:22px">אני רוצה להצטרף לתוכנית</a>
@@ -671,10 +680,10 @@
   </div>
 </section>
 
-<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ FINAL + FORM ============ -->
-<section id="signup" style="padding-top:34px">
+<section id="signup" class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center" style="max-width:54ch">
       <span class="eyebrow">🌅 מוכנים לקחת את הספרדית שלכם לשלב הבא?</span>
@@ -687,8 +696,8 @@
     </div>
 
     <div class="pay-options">
-      <a href="tel:0525013849" class="pay-chip">💙 תשלום בביט</a>
-      <a href="tel:0525013849" class="pay-chip">🅿️ תשלום בפייבוקס</a>
+      <a href="tel:0525013849" class="pay-chip" id="bitBtn">💙 תשלום בביט</a>
+      <a href="tel:0525013849" class="pay-chip" id="payboxBtn">🅿️ תשלום בפייבוקס</a>
       <a href="https://wa.me/972525013849?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%95%D7%A8%D7%94%21%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%9B%D7%95%D7%A9%20%D7%90%D7%AA%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%AA%20%D7%A9%D7%9C%D7%9A%20-%20%D7%A1%D7%A4%D7%A8%D7%93%D7%99%D7%AA%20%D7%9C%D7%90%D7%A0%D7%A9%D7%99%D7%9D%20%D7%A2%D7%A1%D7%95%D7%A7%D7%99%D7%9D%20%D7%9E%D7%9E%D7%AA%D7%97%D7%99%D7%9C%D7%99%D7%9D%20%D7%9C%D7%9E%D7%AA%D7%A7%D7%93%D7%9E%D7%99%D7%9D%2C%20%D7%91%D7%94%D7%A2%D7%91%D7%A8%D7%94%20%D7%91%D7%A0%D7%A7%D7%90%D7%99%D7%AA.%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%20%D7%97%D7%A9%D7%91%D7%95%D7%9F%20%D7%91%D7%A0%D7%A7%20%3A%29" class="pay-chip">🏦 העברה בנקאית</a>
     </div>
     <p style="text-align:center; font-size:14px; color:var(--ink-faint); margin-top:6px">לתשלום בביט או בפייבוקס &#45; שילחו למספר 052-5013849</p>
@@ -715,6 +724,15 @@
 </footer>
 
 <div id="lessons" hidden></div>
+
+<div class="notice-modal" id="appNoticeModal">
+  <div class="notice-modal-box">
+    <button class="notice-modal-close" id="appNoticeClose" aria-label="סגירה">✕</button>
+    <p class="notice-modal-emoji">📱</p>
+    <h3>תשלום מהטלפון</h3>
+    <p class="notice-modal-note">אי אפשר לפתוח את אפליקציית התשלום ממחשב. כנסו לעמוד הזה מהטלפון שלכם ולחצו שוב על הכפתור &#45; זה יוביל אתכם ישירות לאפליקציה.</p>
+  </div>
+</div>
 
 <div class="vmodal" id="vmodal">
   <div class="box">
@@ -991,6 +1009,30 @@ track.addEventListener('scroll', () => {
   });
   if(vmodal) vmodal.addEventListener('click', function(e){
     if(e.target === vmodal){ vmodal.classList.remove('on'); vframe.innerHTML=''; document.body.style.overflow=''; }
+  });
+
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  var appNoticeModal = document.getElementById('appNoticeModal');
+  var appNoticeClose = document.getElementById('appNoticeClose');
+  function openAppNotice(){
+    if(!appNoticeModal) return;
+    appNoticeModal.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAppNotice(){
+    if(!appNoticeModal) return;
+    appNoticeModal.classList.remove('on');
+    document.body.style.overflow = '';
+  }
+  if(!isMobile){
+    ['bitBtn','payboxBtn'].forEach(function(id){
+      var btn = document.getElementById(id);
+      if(btn) btn.addEventListener('click', function(e){ e.preventDefault(); openAppNotice(); });
+    });
+  }
+  if(appNoticeClose) appNoticeClose.addEventListener('click', closeAppNotice);
+  if(appNoticeModal) appNoticeModal.addEventListener('click', function(e){
+    if(e.target === appNoticeModal) closeAppNotice();
   });
 
   var items = document.querySelectorAll('#whoForCheck .familiar-item');
