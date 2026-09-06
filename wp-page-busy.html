@@ -293,16 +293,7 @@
   display:inline-flex; align-items:center; gap:6px; background:var(--white); border-radius:999px;
   padding:9px 18px; box-shadow:var(--soft); font-family:var(--f-head); font-weight:700;
   font-size:14px; color:var(--ink); text-decoration:none; transition:transform .15s, box-shadow .15s;
-}#lp a.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp button.pay-chip{border:none; cursor:pointer; font:inherit}#lp button.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp .bank-modal{
-  position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center;
-  background:rgba(20,30,40,.55); padding:20px;
-}#lp .bank-modal.on{display:flex}#lp .bank-modal-box{
-  position:relative; background:var(--white); border-radius:22px; padding:32px 28px;
-  max-width:420px; width:100%; box-shadow:var(--soft-lg); text-align:center;
-}#lp .bank-modal-box h3{font-family:var(--f-head); font-size:19px; margin:0 0 14px}#lp .bank-modal-note{font-size:15px; color:var(--ink-soft); line-height:1.6; margin:0}#lp .bank-modal-note a{color:var(--teal); font-weight:700}#lp .bank-modal-close{
-  position:absolute; top:12px; inset-inline-end:12px; width:30px; height:30px; border-radius:50%;
-  border:none; background:var(--cream); cursor:pointer; font-size:15px; display:grid; place-items:center;
-}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto !important; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
+}#lp a.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto !important; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
   display:flex; align-items:flex-start; gap:14px; width:100%; text-align:start;
   background:var(--white); border:none; border-radius:16px; padding:16px 18px;
   box-shadow:var(--soft); cursor:pointer; font:inherit; color:var(--ink-soft);
@@ -698,7 +689,7 @@
     <div class="pay-options">
       <a href="tel:0525013849" class="pay-chip">💙 תשלום בביט</a>
       <a href="tel:0525013849" class="pay-chip">🅿️ תשלום בפייבוקס</a>
-      <button type="button" class="pay-chip" id="bankBtn">🏦 העברה בנקאית</button>
+      <a href="https://wa.me/972525013849?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%95%D7%A8%D7%94%21%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%9B%D7%95%D7%A9%20%D7%90%D7%AA%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%AA%20%D7%A9%D7%9C%D7%9A%20-%20%D7%A1%D7%A4%D7%A8%D7%93%D7%99%D7%AA%20%D7%9C%D7%90%D7%A0%D7%A9%D7%99%D7%9D%20%D7%A2%D7%A1%D7%95%D7%A7%D7%99%D7%9D%20%D7%9E%D7%9E%D7%AA%D7%97%D7%99%D7%9C%D7%99%D7%9D%20%D7%9C%D7%9E%D7%AA%D7%A7%D7%93%D7%9E%D7%99%D7%9D%2C%20%D7%91%D7%94%D7%A2%D7%91%D7%A8%D7%94%20%D7%91%D7%A0%D7%A7%D7%90%D7%99%D7%AA.%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%20%D7%97%D7%A9%D7%91%D7%95%D7%9F%20%D7%91%D7%A0%D7%A7%20%3A%29" class="pay-chip">🏦 העברה בנקאית</a>
     </div>
     <p style="text-align:center; font-size:14px; color:var(--ink-faint); margin-top:6px">לתשלום בביט או בפייבוקס &#45; שילחו למספר 052-5013849</p>
 
@@ -730,14 +721,6 @@
     <button class="close" id="vclose" aria-label="סגירה">✕</button>
     <div class="frame" id="vframe"></div>
     <p class="cap" id="vcap"></p>
-  </div>
-</div>
-
-<div class="bank-modal" id="bankModal">
-  <div class="bank-modal-box">
-    <button class="bank-modal-close" id="bankModalClose" aria-label="סגירה">✕</button>
-    <h3>פרטי העברה בנקאית</h3>
-    <p class="bank-modal-note">פרטי החשבון להעברה יעודכנו כאן בקרוב. בינתיים אפשר ליצור קשר בוואטסאפ למספר <a href="https://wa.me/972525013849">052-5013849</a> ונשלח לכם את הפרטים.</p>
   </div>
 </div>
 <script>
@@ -1009,16 +992,6 @@ track.addEventListener('scroll', () => {
   if(vmodal) vmodal.addEventListener('click', function(e){
     if(e.target === vmodal){ vmodal.classList.remove('on'); vframe.innerHTML=''; document.body.style.overflow=''; }
   });
-
-  var bankBtn = document.getElementById('bankBtn');
-  var bankModal = document.getElementById('bankModal');
-  var bankModalClose = document.getElementById('bankModalClose');
-  if(bankBtn && bankModal){
-    bankBtn.addEventListener('click', function(){ bankModal.classList.add('on'); document.body.style.overflow='hidden'; });
-    var closeBank = function(){ bankModal.classList.remove('on'); document.body.style.overflow=''; };
-    if(bankModalClose) bankModalClose.addEventListener('click', closeBank);
-    bankModal.addEventListener('click', function(e){ if(e.target === bankModal) closeBank(); });
-  }
 
   var items = document.querySelectorAll('#whoForCheck .familiar-item');
   var result = document.getElementById('whoForResult');
