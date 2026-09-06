@@ -281,7 +281,7 @@
 }#lp .conv-hero .trust{justify-content:center; margin:24px auto 0}#lp .date-chips{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; max-width:760px; margin:0 auto}#lp .date-chip{
   display:inline-flex; align-items:center; gap:9px;
   background:var(--white); border-radius:999px; padding:6px 16px 6px 6px; box-shadow:var(--soft);
-  font-family:var(--f-head); font-weight:700; font-size:14px; color:var(--ink);
+  font-family:var(--f-head); font-weight:700; font-size:14px; color:var(--teal);
 }#lp .date-chip .n{
   width:24px; height:24px; border-radius:50%; flex:0 0 auto;
   display:grid; place-items:center; background:var(--teal); color:#fff;
@@ -293,7 +293,16 @@
   display:inline-flex; align-items:center; gap:6px; background:var(--white); border-radius:999px;
   padding:9px 18px; box-shadow:var(--soft); font-family:var(--f-head); font-weight:700;
   font-size:14px; color:var(--ink); text-decoration:none; transition:transform .15s, box-shadow .15s;
-}#lp a.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
+}#lp a.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp button.pay-chip{border:none; cursor:pointer; font:inherit}#lp button.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp .bank-modal{
+  position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center;
+  background:rgba(20,30,40,.55); padding:20px;
+}#lp .bank-modal.on{display:flex}#lp .bank-modal-box{
+  position:relative; background:var(--white); border-radius:22px; padding:32px 28px;
+  max-width:420px; width:100%; box-shadow:var(--soft-lg); text-align:center;
+}#lp .bank-modal-box h3{font-family:var(--f-head); font-size:19px; margin:0 0 14px}#lp .bank-modal-note{font-size:15px; color:var(--ink-soft); line-height:1.6; margin:0}#lp .bank-modal-note a{color:var(--teal); font-weight:700}#lp .bank-modal-close{
+  position:absolute; top:12px; inset-inline-end:12px; width:30px; height:30px; border-radius:50%;
+  border:none; background:var(--cream); cursor:pointer; font-size:15px; display:grid; place-items:center;
+}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto !important; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
   display:flex; align-items:flex-start; gap:14px; width:100%; text-align:start;
   background:var(--white); border:none; border-radius:16px; padding:16px 18px;
   box-shadow:var(--soft); cursor:pointer; font:inherit; color:var(--ink-soft);
@@ -554,7 +563,7 @@
     </div>
     <div class="steps steps-span-last">
       <div class="step"><div><h3>נרשמים ומשלמים</h3><p>מיד לאחר ההרשמה והתשלום תקבלו במייל את פרטי הגישה לאתר הקורס הדיגיטלי &#45; ותוכלו להתחיל ללמוד באותו רגע.</p></div></div>
-      <div class="step"><div><h3>הספר מגיע עד הבית</h3><p>תוך כמה ימים תקבלו את הספר המודפס ״ספרדית לאנשים עסוקים״ עם שליח עד הבית.</p></div></div>
+      <div class="step"><div><h3>הספר מגיע עד הבית</h3><p>תוך כמה ימים תקבלו את הספר המודפס ״ספרדית לאנשים עסוקים &#45; רמת מתחילים״ עם שליח עד הבית.</p></div></div>
       <div class="step"><div><h3>מצטרפים לקבוצה ולזום</h3><p>מצטרפים לקבוצת הוואטסאפ של התוכנית, ומתחילים 8 מפגשי תרגול שבועיים בזום, בימי שני 19:30-18:30.</p></div></div>
     </div>
   </div>
@@ -569,7 +578,7 @@
       <p class="deadline">⏳ מספר מקומות מוגבל</p>
       <h2 class="h-lg" style="font-size:22px">כמה ההשקעה שלכם ואיך מצטרפים?</h2>
       <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:52ch; margin-inline:auto">״ספרדית לאנשים עסוקים: ממתחילים למתקדמים ב-8 מפגשים״ היא התוכנית המקיפה והמושקעת ביותר בישראל ללימוד ספרדית מדוברת בזמן קצר, והיחידה מסוגה בארץ &#45; הנפרשת על פני 8 שבועות של תוכן, בקרה על ההתקדמות, וכמובן &#45; חוויה ושפה חדשה במוצ׳ילה.</p>
-      <div class="price-row"><b style="font-size:clamp(24px,4vw,30px) !important">יעודכן בקרוב</b></div>
+      <div class="price-row"><b>1,697 ₪</b></div>
       <p class="pay">ניתן לחלק עד 6 תשלומים ללא ריבית · ניתן לשלם בביט, Paybox או העברה בנקאית</p>
       <figure style="max-width:150px; margin:20px auto 4px"><img src="https://myfluentspanish.com/wp-content/uploads/2026/09/busy-guarantee.png" alt="100% אחריות &#45; שיפור בדיבור או קורס חדש" style="width:100%; display:block"></figure>
       <p style="font-size:15px; color:var(--ink-soft); max-width:48ch; margin:6px auto 0">אני בטוחה בתוכנית שיצרתי. אם בתום 60 יום מסיום התוכנית &#45; לאחר שהשתתפתם בכל המפגשים וביצעתם את כל המשימות &#45; תרגישו שיכולת הדיבור שלכם לא השתפרה, תקבלו סבב נוסף ללא תשלום.</p>
@@ -689,7 +698,7 @@
     <div class="pay-options">
       <a href="tel:0525013849" class="pay-chip">💙 תשלום בביט</a>
       <a href="tel:0525013849" class="pay-chip">🅿️ תשלום בפייבוקס</a>
-      <span class="pay-chip">🏦 העברה בנקאית</span>
+      <button type="button" class="pay-chip" id="bankBtn">🏦 העברה בנקאית</button>
     </div>
     <p style="text-align:center; font-size:14px; color:var(--ink-faint); margin-top:6px">לתשלום בביט או בפייבוקס &#45; שילחו למספר 052-5013849</p>
 
@@ -721,6 +730,14 @@
     <button class="close" id="vclose" aria-label="סגירה">✕</button>
     <div class="frame" id="vframe"></div>
     <p class="cap" id="vcap"></p>
+  </div>
+</div>
+
+<div class="bank-modal" id="bankModal">
+  <div class="bank-modal-box">
+    <button class="bank-modal-close" id="bankModalClose" aria-label="סגירה">✕</button>
+    <h3>פרטי העברה בנקאית</h3>
+    <p class="bank-modal-note">פרטי החשבון להעברה יעודכנו כאן בקרוב. בינתיים אפשר ליצור קשר בוואטסאפ למספר <a href="https://wa.me/972525013849">052-5013849</a> ונשלח לכם את הפרטים.</p>
   </div>
 </div>
 <script>
@@ -992,6 +1009,16 @@ track.addEventListener('scroll', () => {
   if(vmodal) vmodal.addEventListener('click', function(e){
     if(e.target === vmodal){ vmodal.classList.remove('on'); vframe.innerHTML=''; document.body.style.overflow=''; }
   });
+
+  var bankBtn = document.getElementById('bankBtn');
+  var bankModal = document.getElementById('bankModal');
+  var bankModalClose = document.getElementById('bankModalClose');
+  if(bankBtn && bankModal){
+    bankBtn.addEventListener('click', function(){ bankModal.classList.add('on'); document.body.style.overflow='hidden'; });
+    var closeBank = function(){ bankModal.classList.remove('on'); document.body.style.overflow=''; };
+    if(bankModalClose) bankModalClose.addEventListener('click', closeBank);
+    bankModal.addEventListener('click', function(e){ if(e.target === bankModal) closeBank(); });
+  }
 
   var items = document.querySelectorAll('#whoForCheck .familiar-item');
   var result = document.getElementById('whoForResult');
