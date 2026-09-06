@@ -270,18 +270,11 @@
 }html.js #lp .rv{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.3,1)}html.js #lp .rv.in{opacity:1; transform:none}
 
 @media (prefers-reduced-motion: reduce){#lp{scroll-behavior:auto}#lp *{transition-duration:.01ms !important; animation:none !important}html.js #lp .rv{opacity:1; transform:none}
-}#lp .who-grid{display:grid; gap:26px; max-width:900px; margin:30px auto 0}#lp .who-photo{position:relative; margin:0 auto; line-height:0; width:200px}#lp .who-photo::before{
-  content:""; position:absolute; z-index:0; inset:18% -9% 4% -9%;
-  background:linear-gradient(150deg, var(--teal-soft), var(--orange-soft));
-  border-radius:46% 54% 52% 48% / 56% 44% 56% 44%;
-}#lp .who-photo img{position:relative; z-index:1; width:100%; height:auto; display:block;
-  filter:drop-shadow(0 16px 22px rgba(28,58,80,.16))}#lp .who-list{display:grid; gap:14px; margin:0}#lp .who-list li{
+}#lp .who-list{display:grid; gap:14px; max-width:70ch; margin:30px auto 0}#lp .who-list li{
   display:flex; gap:12px; align-items:flex-start; background:var(--white);
   border-radius:16px; padding:16px 18px; box-shadow:var(--soft); list-style:none;
   font-size:15.5px; color:var(--ink-soft); line-height:1.6;
-}#lp .who-list li::before{content:"⇐"; color:var(--orange); font-weight:700; font-size:18px; flex:0 0 auto}
-@media(min-width:900px){#lp .who-grid{grid-template-columns:220px 1fr; align-items:start; gap:34px}#lp .who-photo{width:220px; position:sticky; top:110px}
-}#lp .who-close{text-align:center; max-width:52ch; margin:26px auto 0; font-size:16px; color:var(--ink)}#lp .testi-shot{max-width:820px; margin:0 auto; border-radius:24px; overflow:hidden; box-shadow:var(--soft-lg)}#lp .testi-shot img{width:100%; display:block}#lp .card .ico.img-ico{width:64px; height:64px; border-radius:16px; padding:9px}#lp .card .ico.img-ico img{width:100%; height:100%; object-fit:contain}#lp .card .ico.img-ico.big{padding:0; overflow:hidden; position:relative}#lp .card .ico.img-ico.big img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center}#lp .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}#lp .conv-hero{padding:34px 0 26px; text-align:center}
+}#lp .who-list li::before{content:"⇐"; color:var(--orange); font-weight:700; font-size:18px; flex:0 0 auto}#lp .who-close{text-align:center; max-width:52ch; margin:26px auto 0; font-size:16px; color:var(--ink)}#lp .testi-shot{max-width:820px; margin:0 auto; border-radius:24px; overflow:hidden; box-shadow:var(--soft-lg)}#lp .testi-shot img{width:100%; display:block}#lp .card .ico.img-ico{width:64px; height:64px; border-radius:16px; padding:9px}#lp .card .ico.img-ico img{width:100%; height:100%; object-fit:contain}#lp .card .ico.img-ico.big{padding:0; overflow:hidden; position:relative}#lp .card .ico.img-ico.big img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center}#lp .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}#lp .conv-hero{padding:34px 0 26px; text-align:center}
 @media(min-width:880px){#lp .conv-hero{padding:52px 0 40px}}#lp .conv-hero-top{margin-bottom:22px}#lp .conv-hero-title{font-size:clamp(30px, 5.6vw, 48px); line-height:1.16; margin:16px 0 0}#lp .conv-hero-banner{max-width:860px; margin:0 auto 32px; border-radius:26px; overflow:hidden; box-shadow:var(--soft-lg); line-height:0}#lp .conv-hero-banner img{width:100%; display:block}#lp .conv-hero-hook{max-width:52ch; margin:0 auto}#lp .conv-hero-hook .pull{
   font-family:var(--f-head); font-weight:800; color:var(--ink);
   font-size:clamp(24px, 4.4vw, 36px); line-height:1.28; margin:0;
@@ -342,21 +335,21 @@
 
 <div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
 
-<!-- ============ TASTER ============ -->
-<section class="bg-cream" id="taster" style="padding-top:34px; padding-top:32px">
+<!-- ============ SOUNDS FAMILIAR ============ -->
+<section class="bg-cream" style="padding-top:34px; padding-top:32px">
   <div class="shell rv">
     <div class="section-head center">
-      <span class="eyebrow">✨ טעימה קטנה</span>
-      <h2 class="h-lg">תוך דקה אתם כבר יודעים משהו</h2>
-      <p class="lead">לחצו על משפט כדי לראות מה הוא אומר ואיך אומרים אותו. ככה בדיוק מרגישים השיעורים &#45; קטן, ברור, ומיד מצליחים.</p>
+      <span class="eyebrow">💬 מכירים את זה?</span>
+      <h2 class="h-lg">נשמע לכם מוכר?</h2>
     </div>
-    <div class="taster">
-      <button class="phrase"><span class="es">¡Hola! ¿Qué tal?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">היי, מה נשמע?</span></span></button>
-      <button class="phrase"><span class="es">Me llamo…</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">קוראים לי…</span></span></button>
-      <button class="phrase"><span class="es">¿De dónde eres?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">מאיפה אתה?</span></span></button>
-      <button class="phrase"><span class="es">Mucho gusto</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">נעים מאוד</span></span></button>
-      <button class="phrase"><span class="es">¿Nos vemos mañana?</span><span class="tap">👆 לחצו לגילוי</span><span class="rev"><span class="he">נתראה מחר?</span></span></button>
+    <div class="argument">
+      <p>אתם חולמים לדבר ספרדית &#45; אבל לא מצליחים באמת להתחיל.</p>
+      <p>אולי ניסיתם דרך אפליקציות, סרטוני יוטיוב, מפגשי תרגול או אפילו קורסים שונים, אבל בפועל אתם רק יודעים מילים, מבינים חלק ונתקעים כשצריך להרכיב משפט.</p>
+      <p>ואם עוד לא התחלתם? זה כי לדבר ספרדית מרגיש כמו ״פרויקט״: יקר, מסובך, ודורש יותר מדי זמן.</p>
+      <p class="pull">הגיע הזמן להפסיק ללמוד,<br>ותכלס &#45; <span class="hl">להתחיל לדבר!</span></p>
+      <p>הקורס ״השיחה הראשונה שלי בספרדית״ מלמד אתכם לא רק את השפה &#45; אלא איך לדבר בפועל. בלי דקדוק מעייף, בלי שינון מיותר, ובלי להיתקע. תתחילו לדבר ספרדית כבר מהשיעור הראשון &#45; במשפטים שלמים, בקצב שמתאים לכם, ועם ביטחון לנהל שיחה אמיתית.</p>
     </div>
+    <p style="text-align:center; margin-top:8px; font-size:19px; font-family:var(--f-head); font-weight:700; color:var(--ink)">זו לא תיאוריה &#45; זה תכלס. וזה עובד.</p>
   </div>
 </section>
 
@@ -386,9 +379,14 @@
 <!-- ============ WHAT YOU GET ============ -->
 <section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
-    <div class="section-head center">
-      <span class="eyebrow">📦 מה מקבלים בקורס</span>
-      <h2 class="h-lg">ארבעה דברים, מיד עם ההרשמה</h2>
+    <div class="gains-head">
+      <figure class="gains-photo">
+        <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-megaphone2.webp" alt="לאורה אפשטיין" loading="lazy">
+      </figure>
+      <div class="section-head">
+        <span class="eyebrow">📦 מה מקבלים בקורס</span>
+        <h2 class="h-lg">ארבעה דברים, מיד עם ההרשמה</h2>
+      </div>
     </div>
     <div class="steps">
       <div class="step"><div><h3>30 שיעורים מוקלטים</h3><p>לצפייה מכל מקום ובכל זמן.</p></div></div>
@@ -447,11 +445,7 @@
       <span class="eyebrow">🎯 למי זה מתאים</span>
       <h2 class="h-lg">האם זה בשבילכם?</h2>
     </div>
-    <div class="who-grid">
-      <figure class="who-photo">
-        <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-megaphone2.webp" alt="לאורה אפשטיין" loading="lazy">
-      </figure>
-      <ul class="who-list">
+    <ul class="who-list">
         <li>לכם, שמפנטזים כבר שנים לדבר ספרדית &#45; אבל זה תמיד נדחה ל״יום אחד״…</li>
         <li>לכם, אנשים בלי ידע קודם, וגם למי שכבר התחיל ללמוד ומרגיש תקוע.</li>
         <li>לכם, אנשים שיודעים הרבה מילים אבל רוצים להפוך אותן למשפטים אמיתיים ולהתחיל לדבר.</li>
@@ -460,7 +454,6 @@
         <li>לכם, שמתכננים לטייל, ורוצים סוף־סוף להרגיש שאתם באמת מתקשרים.</li>
         <li>ולכם, שפשוט מרגישים בפנים שזה אפשרי &#45; אם רק מישהו היה מסביר את זה בצורה ברורה, בלי חוקים מסובכים, בלי דקדוק מבלבל, ועם הרבה אמונה בדרך.</li>
       </ul>
-    </div>
     <p class="who-close">אם זה אתם &#45; הקורס הזה נבנה בדיוק בשבילכם. כדי שתוכלו לדבר בביטחון, בשקט פנימי, ובשמחה.</p>
   </div>
 </section>
