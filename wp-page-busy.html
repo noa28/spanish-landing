@@ -283,7 +283,7 @@
   font-family:var(--f-head); font-weight:700; font-size:14px; color:var(--ink);
 }#lp .testi-grid{display:grid; gap:16px; grid-template-columns:repeat(2,1fr); max-width:820px; margin:0 auto}
 @media(min-width:700px){#lp .testi-grid{grid-template-columns:repeat(4,1fr)}}#lp .testi-grid figure{margin:0; border-radius:18px; overflow:hidden; box-shadow:var(--soft-lg); line-height:0}#lp .testi-grid img{width:100%; display:block}#lp .price-box .price-row{margin:20px 0}#lp .lesson .thumb{aspect-ratio:3/4}
-@media(min-width:820px){#lp .bonus-cards{grid-template-columns:repeat(3,1fr)}}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
+@media(min-width:820px){#lp .bonus-cards{grid-template-columns:repeat(3,1fr)}}#lp .bonus-cards .card{display:flex; flex-direction:column}#lp .bonus-cards .card .bonus-val{margin-top:auto; padding-top:10px}#lp .familiar-check{display:grid; gap:12px; max-width:640px; margin:0 auto}#lp .familiar-item{
   display:flex; align-items:flex-start; gap:14px; width:100%; text-align:start;
   background:var(--white); border:none; border-radius:16px; padding:16px 18px;
   box-shadow:var(--soft); cursor:pointer; font:inherit; color:var(--ink-soft);
@@ -490,10 +490,10 @@
   </div>
 </section>
 
-<div style="color:var(--white)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C 260 50 430 2 720 24 C 1020 46 1200 4 1440 32 L1440 52 L0 52 Z"/></svg></div>
+<div style="color:var(--cream)"><svg class="wave" viewBox="0 0 1440 52" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 -8 420 52 720 26 C 1010 2 1180 46 1440 18 L1440 52 L0 52 Z"/></svg></div>
 
 <!-- ============ BONUSES ============ -->
-<section>
+<section class="bg-cream" style="padding-top:34px">
   <div class="shell rv">
     <div class="section-head center">
       <span class="eyebrow">🎁 בונוסים בשווי 3,385 ₪</span>
@@ -502,7 +502,7 @@
     <div class="cards bonus-cards">
       <div class="card"><div class="ico o">📖</div><h3>ספר מודפס חוויתי ללימוד ותרגול</h3><p>מתחיל משיחה בסיסית וכולל תרגילים ומשימות שיעזרו לכם לנסח משפטים ולהרחיב את אוצר המילים.</p><p class="bonus-val">שווי ההטבה 148 ₪</p></div>
       <div class="card"><div class="ico">💻</div><h3>קורס דיגיטלי &#45; 45 שיעורי וידאו</h3><p>גישה לכל החיים. בנוי בצורה הדרגתית ואסטרטגית עם דגש על השפה המדוברת.</p><p class="bonus-val">שווי ההטבה 997 ₪</p></div>
-      <div class="card"><div class="ico o img-ico"><img src="https://myfluentspanish.com/wp-content/uploads/2026/09/busy-trophy.jpg" alt=""></div><h3>תחרות משימות שבועית</h3><p>מי שיגיש הכי הרבה משימות במהלך התוכנית יזכה בשיעור אחד על אחד עם לאורה (60 דקות מתנה).</p><p class="bonus-val">שווי ההטבה 497 ₪</p></div>
+      <div class="card"><div class="ico o">🏆</div><h3>תחרות משימות שבועית</h3><p>מי שיגיש הכי הרבה משימות במהלך התוכנית יזכה בשיעור אחד על אחד עם לאורה (60 דקות מתנה).</p><p class="bonus-val">שווי ההטבה 497 ₪</p></div>
       <div class="card"><div class="ico">🎧</div><h3>הקלטות של כל השיעורים</h3><p>פספסתם מפגש? רוצים לחזור על החומר? כל ההקלטות, הקבצים וסיכומי השיעור יישלחו במייל.</p><p class="bonus-val">שווי ההטבה 797 ₪</p></div>
       <div class="card"><div class="ico o">💬</div><h3>קבוצת וואטסאפ פרטית</h3><p>להתייעצות, עזרה הדדית, תמיכה ומענה לשאלות, הגשת משימות ומשוב + תכנים רבים נוספים. בנוסף, כל 45 השיעורים יישלחו לקבוצה בכתב, יום אחרי יום (כ-15 דקות ביום), יחד עם קובץ MP3 לכל שיעור &#45; כדי שתוכלו ללמוד גם בדרכים או מכל מקום שתבחרו.</p><p class="bonus-val">שווי ההטבה 797 ₪</p></div>
       <div class="card"><div class="ico">✈️</div><h3>ערכת נסיעות להורדה והדפסה</h3><p>איך לבצע פעולות שגרתיות שנדרשות בחו״ל &#45; הזמנת חדר במלון, אוכל במסעדות, הגעה לכתובת ועוד.</p><p class="bonus-val">שווי ההטבה 149 ₪</p></div>
