@@ -552,7 +552,7 @@
       <p class="lead">8 מפגשים של 60 דקות בזום, בימי שני בין השעות 19:30-18:30.</p>
     </div>
     <div class="date-chips">
-      <span class="date-chip first-chip"><span class="first-label">מתחילים במפגש הראשון<br>⬇</span><b class="n">1</b>12.10.26</span>
+      <span class="date-chip first-chip"><span class="first-label">מפגש הפתיחה<br>⬇</span><b class="n">1</b>12.10.26</span>
       <span class="date-chip"><b class="n">2</b>19.10.26</span>
       <span class="date-chip"><b class="n">3</b>26.10.26</span>
       <span class="date-chip"><b class="n">4</b>02.11.26</span>
@@ -1050,28 +1050,20 @@ track.addEventListener('scroll', () => {
   var phoneCopyBtn = document.getElementById('phoneCopyBtn');
   if(phoneCopyBtn) phoneCopyBtn.addEventListener('click', function(){
     var num = '0525013849';
-    function done(){
-      phoneCopyBtn.textContent = 'הועתק! ✓';
-      phoneCopyBtn.classList.add('copied');
-      setTimeout(function(){
-        phoneCopyBtn.textContent = 'העתקה 📋';
-        phoneCopyBtn.classList.remove('copied');
-      }, 1800);
-    }
+    var ta = document.createElement('textarea');
+    ta.value = num; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
     if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(num).then(done).catch(function(){
-        fallbackCopy(num); done();
-      });
-    } else {
-      fallbackCopy(num); done();
+      try { navigator.clipboard.writeText(num).catch(function(){}); } catch(e){}
     }
-    function fallbackCopy(text){
-      var ta = document.createElement('textarea');
-      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); } catch(e){}
-      document.body.removeChild(ta);
-    }
+    phoneCopyBtn.textContent = 'הועתק! ✓';
+    phoneCopyBtn.classList.add('copied');
+    setTimeout(function(){
+      phoneCopyBtn.textContent = 'העתקה 📋';
+      phoneCopyBtn.classList.remove('copied');
+    }, 1800);
   });
 
   var items = document.querySelectorAll('#whoForCheck .familiar-item');
