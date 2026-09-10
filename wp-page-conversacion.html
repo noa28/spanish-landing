@@ -270,8 +270,8 @@
 }html.js #lp .rv{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.3,1)}html.js #lp .rv.in{opacity:1; transform:none}
 
 @media (prefers-reduced-motion: reduce){#lp{scroll-behavior:auto}#lp *{transition-duration:.01ms !important; animation:none !important}html.js #lp .rv{opacity:1; transform:none}
-}#lp .conv-hero-banner{position:relative}#lp .conv-banner-cta{position:absolute; z-index:2; right:7%; bottom:9%}#lp .conv-banner-cta .btn{padding:15px 28px; font-size:15.5px; white-space:nowrap; box-shadow:0 16px 30px -12px rgba(0,0,0,.45)}
-@media (max-width:600px){#lp .conv-banner-cta{right:5%; bottom:6%}#lp .conv-banner-cta .btn{padding:10px 18px; font-size:12.5px}
+}#lp .conv-price-bar-cta-only{padding:9px}#lp .conv-cta-wide{display:block; width:100%; text-align:center; padding:14px 30px; font-size:15.5px; white-space:nowrap}
+@media (max-width:480px){#lp .conv-price-bar-cta-only{padding:8px}#lp .conv-cta-wide{padding:12px 20px; font-size:14.5px}
 }#lp .who-list{display:grid; gap:14px; max-width:70ch; margin:30px auto 0}#lp .who-list li{
   display:flex; gap:12px; align-items:flex-start; background:var(--white);
   border-radius:16px; padding:16px 18px; box-shadow:var(--soft); list-style:none;
@@ -319,9 +319,6 @@
 
     <figure class="conv-hero-banner">
       <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-banner.webp" alt="השיחה הראשונה שלי בספרדית &#45; מחוסר ביטחון בדיבור לשיחה זורמת, תוך 30 שיעורים קצרים וקלים">
-      <div class="conv-banner-cta">
-        <a class="btn btn-main" href="#form">אני רוצה להתחיל לדבר</a>
-      </div>
     </figure>
 
     <div class="conv-hero-hook">
@@ -331,6 +328,10 @@
     <div class="trust">
       <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-laura.webp" alt="לאורה אפשטיין">
       <div>עם <b>לאורה אפשטיין</b> · מורה לספרדית 20 שנה · דוברת 5 שפות</div>
+    </div>
+
+    <div class="conv-price-bar conv-price-bar-cta-only">
+      <a class="btn btn-main conv-cta-wide" href="#form">אני רוצה להתחיל לדבר</a>
     </div>
   </div>
 </header>
