@@ -655,7 +655,15 @@
 <section>
   <div class="shell rv">
     <div class="price-box">
-      <p class="deadline">⏳ מחיר השקה מיוחד לזמן מוגבל</p>
+      <div class="cdown">
+        <p class="deadline">⏳ מחיר השקה מיוחד לזמן מוגבל</p>
+        <div class="cd-cells">
+          <div><b data-cd="d">00</b><i>ימים</i></div>
+          <div><b data-cd="h">00</b><i>שעות</i></div>
+          <div><b data-cd="m">00</b><i>דקות</i></div>
+          <div><b data-cd="s">00</b><i>שניות</i></div>
+        </div>
+      </div>
       <h2 class="h-lg" style="font-size:22px">כמה הייתם משקיעים כדי להגשים את החלום שלכם ולדבר ספרדית בביטחון?</h2>
       <p style="font-size:15.5px; color:var(--ink-soft); margin-top:10px; max-width:46ch; margin-inline:auto">״השיחה הראשונה שלי בספרדית״ הוא קורס מושקע, ממוקד דיבור, <b>ויחיד מסוגו בארץ</b> &#45; שנבנה במיוחד כדי שתתחילו לדבר מהר, בקלות, ובביטחון.</p>
       <div class="price-row"><b>348 ₪</b><s>697 ₪</s></div>
@@ -1037,6 +1045,32 @@ track.addEventListener('scroll', () => {
       phoneCopyBtn.classList.remove('copied');
     }, 1800);
   });
+})();
+(function(){
+  var box = document.querySelector('.cdown');
+  if(!box) return;
+  var label = box.querySelector('.deadline');
+  var cell = {};
+  box.querySelectorAll('[data-cd]').forEach(function(el){ cell[el.dataset.cd] = el; });
+  function pad(n){ return String(n).padStart(2, '0'); }
+  var CYCLE = 30 * 24 * 60 * 60 * 1000;
+  var ANCHOR = new Date('2026-01-01T00:00:00+03:00').getTime();
+  function nextDeadline(){
+    var cyclesPassed = Math.floor((Date.now() - ANCHOR) / CYCLE) + 1;
+    return ANCHOR + cyclesPassed * CYCLE;
+  }
+  function tick(){
+    var left = nextDeadline() - Date.now();
+    var s = Math.max(0, Math.floor(left / 1000));
+    cell.d.textContent = Math.floor(s / 86400);
+    cell.h.textContent = pad(Math.floor(s / 3600) % 24);
+    cell.m.textContent = pad(Math.floor(s / 60) % 60);
+    cell.s.textContent = pad(s % 60);
+  }
+  label.textContent = '⏳ מחיר ההשקה מסתיים בעוד';
+  box.classList.add('live');
+  tick();
+  setInterval(tick, 1000);
 })();
 </script>
 </div>
