@@ -282,22 +282,13 @@
   --ink-soft:#5C7C93;
   --ink-faint:#9BB4C4;
   --line:#E3EEF1;
-}#lp .btn-main{background:#F79320; box-shadow:0 10px 26px -10px rgba(247,147,32,.85)}#lp .btn-main:hover{background:#DD7A08; box-shadow:0 16px 30px -12px rgba(247,147,32,.9)}#lp .deadline{background:#FCEFD2; color:#9A6B0A}#lp .cdown.done .deadline{background:var(--teal-soft); color:var(--teal)}#lp .conv-hero{padding-bottom:12px}
+}#lp .btn-main{background:#F79320; box-shadow:0 10px 26px -10px rgba(247,147,32,.85)}#lp .btn-main:hover{background:#DD7A08; box-shadow:0 16px 30px -12px rgba(247,147,32,.9)}#lp .deadline{background:#FCEFD2; color:#9A6B0A}#lp .cdown.done .deadline{background:var(--teal-soft); color:var(--teal)}#lp .conv-hero .trust{flex-wrap:wrap; row-gap:14px}#lp .hero-cta-inline{padding:11px 22px; font-size:14px; white-space:nowrap}#lp .conv-hero{padding-bottom:12px}
 @media(min-width:880px){#lp .conv-hero{padding-bottom:18px}}#lp header.conv-hero + section{padding-top:12px}
 @media(min-width:880px){#lp header.conv-hero + section{padding-top:18px}}#lp .section-head.center h2.h-lg{position:relative; padding-bottom:16px}#lp .section-head.center h2.h-lg::after{
   content:""; position:absolute; bottom:0; right:50%; transform:translateX(50%);
   width:56px; height:4px; border-radius:999px;
   background:linear-gradient(90deg, var(--orange), var(--teal));
-}#lp .tab[aria-selected="true"]{background:linear-gradient(90deg, var(--orange), var(--teal))}
-
-
-@media(min-width:880px){#lp .steps{grid-template-columns:1fr}}#lp .steps{gap:18px}#lp .step{
-  background:transparent; box-shadow:none; border-radius:0; padding:2px 0 2px 20px;
-  border-inline-start:3px solid var(--teal); transition:none;
-}#lp .step:hover{transform:none}#lp .step:nth-child(even){border-inline-start-color:var(--orange)}#lp .step::before, #lp .step:nth-child(even)::before{
-  background:linear-gradient(135deg, var(--orange), var(--teal));
-  width:36px; height:36px; font-size:16px;
-}#lp .teacher-photo .ring{display:none}#lp .teacher-photo::before{
+}#lp .tab[aria-selected="true"]{background:linear-gradient(90deg, var(--orange), var(--teal))}#lp .teacher-photo .ring{display:none}#lp .teacher-photo::before{
   content:""; position:absolute; z-index:0; inset:14% -10% 2% -10%;
   background:linear-gradient(150deg, var(--teal-soft), var(--orange-soft));
   border-radius:44% 56% 50% 50% / 54% 46% 54% 46%;
@@ -385,10 +376,7 @@
     <div class="trust">
       <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-laura.webp" alt="לאורה אפשטיין">
       <div>עם <b>לאורה אפשטיין</b> · מורה לספרדית 20 שנה · דוברת 5 שפות</div>
-    </div>
-
-    <div class="conv-price-bar conv-price-bar-cta-only">
-      <a class="btn btn-main conv-cta-wide" href="#form">אני רוצה להתחיל לדבר</a>
+      <a class="btn btn-main hero-cta-inline" href="#form">אני רוצה להתחיל לדבר</a>
     </div>
   </div>
 </header>
