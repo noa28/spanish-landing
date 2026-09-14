@@ -320,7 +320,8 @@
   padding:7px 14px; cursor:pointer; white-space:nowrap; transition:background .15s;
 }#lp .phone-copy-btn.copied{background:var(--orange)}#lp .conv-price-bar-cta-only{padding:9px}#lp .conv-cta-wide{display:block; width:100%; text-align:center; padding:14px 30px; font-size:15.5px; white-space:nowrap}
 @media (max-width:480px){#lp .conv-price-bar-cta-only{padding:8px}#lp .conv-cta-wide{padding:12px 20px; font-size:14.5px}
-}#lp .who-list{display:grid; gap:14px; max-width:70ch; margin:30px auto 0}#lp .who-list li{
+}#lp .who-list{display:grid; gap:14px; max-width:70ch; margin:30px auto 0}
+@media(min-width:720px){#lp .who-list{grid-template-columns:1fr 1fr; max-width:920px}}#lp .who-list li{
   display:flex; gap:12px; align-items:flex-start; background:var(--white);
   border-radius:16px; padding:16px 18px; box-shadow:var(--soft); list-style:none;
   font-size:15.5px; color:var(--ink-soft); line-height:1.6;
