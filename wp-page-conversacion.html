@@ -282,7 +282,27 @@
   --ink-soft:#5C7C93;
   --ink-faint:#9BB4C4;
   --line:#E3EEF1;
-}#lp .btn-main{background:#F79320; box-shadow:0 10px 26px -10px rgba(247,147,32,.85)}#lp .btn-main:hover{background:#DD7A08; box-shadow:0 16px 30px -12px rgba(247,147,32,.9)}#lp .deadline{background:#FCEFD2; color:#9A6B0A}#lp .cdown.done .deadline{background:var(--teal-soft); color:var(--teal)}#lp .conv-price-bar-cta-only{padding:9px}#lp .conv-cta-wide{display:block; width:100%; text-align:center; padding:14px 30px; font-size:15.5px; white-space:nowrap}
+}#lp .btn-main{background:#F79320; box-shadow:0 10px 26px -10px rgba(247,147,32,.85)}#lp .btn-main:hover{background:#DD7A08; box-shadow:0 16px 30px -12px rgba(247,147,32,.9)}#lp .deadline{background:#FCEFD2; color:#9A6B0A}#lp .cdown.done .deadline{background:var(--teal-soft); color:var(--teal)}#lp .pay-options{display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:26px}#lp .pay-chip{
+  display:inline-flex; align-items:center; gap:6px; background:var(--white); border-radius:999px;
+  padding:9px 18px; box-shadow:var(--soft); font-family:var(--f-head); font-weight:700;
+  font-size:14px; color:var(--ink); text-decoration:none; transition:transform .15s, box-shadow .15s;
+}#lp a.pay-chip:hover{transform:translateY(-2px); box-shadow:var(--soft-lg)}#lp .notice-modal{
+  position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center;
+  background:rgba(20,30,40,.55); padding:20px;
+}#lp .notice-modal.on{display:flex}#lp .notice-modal-box{
+  position:relative; background:var(--white); border-radius:22px; padding:32px 28px;
+  max-width:380px; width:100%; box-shadow:var(--soft-lg); text-align:center;
+}#lp .notice-modal-emoji{font-size:34px; margin:0 0 8px}#lp .notice-modal-box h3{font-family:var(--f-head); font-size:19px; margin:0 0 12px}#lp .notice-modal-note{font-size:15px; color:var(--ink-soft); line-height:1.6; margin:0}#lp .notice-modal-note + .notice-modal-note{margin-top:10px}#lp .notice-modal-note a{color:var(--teal); font-weight:700; text-decoration:underline}#lp .notice-modal-close{
+  position:absolute; top:12px; inset-inline-end:12px; width:30px; height:30px; border-radius:50%;
+  border:none; background:var(--cream); cursor:pointer; font-size:15px; display:grid; place-items:center; color:#000;
+}#lp .phone-copy-row{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background:var(--cream); border-radius:14px; padding:10px 14px; margin:14px 0;
+}#lp .phone-copy-num{font-family:var(--f-head); font-weight:800; font-size:18px; color:var(--ink); direction:ltr; unicode-bidi:isolate}#lp .phone-copy-btn{
+  font:inherit; font-family:var(--f-head); font-weight:700; font-size:13px;
+  background:var(--teal); color:#fff; border:none; border-radius:999px;
+  padding:7px 14px; cursor:pointer; white-space:nowrap; transition:background .15s;
+}#lp .phone-copy-btn.copied{background:var(--orange)}#lp .conv-price-bar-cta-only{padding:9px}#lp .conv-cta-wide{display:block; width:100%; text-align:center; padding:14px 30px; font-size:15.5px; white-space:nowrap}
 @media (max-width:480px){#lp .conv-price-bar-cta-only{padding:8px}#lp .conv-cta-wide{padding:12px 20px; font-size:14.5px}
 }#lp .who-list{display:grid; gap:14px; max-width:70ch; margin:30px auto 0}#lp .who-list li{
   display:flex; gap:12px; align-items:flex-start; background:var(--white);
@@ -678,6 +698,29 @@
       <a href="https://wa.me/972585013849"><span>📱</span><span class="c-txt"><b>וואטסאפ / טלפון</b><i>058-5013849</i></span></a>
       <a href="mailto:laura@myfluentspanish.com"><span>📧</span><span class="c-txt"><b>מייל</b><i>laura@myfluentspanish.com</i></span></a>
     </div>
+
+    <div class="pay-options">
+      <a href="tel:0585013849" class="pay-chip" id="bitBtn">💙 תשלום בביט</a>
+      <a href="tel:0585013849" class="pay-chip" id="payboxBtn">🅿️ תשלום בפייבוקס</a>
+      <a href="https://wa.me/972585013849?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%95%D7%A8%D7%94%21%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A8%D7%9B%D7%95%D7%A9%20%D7%90%D7%AA%20%D7%94%D7%A7%D7%95%D7%A8%D7%A1%20%D7%A9%D7%9C%D7%9A%20-%20%D7%94%D7%A9%D7%99%D7%97%D7%94%20%D7%94%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94%20%D7%A9%D7%9C%D7%99%20%D7%91%D7%A1%D7%A4%D7%A8%D7%93%D7%99%D7%AA%2C%20%D7%91%D7%94%D7%A2%D7%91%D7%A8%D7%94%20%D7%91%D7%A0%D7%A7%D7%90%D7%99%D7%AA.%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%20%D7%97%D7%A9%D7%91%D7%95%D7%9F%20%D7%91%D7%A0%D7%A7%20%3A%29" class="pay-chip">🏦 העברה בנקאית</a>
+    </div>
+    <p style="text-align:center; font-size:14.5px; color:var(--ink-soft); margin-top:22px">
+      לאחר הזנת הפרטים והתשלום &#45; תקבלו אישור וחשבונית מס / קבלה לתיבת המייל שלכם.
+    </p>
+
+    <div class="notice-modal" id="appNoticeModal">
+      <div class="notice-modal-box">
+        <button class="notice-modal-close" id="appNoticeClose" aria-label="סגירה">✕</button>
+        <p class="notice-modal-emoji">💙</p>
+        <h3>תשלום בביט / פייבוקס</h3>
+        <p class="notice-modal-note">פתחו את אפליקציית ביט או פייבוקס והעבירו את התשלום למספר הבא:</p>
+        <div class="phone-copy-row">
+          <span class="phone-copy-num">058-5013849</span>
+          <button type="button" class="phone-copy-btn" id="phoneCopyBtn">העתקה 📋</button>
+        </div>
+        <p class="notice-modal-note">לאחר ביצוע התשלום באפליקציה, אנא <a href="https://wa.me/972585013849" target="_blank" rel="noopener">שלחו לוואטסאפ שלי</a> אסמכתא של התשלום, בצירוף שם מלא וכתובת מייל.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -913,6 +956,38 @@ track.addEventListener('scroll', () => {
     else result.textContent = 'כל השלושה? בדיוק בשביל זה בניתי את הקורס הזה.';
   }
   items.forEach(function(b){ b.addEventListener('click', function(){ b.classList.toggle('on'); update(); }); });
+})();
+(function(){
+  var appNoticeModal = document.getElementById('appNoticeModal');
+  var appNoticeClose = document.getElementById('appNoticeClose');
+  function openAppNotice(){ if(!appNoticeModal) return; appNoticeModal.classList.add('on'); document.body.style.overflow='hidden'; }
+  function closeAppNotice(){ if(!appNoticeModal) return; appNoticeModal.classList.remove('on'); document.body.style.overflow=''; }
+  ['bitBtn','payboxBtn'].forEach(function(id){
+    var btn = document.getElementById(id);
+    if(btn) btn.addEventListener('click', function(e){ e.preventDefault(); openAppNotice(); });
+  });
+  if(appNoticeClose) appNoticeClose.addEventListener('click', closeAppNotice);
+  if(appNoticeModal) appNoticeModal.addEventListener('click', function(e){ if(e.target===appNoticeModal) closeAppNotice(); });
+  var phoneCopyBtn = document.getElementById('phoneCopyBtn');
+  if(phoneCopyBtn) phoneCopyBtn.addEventListener('click', function(){
+    var num = '0585013849';
+    var ta = document.createElement('textarea');
+    ta.value = num; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+    if(navigator.clipboard){
+      if(navigator.clipboard.writeText){
+        try { navigator.clipboard.writeText(num).catch(function(){}); } catch(e){}
+      }
+    }
+    phoneCopyBtn.textContent = 'הועתק! ✓';
+    phoneCopyBtn.classList.add('copied');
+    setTimeout(function(){
+      phoneCopyBtn.textContent = 'העתקה 📋';
+      phoneCopyBtn.classList.remove('copied');
+    }, 1800);
+  });
 })();
 </script>
 </div>
