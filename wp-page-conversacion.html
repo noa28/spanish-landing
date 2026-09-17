@@ -337,9 +337,12 @@
   font-family:var(--f-head); font-weight:700; font-size:12px;
   padding:4px 11px; border-radius:999px;
 }#lp .bonus-cards .card.bonus-book{padding-top:26px}#lp .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}#lp .conv-hero{padding:34px 0 8px; text-align:center}
-@media(min-width:880px){#lp .conv-hero{padding:52px 0 12px}}#lp .trust{justify-content:center; flex-wrap:wrap; row-gap:14px}#lp .conv-hero-top{margin-bottom:22px}#lp .conv-hero-title{font-size:clamp(30px, 5.6vw, 48px); line-height:1.16; margin:16px 0 0}#lp .conv-hero-banner{max-width:860px; margin:0 auto 32px; border-radius:26px; overflow:hidden; box-shadow:var(--soft-lg); line-height:0}#lp .conv-hero-banner img{width:100%; display:block}#lp .conv-hero-hook{max-width:none; margin:0 auto 22px; text-align:center}#lp .conv-hero-hook .eyebrow{
-  font-size:clamp(13px, 3.2vw, 16px); white-space:normal; margin-bottom:0;
-}#lp .conv-hero .trust{justify-content:center; margin:24px auto 0}#lp .conv-price-bar{
+@media(min-width:880px){#lp .conv-hero{padding:52px 0 12px}}#lp .trust{justify-content:center; flex-wrap:wrap; row-gap:14px}#lp .conv-hero-top{margin-bottom:22px}#lp .conv-hero-title{font-size:clamp(30px, 5.6vw, 48px); line-height:1.16; margin:16px 0 0}#lp .conv-hero-banner{max-width:860px; margin:0 auto 32px; border-radius:26px; overflow:hidden; box-shadow:var(--soft-lg); line-height:0}#lp .conv-hero-banner img{width:100%; display:block}#lp .conv-hero-hook{max-width:none; margin:0 auto 26px; text-align:center}#lp .conv-hero-hook .hook-title{
+  font-family:var(--f-head); font-weight:800; line-height:1.18;
+  font-size:clamp(26px, 4.8vw, 42px); margin:0;
+}#lp .conv-hero .trust{justify-content:center; margin:24px auto 0}#lp .testi-row{display:flex; flex-direction:column; align-items:center; gap:22px}
+@media(min-width:880px){#lp .testi-row{flex-direction:row; justify-content:center; align-items:center; gap:48px}#lp .testi-row .carousel{max-width:560px}
+}#lp .conv-price-bar{
   display:inline-flex; align-items:center; gap:22px; flex-wrap:wrap; justify-content:center;
   background:var(--white); border-radius:999px; padding:14px 28px 14px 14px;
   box-shadow:var(--soft-lg); margin:30px auto 0;
@@ -376,7 +379,7 @@
     </div>
 
     <div class="conv-hero-hook">
-      <span class="eyebrow">💬 חולמים לדבר ספרדית, אבל אין לכם זמן להתחיל?</span>
+      <p class="hook-title"><span class="hl-t">חולמים לדבר ספרדית,</span><br><span class="hl">אבל אין לכם זמן להתחיל?</span></p>
     </div>
 
     <figure class="conv-hero-banner">
@@ -549,14 +552,9 @@
 <!-- ============ WHEN ============ -->
 <section class="bg-sky" style="padding-top:18px">
   <div class="shell rv">
-    <div class="gains-head">
-      <figure class="gains-photo">
-        <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-hero-photo.webp" alt="לאורה אפשטיין" loading="lazy">
-      </figure>
-      <div class="section-head center" style="max-width:none">
-        <span class="eyebrow">📅 מתי מתחילים</span>
-        <p class="lead">ברגע שנרשמים &#45; מקבלים גישה מלאה לקורס, והכל נשאר שלכם לתמיד. לא צריך לחכות, לא צריך לצאת מהבית, ולא צריך להתאים את עצמכם למערכת.</p>
-      </div>
+    <div class="section-head center">
+      <span class="eyebrow">📅 מתי מתחילים</span>
+      <p class="lead">ברגע שנרשמים &#45; מקבלים גישה מלאה לקורס, והכל נשאר שלכם לתמיד. לא צריך לחכות, לא צריך לצאת מהבית, ולא צריך להתאים את עצמכם למערכת.</p>
     </div>
     <div class="cards">
       <div class="card"><div class="ico o">🚗</div><p>אפשר ללמוד מכל מקום ובכל זמן &#45; גם תוך כדי נהיגה, הליכה או בישולים.</p></div>
@@ -575,6 +573,10 @@
     <div class="section-head center" style="margin-bottom:2px">
       <span class="eyebrow">💬 מה מספרים התלמידים שלי</span>
     </div>
+    <div class="testi-row">
+    <figure class="gains-photo testi-photo">
+      <img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-hero-photo.webp" alt="לאורה אפשטיין" loading="lazy">
+    </figure>
     <div class="carousel">
       <div class="track" id="track">
         <figure class="slide">
@@ -606,6 +608,7 @@
       <button class="arw prev" id="cPrev" aria-label="המלצה קודמת"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
       <button class="arw next" id="cNext" aria-label="המלצה הבאה"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <div class="dots" id="dots"></div>
+    </div>
     </div>
   </div>
 </section>
