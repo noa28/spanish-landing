@@ -271,7 +271,8 @@
 
 @media (prefers-reduced-motion: reduce){#lp{scroll-behavior:auto}#lp *{transition-duration:.01ms !important; animation:none !important}html.js #lp .rv{opacity:1; transform:none}
 }#lp, #lp{overflow-x:hidden; max-width:100%}#lp .eyebrow{font-size:16px; padding:8px 16px}#lp .section-head:not(:has(h2)):not(:has(p)){margin-bottom:2px}#lp section{padding:18px 0}
-@media(min-width:780px){#lp section{padding:26px 0}}#lp .hero-badge{max-width:min(90%,320px); flex-wrap:wrap}#lp .book-cards{display:grid; gap:24px; max-width:960px; margin:0 auto}
+@media(min-width:780px){#lp section{padding:26px 0}}#lp .hero-badge{max-width:min(90%,320px); flex-wrap:wrap}#lp .hero-badge-cta-only{max-width:none; inset-inline-end:-6px; padding:8px}#lp .badge-cta-wide{display:block; width:100%; text-align:center; padding:16px 20px; font-size:16px; white-space:normal}
+@media(max-width:480px){#lp .badge-cta-wide{padding:13px 16px; font-size:14px}}#lp .book-cards{display:grid; gap:24px; max-width:960px; margin:0 auto}
 @media(min-width:760px){#lp .book-cards{grid-template-columns:1fr 1fr}}#lp .book-card{background:var(--white); border-radius:26px; overflow:hidden; box-shadow:var(--soft-lg); display:flex; flex-direction:column}#lp .book-card figure{margin:0; line-height:0}#lp .book-card img{width:100%; display:block; aspect-ratio:1/1; object-fit:cover}#lp .book-card-body{padding:22px 24px 26px; display:flex; flex-direction:column; flex:1}#lp .book-tag{display:inline-flex; align-self:flex-start; font-family:var(--f-head); font-weight:700; font-size:12.5px; padding:5px 13px; border-radius:999px; margin-bottom:10px}#lp .book-tag-o{background:var(--orange-soft); color:var(--orange-dark)}#lp .book-tag-b{background:var(--teal-soft); color:var(--teal)}#lp .book-card h3{font-size:21px; margin-bottom:8px}#lp .book-card p{font-size:15.5px; color:var(--ink-soft); line-height:1.6; flex:1}#lp .book-card-o{border-top:5px solid var(--orange)}#lp .book-card-b{border-top:5px solid var(--teal)}#lp .book-stats{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}#lp .book-stats span{background:var(--cream); color:var(--ink-soft); font-size:12.5px; font-weight:700; font-family:var(--f-head); padding:5px 12px; border-radius:999px}#lp .who-list{display:grid; gap:14px; max-width:70ch; margin:30px auto 0}
 @media(min-width:720px){#lp .who-list{grid-template-columns:1fr 1fr; max-width:920px}}#lp .who-list li{
   display:flex; gap:12px; align-items:flex-start; background:var(--white);
@@ -315,7 +316,6 @@
 
   <div class="shell hero-grid">
     <div>
-      <span class="eyebrow">🎁 מארז 2 הספרים ביחד</span>
       <h1>ספרדית לאנשים עסוקים <span class="hl">- המארז המלא</span></h1>
       <p class="lead">שני הספרים הכי נמכרים שלי &#45; <b>רמת מתחילים</b> ו<b>רמת מתקדמים</b> &#45; ביחד במארז אחד. מסע שלם מאפס ועד שיחה שוטפת בספרדית, בלי לחשוב מה ללמוד הלאה.</p>
       <div class="trust">
@@ -327,8 +327,8 @@
     <div class="hero-art">
       <div class="blob"></div>
       <img src="https://myfluentspanish.com/wp-content/uploads/2026/10/bundle-hero.webp" alt="מארז שני הספרים &#45; ספרדית לאנשים עסוקים">
-      <div class="hero-badge">
-        <b>249₪</b><span>במקום 298₪<br>לשני הספרים</span><a class="btn btn-main badge-cta" href="#form">לקנות עכשיו</a>
+      <div class="hero-badge hero-badge-cta-only">
+        <a class="btn btn-main badge-cta-wide" href="#form">אני רוצה את המארז המלא!</a>
       </div>
     </div>
   </div>
@@ -345,20 +345,20 @@
     </div>
 
     <div class="book-cards">
-      <article class="book-card book-card-o">
-        <figure><img src="https://myfluentspanish.com/wp-content/uploads/2026/10/bundle-book1.webp" alt="ספרדית לאנשים עסוקים &#45; רמת מתחילים" loading="lazy"></figure>
+      <article class="book-card book-card-b">
+        <figure><img src="https://myfluentspanish.com/wp-content/uploads/2026/10/bundle-book2.webp" alt="ספרדית לאנשים עסוקים &#45; רמת מתחילים" loading="lazy"></figure>
         <div class="book-card-body">
-          <span class="book-tag book-tag-o">שלב 1 · מתחילים</span>
+          <span class="book-tag book-tag-b">שלב 1 · מתחילים</span>
           <h3>רמת מתחילים</h3>
           <p>45 שיעורים קצרים ו־10 פרקים שילמדו אתכם לדבר ספרדית מאפס: היכרות, זמן הווה, שאלות ותשובות &#45; ועד משפטים שלמים בביטחון.</p>
           <div class="book-stats"><span>184 עמ׳</span><span>10 פרקים</span><span>45 שיעורים</span></div>
         </div>
       </article>
 
-      <article class="book-card book-card-b">
-        <figure><img src="https://myfluentspanish.com/wp-content/uploads/2026/10/bundle-book2.webp" alt="ספרדית לאנשים עסוקים &#45; רמת מתקדמים" loading="lazy"></figure>
+      <article class="book-card book-card-o">
+        <figure><img src="https://myfluentspanish.com/wp-content/uploads/2026/10/bundle-book1.webp" alt="ספרדית לאנשים עסוקים &#45; רמת מתקדמים" loading="lazy"></figure>
         <div class="book-card-body">
-          <span class="book-tag book-tag-b">שלב 2 · מתקדמים</span>
+          <span class="book-tag book-tag-o">שלב 2 · מתקדמים</span>
           <h3>רמת מתקדמים</h3>
           <p>12 פרקים שלוקחים אתכם מ״מסתדרים״ ל״מדברים בביטחון״: עבר, ציווי, הבעת דעה, סיפור חוויות &#45; ושיחה זורמת כמו דוברי שפת אם.</p>
           <div class="book-stats"><span>184 עמ׳</span><span>12 פרקים</span></div>
