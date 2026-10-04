@@ -278,7 +278,7 @@
   display:flex; gap:12px; align-items:flex-start; background:var(--white);
   border-radius:16px; padding:16px 18px; box-shadow:var(--soft); list-style:none;
   font-size:16.5px; color:var(--ink-soft); line-height:1.6;
-}#lp .who-list li::before{content:"⇐"; color:var(--orange); font-weight:700; font-size:18px; flex:0 0 auto}#lp .book-card .book-size{flex:0 0 auto; margin-top:12px; font-size:14px; color:var(--ink-soft); line-height:1.55}
+}#lp .who-list li::before{content:"⇐"; color:var(--orange); font-weight:700; font-size:18px; flex:0 0 auto}#lp .book-card .book-size{flex:0 0 auto; margin-top:12px; font-size:15.5px; color:var(--ink-soft); line-height:1.6}#lp .book-card .book-size b{color:var(--ink)}
 
 @media(min-width:900px){#lp .checks{grid-template-columns:repeat(3,1fr)}#lp .cards-3{grid-template-columns:repeat(3,1fr)}}#lp .who-list.you-list{margin-top:26px}#lp .you-list li::before{content:"✓"; width:24px; height:24px; border-radius:50%; background:var(--teal); color:#fff; display:grid; place-items:center; font-size:13px; font-weight:800; flex:0 0 auto; margin-top:1px}#lp .you-close{text-align:center; font-weight:700; color:var(--ink); max-width:60ch; margin:26px auto 0; font-size:17px; line-height:1.6}
 
@@ -353,7 +353,7 @@
           <span class="book-tag book-tag-b">שלב 1 · מתחילים</span>
           <h3>רמת מתחילים</h3>
           <p>45 שיעורים קצרים ו־10 פרקים שילמדו אתכם לדבר ספרדית מאפס: היכרות, זמן הווה, שאלות ותשובות &#45; ועד משפטים שלמים בביטחון.</p>
-          <p class="book-size">184 עמודים צבעוניים, 23 על 15.5 ס״מ (קצת יותר גדול ממחברת או יומן A5). אפשר לקחת אותו לכל מקום: טיסה, חוף הים, נסיעה.</p>
+          <p class="book-size"><b>גודל הספר:</b> 23 על 15.5 ס״מ (קצת יותר גדול ממחברת או יומן A5). אפשר לקחת אותו לכל מקום: טיסה, חוף הים, נסיעה.</p>
           <div class="book-stats"><span>184 עמ׳</span><span>10 פרקים</span><span>45 שיעורים</span></div>
         </div>
       </article>
@@ -364,7 +364,7 @@
           <span class="book-tag book-tag-o">שלב 2 · מתקדמים</span>
           <h3>רמת מתקדמים</h3>
           <p>12 פרקים שלוקחים אתכם מ״מסתדרים״ ל״מדברים בביטחון״: עבר, ציווי, הבעת דעה, סיפור חוויות &#45; ושיחה זורמת כמו דוברי שפת אם.</p>
-          <p class="book-size">184 עמודים צבעוניים, 23 על 15.5 ס״מ (קצת יותר גדול ממחברת או יומן A5). אפשר לקחת אותו לכל מקום: טיסה, חוף הים, נסיעה.</p>
+          <p class="book-size"><b>גודל הספר:</b> 23 על 15.5 ס״מ (קצת יותר גדול ממחברת או יומן A5). אפשר לקחת אותו לכל מקום: טיסה, חוף הים, נסיעה.</p>
           <div class="book-stats"><span>184 עמ׳</span><span>12 פרקים</span></div>
         </div>
       </article>
@@ -451,8 +451,8 @@
           <tr><th scope="row">תוכן</th><td>10 פרקים, 45 שיעורים</td><td>12 פרקים</td></tr>
           <tr><th scope="row">עמודים</th><td>184 צבעוניים</td><td>184 צבעוניים</td></tr>
           <tr><th scope="row">גודל</th><td>23 על 15.5 ס״מ</td><td>23 על 15.5 ס״מ</td></tr>
-          <tr><th scope="row">מתורגם לעברית</th><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th scope="row">שיעורי בית ומשימות בסוף כל שיעור</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">מותאם לדוברי עברית</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th scope="row">תרגילים ומשימות בסוף כל שיעור</th><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><th scope="row">קוד QR לעמוד פתרונות התרגילים</th><td class="yes">✓</td><td class="yes">✓</td></tr>
           <tr><th scope="row">בונוס: שיעור וידאו ABC</th><td class="yes">✓</td><td class="no">-</td></tr>
           <tr><th scope="row">ארוז יפה, מגיע עם שליח עד הבית</th><td class="yes">✓</td><td class="yes">✓</td></tr>
@@ -486,7 +486,7 @@
         </ul>
       </div>
     </div>
-    <p class="callout"><b>והכי חשוב:</b> השיעורים בנויים בהדרגה ובאסטרטגיה חכמה, עם דגש על שפה מדוברת ושימושית ביום־יום. מעבר להדרכה והדוגמאות, בסיום כל שיעור תקבלו <u>שיעורי בית ומשימות</u>, עם מקום לכתוב בתוך הספר ולתרגל ממש כמו בכיתה, כך שתראו <u>התקדמות אמיתית</u> בכל שלב.</p>
+    <p class="callout"><b>והכי חשוב:</b> השיעורים בנויים בהדרגה ובאסטרטגיה חכמה, עם דגש על שפה מדוברת ושימושית ביום־יום. מעבר להדרכה והדוגמאות, בסיום כל שיעור תקבלו <u>תרגילים ומשימות</u>, עם מקום לכתוב בתוך הספר ולתרגל ממש כמו בכיתה, כך שתראו <u>התקדמות אמיתית</u> בכל שלב.</p>
   </div>
 </section>
 
@@ -503,7 +503,7 @@
       <div class="card"><div class="ico">💰</div><h3>חוסכים בגדול</h3><p>המארז עולה 249₪ במקום 298₪ בקנייה נפרדת של שני הספרים.</p></div>
       <div class="card"><div class="ico o">📦</div><h3>ארוזים יפה, עד הבית</h3><p>שני הספרים המודפסים מגיעים ארוזים יפה במשלוח עם שליח עד הבית, מוכנים להתחיל ללמוד.</p></div>
       <div class="card"><div class="ico">🎬</div><h3>שיעור ABC ופתרונות בקוד QR</h3><p>בספר המתחילים מחכה לכם שיעור וידאו ABC להגייה נכונה, ובכל ספר קוד QR לעמוד פתרונות התרגילים.</p></div>
-      <div class="card"><div class="ico o">✍️</div><h3>תרגול בכל שלב</h3><p>בסיום כל שיעור, בשני הספרים, שיעורי בית ומשימות עם מקום לכתוב בתוך הספר &#45; כמו בכיתה.</p></div>
+      <div class="card"><div class="ico o">✍️</div><h3>תרגול בכל שלב</h3><p>בסיום כל שיעור, בשני הספרים, תרגילים ומשימות עם מקום לכתוב בתוך הספר &#45; כמו בכיתה.</p></div>
       <div class="card"><div class="ico">🧭</div><h3>יודעים תמיד מה השלב הבא</h3><p>מתחילים מהספר הראשון, ורק אחרי ששולטים בו עוברים למתקדמים &#45; בלי לנחש ובלי לבזבז זמן.</p></div>
     </div>
   </div>
@@ -635,7 +635,7 @@
       </details>
       <details>
         <summary>אני לא יודע לקרוא ספרדית, זה מתאים לי?</summary>
-        <p>בהחלט. שני הספרים מתורגמים לעברית, ובספר המתחילים מחכה לכם שיעור וידאו ABC (דרך קוד QR בתוך הספר) שמלמד בדיוק איך קוראים ומבטאים כל אות &#45; בלי קשר לרמה שלכם.</p>
+        <p>בהחלט. שני הספרים מותאמים לדוברי עברית, ובספר המתחילים מחכה לכם שיעור וידאו ABC (דרך קוד QR בתוך הספר) שמלמד בדיוק איך קוראים ומבטאים כל אות &#45; בלי קשר לרמה שלכם.</p>
       </details>
       <details>
         <summary>אני צריך לסיים את הספר הראשון לפני שמתחילים את השני?</summary>
