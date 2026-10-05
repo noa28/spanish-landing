@@ -851,7 +851,7 @@ track.addEventListener('scroll', () => {
   var update = function(){
     var n = document.querySelectorAll('#youCheck .familiar-item.on').length;
     if(n===0) result.textContent = '';
-    else if(n < 3) result.textContent = 'מרגיש מוכר? אתם ממש לא לבד.';
+    else if(n < 3) result.textContent = 'מרגיש מוכר? אתם ממש לא לבד והספרים בדיוק בשבילכם.';
     else if(n < items.length) result.textContent = 'כל כך הרבה מוכר לכם? הספרים האלה נכתבו בשבילכם.';
     else result.textContent = 'סימנתם את כל החמישה? המארז הזה בדיוק בשבילכם.';
   };
