@@ -1,0 +1,157 @@
+<!-- wp:html -->
+<div id="lp">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Rubik:wght@500;700;800&display=swap">
+<style>#lp{
+  --white:#fff; --cream:#FFF9F2; --sky:#F1FAFB;
+  --orange:#F79320; --orange-dark:#DD7A08; --orange-soft:#FFEEDA;
+  --teal:#12C8DD; --teal-dark:#0FB0C6; --teal-soft:#DDF7FB;
+  --navy:#084A84; --ink:#10344F; --ink-soft:#4F6B80; --ink-faint:#93A6B3;
+  --f-head:"Rubik","Segoe UI",sans-serif; --f-body:"Assistant","Segoe UI",sans-serif;
+  --soft:0 18px 40px -24px rgba(16,52,79,.3); --soft-lg:0 30px 60px -30px rgba(16,52,79,.38);
+}#lp *{box-sizing:border-box; margin:0; padding:0}#lp{scroll-behavior:smooth}#lp{font-family:var(--f-body); font-size:17px; line-height:1.6; color:var(--ink); background:var(--sky)}#lp img{max-width:100%; display:block}#lp a{color:inherit; text-decoration:none}#lp button{font:inherit; cursor:pointer}#lp h1, #lp h2, #lp h3{font-family:var(--f-head); font-weight:800; line-height:1.18; text-wrap:balance}#lp .shell{width:min(1100px,100% - 32px); margin-inline:auto}#lp .bar{position:sticky; top:0; z-index:50; background:var(--navy); color:#fff; padding:9px 0}#lp .bar .shell{display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; font-family:var(--f-head); font-weight:700; font-size:15px}#lp .bar .tag{background:var(--orange); color:#fff; padding:3px 12px; border-radius:999px; font-size:13px}#lp .bar .t{display:flex; gap:6px; direction:ltr}#lp .bar .t span{direction:rtl}#lp .bar .t span{background:rgba(255,255,255,.14); border-radius:8px; padding:2px 9px; min-width:42px; white-space:nowrap; text-align:center; font-variant-numeric:tabular-nums}#lp .bar a.go{background:#fff; color:var(--navy); padding:4px 14px; border-radius:999px; font-size:13px}#lp .hero{background:radial-gradient(800px 420px at 85% 0%,rgba(18,200,221,.28),transparent 60%),radial-gradient(640px 400px at 5% 90%,rgba(247,147,32,.2),transparent 62%),linear-gradient(180deg,var(--sky),#fff); text-align:center; padding:54px 0 70px}#lp .bf-pill{display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#fff; font-family:var(--f-head); font-weight:800; font-size:15px; letter-spacing:.04em; padding:8px 20px; border-radius:999px}#lp .bf-pill b{color:var(--orange)}#lp .hero h1{font-size:clamp(32px,5.4vw,58px); margin:18px auto 12px; max-width:17ch}#lp .hero h1 span{color:var(--orange)}#lp .hero p.lead{color:var(--ink-soft); font-size:19px; max-width:48ch; margin:0 auto}#lp .count{display:inline-flex; gap:12px; margin:30px auto 8px; direction:ltr}#lp .count .cell{direction:rtl}#lp .cell{background:#fff; border-radius:20px; box-shadow:var(--soft); min-width:92px; padding:14px 10px 10px; border-top:5px solid var(--teal)}#lp .cell:nth-child(2n){border-top-color:var(--orange)}#lp .cell b{display:block; font-family:var(--f-head); font-weight:800; font-size:clamp(30px,5vw,46px); line-height:1; color:var(--ink); font-variant-numeric:tabular-nums}#lp .cell span{font-size:13px; color:var(--ink-soft); font-weight:700}#lp .until{color:var(--ink-soft); font-size:15.5px}#lp .until b{color:var(--ink)}#lp .hg{display:inline-block; animation:flip 3s ease-in-out infinite}
+@keyframes flip{0%,45%{transform:rotate(0)}55%,100%{transform:rotate(180deg)}}#lp .offers{padding:10px 0 70px; margin-top:-34px; position:relative}#lp .grid{display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}#lp .offer{background:#fff; border-radius:28px; box-shadow:var(--soft-lg); overflow:hidden; display:flex; flex-direction:column; position:relative; border-top:6px solid var(--teal)}#lp .offer:nth-child(2){border-top-color:var(--orange)}#lp .offer .badge{position:absolute; top:14px; inset-inline-start:14px; z-index:2; background:var(--orange); color:#fff; font-family:var(--f-head); font-weight:800; font-size:13px; padding:5px 13px; border-radius:999px; box-shadow:0 8px 18px -8px rgba(247,147,32,.9)}#lp .offer .pic{aspect-ratio:4/3; background:var(--teal-soft); overflow:hidden}#lp .offer .pic img{width:100%; height:100%; object-fit:cover; object-position:50% 30%}#lp .offer .body{padding:22px 22px 24px; display:flex; flex-direction:column; flex:1}#lp .offer h3{font-size:22px; margin-bottom:6px}#lp .offer .sub{color:var(--ink-soft); font-size:15.5px; flex:1}#lp .price{display:flex; align-items:baseline; gap:12px; margin:16px 0 4px}#lp .price b{font-family:var(--f-head); font-weight:800; font-size:40px; color:var(--navy); line-height:1}#lp .price s{color:var(--ink-faint); font-size:19px}#lp .save{display:inline-block; align-self:flex-start; background:var(--orange-soft); color:var(--orange-dark); font-family:var(--f-head); font-weight:700; font-size:13.5px; padding:3px 12px; border-radius:999px; margin-bottom:16px}#lp .ph{background:repeating-linear-gradient(45deg,#fff3c4,#fff3c4 6px,#ffe9a0 6px,#ffe9a0 12px); color:#7a5a00; border-radius:6px; padding:0 6px; font-size:.7em; font-family:var(--f-body)}#lp .btns{display:grid; grid-template-columns:1fr 1fr; gap:10px}#lp .btn{display:inline-flex; align-items:center; justify-content:center; font-family:var(--f-head); font-weight:700; font-size:16px; padding:13px 10px; border-radius:999px; border:none; transition:transform .15s, box-shadow .15s, background .15s; text-align:center}#lp .btn:hover{transform:translateY(-2px)}#lp .btn-ghost{background:#fff; color:var(--navy); border:2px solid var(--teal)}#lp .btn-ghost:hover{background:var(--teal-soft)}#lp .btn-main{background:var(--orange); color:#fff; box-shadow:0 10px 24px -10px rgba(247,147,32,.85)}#lp .btn-main:hover{background:var(--orange-dark)}#lp .note{max-width:760px; margin:34px auto 0; text-align:center; color:var(--ink-soft); font-size:15.5px}#lp .note b{color:var(--ink)}#lp .modal{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; background:rgba(20,30,40,.62); padding:16px}#lp .modal.on{display:flex}#lp .mbox{position:relative; background:#fff; border-radius:26px; width:min(560px,100%); max-height:88vh; overflow:auto; box-shadow:var(--soft-lg)}#lp .mpic{aspect-ratio:16/9; overflow:hidden; background:var(--teal-soft)}#lp .mpic img{width:100%; height:100%; object-fit:contain}#lp .mpic{background:#fff}#lp .mbody{padding:24px 26px 26px}#lp .mbody h3{font-size:24px; margin-bottom:6px}#lp .mbody .mprice{display:flex; align-items:baseline; gap:12px; margin:6px 0 14px}#lp .mbody .mprice b{font-family:var(--f-head); font-weight:800; font-size:34px; color:var(--navy)}#lp .mbody .mprice s{color:var(--ink-faint)}#lp .mbody ul{list-style:none; display:grid; gap:10px; margin:0 0 20px}#lp .mbody li{display:flex; gap:11px; align-items:flex-start; color:var(--ink-soft); font-size:16px}#lp .mbody li::before{content:"✓"; flex:0 0 auto; width:22px; height:22px; border-radius:50%; background:var(--orange); color:#fff; display:grid; place-items:center; font-size:12px; font-weight:800; margin-top:2px}#lp .mbody .until-m{font-size:14px; color:var(--ink-soft); text-align:center; margin-top:12px}#lp .mdesc{color:var(--ink-soft); font-size:16px; line-height:1.65; margin:0 0 6px}#lp .sec{font-family:var(--f-head); font-weight:800; font-size:15px; color:var(--navy); margin:16px 0 9px}#lp .mbody .gift{display:grid; gap:10px; margin:0 0 20px; padding:14px 16px; background:var(--orange-soft); border-radius:16px; list-style:none}#lp .mbody .gift li::before{content:"🎁"; background:none; width:auto; height:auto; font-size:16px; margin-top:0}#lp .mbody .gift li{color:var(--ink)}#lp .mbody .gift li span{color:var(--ink-soft)}#lp .close{position:absolute; top:12px; inset-inline-end:12px; width:36px; height:36px; min-width:0; padding:0; border-radius:50%; border:none; background:#fff; color:var(--ink); font-size:16px; display:grid; place-items:center; box-shadow:0 4px 12px rgba(0,0,0,.25); z-index:2}#lp.ended .btn-main{background:#c9d3da; color:#fff; box-shadow:none; pointer-events:none}#lp.ended .count{opacity:.35}#lp .ended-msg{display:none; background:var(--orange-soft); color:var(--orange-dark); font-family:var(--f-head); font-weight:800; padding:10px 18px; border-radius:14px; margin-top:14px}#lp.ended .ended-msg{display:inline-block}#lp footer{background:#fff; text-align:center; color:var(--ink-faint); font-size:14px; padding:26px 0}
+@media(max-width:560px){#lp .cell{min-width:68px}#lp .btns{grid-template-columns:1fr}}
+#lp{overflow-x:clip}</style>
+<div class="bar" id="bar">
+  <div class="shell">
+    <span class="tag" dir="ltr">BLACK FRIDAY</span>
+    <span><span class="hg">⏳</span> המבצע נגמר בעוד</span>
+    <span class="t" id="barT"><span>00</span><span>00</span><span>00</span><span>00</span></span>
+    <a class="go" href="#offers">למבצעים</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="shell">
+    <span class="bf-pill"><span dir="ltr">BLACK <b>FRIDAY</b></span> · מדברים ספרדית</span>
+    <h1>הגיע הזמן לדבר ספרדית, <span>במחירי בלאק פריידי</span></h1>
+    <p class="lead">המוצרים המבוקשים ביותר במחירים של בלאק פריידי בלבד. בוחרים מבצע, רוכשים, ומתחילים לדבר.</p>
+    <div class="count" id="count">
+      <div class="cell"><b id="d">00</b><span>ימים</span></div>
+      <div class="cell"><b id="h">00</b><span>שעות</span></div>
+      <div class="cell"><b id="m">00</b><span>דקות</span></div>
+      <div class="cell"><b id="s">00</b><span>שניות</span></div>
+    </div>
+    <div class="until"><span class="hg">⏳</span> מבצע של 14 יום: 8.11 עד 22.11 · המבצע מסתיים ב־<b id="endTxt">22.11 בשעה 23:59</b></div>
+    <div class="ended-msg">המבצע הסתיים. תודה שהייתם איתנו, נתראה בפעם הבאה!</div>
+  </div>
+</header>
+
+<section class="offers" id="offers">
+  <div class="shell">
+    <div class="grid">
+
+      <article class="offer" data-k="1">
+        <span class="badge">חוסכים 59 ₪</span>
+        <div class="pic"><img src="https://myfluentspanish.com/wp-content/uploads/2026/10/bundle-hero.webp" alt="מארז שני הספרים"></div>
+        <div class="body">
+          <h3>מארז שני הספרים</h3>
+          <p class="sub">שני הספרים "ספרדית לאנשים עסוקים", רמת מתחילים ורמת מתקדמים: מסע שלם מאפס ועד שיחה שוטפת. ארוזים יפה, עם שליח עד הבית.</p>
+          <div class="price"><b>237 ₪</b><s>296 ₪</s></div>
+          <span class="save">⭐ מבצע בלאק פריידי בלעדי</span>
+          <div class="btns">
+            <button class="btn btn-ghost" data-open="1">פרטים נוספים</button>
+            <a class="btn btn-main" href="https://secure.cardcom.solutions/EA/EA5/u8xeD9b8vkaL4PkvKTNQ/PaymentSP" data-buy="1">לרכישה</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="offer" data-k="2">
+        <span class="badge">חוסכים 399 ₪</span>
+        <div class="pic"><img src="https://myfluentspanish.com/wp-content/uploads/2026/09/conv-hero-v2-1024x768.webp" alt="השיחה הראשונה שלי + ספר מתחילים"></div>
+        <div class="body">
+          <h3>השיחה הראשונה שלי + ספר מתחילים</h3>
+          <p class="sub">קורס דיגיטלי של 30 שיעורים מוקלטים, 15 דקות ביום, שמתחיל לדבר מהשיעור הראשון. כולל בונוסים, ובנוסף הספר "ספרדית לאנשים עסוקים" רמת מתחילים המודפס, עם שליח עד הבית.</p>
+          <div class="price"><b>447 ₪</b><s>846 ₪</s></div>
+          <span class="save">⭐ מבצע בלאק פריידי בלעדי</span>
+          <div class="btns">
+            <button class="btn btn-ghost" data-open="2">פרטים נוספים</button>
+            <a class="btn btn-main" href="https://secure.cardcom.solutions/EA/EA5/5FwOi5bg9kaz4n7J8BRHqQ/Order" data-buy="2">לרכישה</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="offer" data-k="3">
+        <span class="badge">חוסכים 859 ₪</span>
+        <div class="pic" style="background:#C5E9F7"><img src="https://myfluentspanish.com/wp-content/uploads/2025/11/45.jpg" alt="ספרדית לאנשים עסוקים 45 ימים + ספר מתחילים" style="object-fit:cover; object-position:47% 50%"></div>
+        <div class="body">
+          <h3>ספרדית לאנשים עסוקים + ספר מתחילים</h3>
+          <p class="sub">הקורס הדיגיטלי המקיף "ספרדית לאנשים עסוקים &#45; 45 שיעורים", מאפס לשיחה, בלי הפסקה ובלי דקדוק מעייף. כולל בונוסים וקהילה, ובנוסף הספר המודפס, עם שליח עד הבית.</p>
+          <div class="price"><b>887 ₪</b><s>1,746 ₪</s></div>
+          <span class="save">⭐ מבצע בלאק פריידי בלעדי</span>
+          <div class="btns">
+            <button class="btn btn-ghost" data-open="3">פרטים נוספים</button>
+            <a class="btn btn-main" href="https://secure.cardcom.solutions/EA/EA5/tIKktBdLwEKbormnYHX43A/PaymentSP" data-buy="3">לרכישה</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p class="note"><b>המחירים תקפים עד סוף המבצע בלבד.</b> לשאלות לפני הרכישה אפשר לכתוב לי בוואטסאפ, 058-5013849.</p>
+  </div>
+</section>
+
+<footer>כל הזכויות שמורות ללאורה אפשטיין</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="mbox">
+    <button class="close" id="close" aria-label="סגירה">✕</button>
+    <div class="mpic"><img id="mImg" src="" alt=""></div>
+    <div class="mbody">
+      <h3 id="mTitle"></h3>
+      <div class="mprice"><b id="mPrice"></b><s id="mOld"></s></div>
+      <p class="mdesc" id="mDesc"></p>
+      <div class="sec">מה כלול</div>
+      <ul id="mList"></ul>
+      <div id="mBonus"></div>
+      <a class="btn btn-main" id="mBuy" href="#" style="width:100%">לרכישה במחיר בלאק פריידי</a>
+      <div class="until-m"><span class="hg">⏳</span> המבצע נגמר בעוד <b id="mLeft"></b></div>
+    </div>
+  </div>
+</div>
+<script>
+// ---- demo end date: change to the real one ----
+var LINKS = {'1': 'https://secure.cardcom.solutions/EA/EA5/u8xeD9b8vkaL4PkvKTNQ/PaymentSP', '2': 'https://secure.cardcom.solutions/EA/EA5/5FwOi5bg9kaz4n7J8BRHqQ/Order', '3': 'https://secure.cardcom.solutions/EA/EA5/tIKktBdLwEKbormnYHX43A/PaymentSP'};
+var END = new Date('2026-11-22T23:59:59+02:00').getTime();  // 8.11 - 22.11 (14 days)
+var OFFERS = {
+  1:{t:'מארז שני הספרים', p:'237 ₪', o:'296 ₪', img:'https://myfluentspanish.com/wp-content/uploads/2026/10/bundle-hero.webp',
+     d:'שני הספרים הכי נמכרים שלי, "ספרדית לאנשים עסוקים", ביחד. מתחילים מאפס בספר הראשון, וממשיכים לשיחה שוטפת בספר השני, בלי לנחש מה ללמוד הלאה. הספרים מותאמים לדוברי עברית, מלאים בתרגולים ומשימות, והם מגיעים ארוזים יפה עם שליח עד הבית.',
+     l:['רמת מתחילים: 184 עמודים צבעוניים, 10 פרקים ו־45 שיעורים קצרים','רמת מתקדמים: 184 עמודים צבעוניים ו־12 פרקים','תרגילים ומשימות בסוף כל שיעור, וקוד QR לעמוד פתרונות התרגילים','ארוזים יפה, עם שליח עד הבית'],
+     b:['שיעור וידאו ABC <span>(לקרוא ולהגות נכון, בקוד QR בתוך ספר המתחילים)</span>']},
+  2:{t:'השיחה הראשונה שלי + ספר מתחילים', p:'447 ₪', o:'846 ₪', img:'https://myfluentspanish.com/wp-content/uploads/2026/09/conv-hero-v2-1024x768.webp',
+     d:'"השיחה הראשונה שלי בספרדית" הוא קורס דיגיטלי למי שחולם לדבר ספרדית ואין לו זמן להתחיל. 15 דקות ביום, במשך 30 יום, בלי דקדוק מעייף ובלי שינון, ומתחילים לדבר מהשיעור הראשון: שיחת היכרות, לדבר בלי לתרגם בראש, ולנהל שיחה אמיתית. בסוף כל שיעור משימה קצרה. בתוספת, הספר המודפס "ספרדית לאנשים עסוקים" רמת מתחילים.',
+     l:['30 שיעורים מוקלטים, ללמוד מכל מקום ובכל זמן','חוברת לימוד ותרגול צבעונית של 57 עמודים','הספר "ספרדית לאנשים עסוקים" רמת מתחילים, מודפס, עם שליח עד הבית'],
+     b:['ספר הקורס להורדה <span>(57 עמודים צבעוניים עם תרגולים ומשימות)</span>','קבוצת וואטסאפ תומכת <span>(מענה אישי, משוב על משימות וקהילה לומדת)</span>','תרגול ומשימות אחרי כל שיעור','שיעור ABC מיוחד למתחילים <span>(קריאה, כתיבה והגייה, ולוח אותיות להדפסה)</span>']},
+  3:{t:'ספרדית לאנשים עסוקים + ספר מתחילים', p:'887 ₪', o:'1,746 ₪', img:'https://myfluentspanish.com/wp-content/uploads/2025/11/45.jpg',
+     d:'"ספרדית לאנשים עסוקים" הוא הקורס הדיגיטלי המקיף והמושקע בישראל ללימוד ספרדית מעשית, מאפס ועד שיחה. 45 שיעורים מעשיים שמלמדים שלב אחרי שלב רק את מה שצריך, בלי להעמיס מילים וחוקי דקדוק מיותרים, ומתחילים לדבר כבר מהשיעור הראשון: שיחה בהווה, בעבר ובעתיד, בלי להתבלבל. לומדים בקצב שלכם, מכל מקום בעולם.',
+     l:['הקורס הדיגיטלי "ספרדית לאנשים עסוקים": 45 שיעורים מעשיים','הספר "ספרדית לאנשים עסוקים" רמת מתחילים, מודפס, עם שליח עד הבית'],
+     b:['שיעור "קוראים ומדברים נכון" <span>(מי שחושש שהוא לא יודע לקרוא, לכתוב ולהגות)</span>','קהילת "מתרגלים ספרדית ביחד" <span>(קבוצה סגורה לתלמידי הקורס: מענה אנושי ותרגול עם אנשים כמוכם)</span>']}
+};
+function pad(n){return (n<10?'0':'')+n}
+function tick(){
+  var ms=END-Date.now();
+  if(ms<=0){document.getElementById('lp').classList.add('ended'); ms=0}
+  var s=Math.floor(ms/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), x=s%60;
+  document.getElementById('d').textContent=pad(d); document.getElementById('h').textContent=pad(h);
+  document.getElementById('m').textContent=pad(m); document.getElementById('s').textContent=pad(x);
+  var bar=document.getElementById('barT').children; bar[0].textContent=d+' ימים'; bar[1].textContent=pad(h)+' שעות'; bar[2].textContent=pad(m)+' דק׳'; bar[3].textContent=pad(x)+' שנ׳';
+  var left=(d>0?d+' ימים ו־':'')+pad(h)+' שעות '+pad(m)+' דקות'; var e=document.getElementById('mLeft'); if(e) e.textContent=left;
+}
+tick(); setInterval(tick,1000);
+var modal=document.getElementById('modal');
+document.querySelectorAll('[data-open]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var o=OFFERS[b.getAttribute('data-open')];
+    document.getElementById('mTitle').textContent=o.t; document.getElementById('mPrice').textContent=o.p;
+    document.getElementById('mOld').textContent=o.o; document.getElementById('mImg').src=o.img; var mi=document.getElementById('mImg'); mi.style.objectFit=(b.getAttribute('data-open')==='3')?'cover':'contain'; mi.style.objectPosition=(b.getAttribute('data-open')==='3')?'47% 50%':'50% 50%';
+    document.getElementById('mDesc').textContent=o.d; document.getElementById('mList').innerHTML=o.l.map(function(x){return '<li>'+x+'</li>'}).join(''); document.getElementById('mBonus').innerHTML=(o.b?o.b.length:0)?'<div class="sec">בונוסים במתנה</div><ul class="gift">'+o.b.map(function(x){return '<li><div>'+x+'</div></li>'}).join('')+'</ul>':'';
+    document.getElementById('mBuy').href=LINKS[b.getAttribute('data-open')]; modal.classList.add('on'); document.body.style.overflow='hidden';
+  });
+});
+function closeM(){modal.classList.remove('on'); document.body.style.overflow=''}
+document.getElementById('close').addEventListener('click',closeM);
+modal.addEventListener('click',function(e){if(e.target===modal)closeM()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM()});
+</script>
+</div>
+<!-- /wp:html -->
