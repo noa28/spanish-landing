@@ -143,10 +143,10 @@ var OFFERS = {
 function pad(n){return (n<10?'0':'')+n}
 function tick(){
   var now=Date.now(), target=END, el=document.getElementById('lp')||document.body;
-  if(now<START){el.classList.add('notyet'); target=START} else {el.classList.remove('notyet')}
-  var ms=target-now;
+  if(now<START){el.classList.add('notyet')} else {el.classList.remove('notyet')}
+  var ms=END-Math.max(now,START+60000);
   if(ms<=0){ if(now>=START){el.classList.add('ended')} ms=0 }
-  var lt=document.querySelectorAll('.lbltx'); for(var q=0;q<lt.length;q++){lt[q].textContent=(now<START)?'המבצע מתחיל בעוד':'המבצע נגמר בעוד'}
+  var lt=document.querySelectorAll('.lbltx'); for(var q=0;q<lt.length;q++){lt[q].textContent=(now<START)?'המבצע מתחיל ב־8.11 ונמשך':'המבצע נגמר בעוד'}
   var s=Math.floor(ms/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), x=s%60;
   document.getElementById('d').textContent=pad(d); document.getElementById('h').textContent=pad(h);
   document.getElementById('m').textContent=pad(m); document.getElementById('s').textContent=pad(x);
